@@ -4,26 +4,41 @@ import numpy as np
 import fitz  # PyMuPDF
 import simplekml
 from glob import glob
+import argparse
+import json
 
 # Constants
 TEMPLATE_DIR = "templates"
-PDF_FILE = "WA13_90%_IH69 CTMS.pdf"  # <-- You can change this
-OUTPUT_KMZ = "matched_symbols.kmz"
-CONTROL_POINTS = {
-    # Manually define control points (pixel_x, pixel_y): (lon, lat)
-    # These should be for a single page and reused if sheets have the same layout
-    (100, 100): (-95.3922, 29.7361),  # Montrose
-    (1500, 100): (-95.3815, 29.7361),  # Main
-    (100, 2000): (-95.3922, 29.7280),  # South point 1
-}
 
-def affine_transform(pixels):
-    """Compute affine transform based on CONTROL_POINTS and apply it."""
+def load_control_points(json_path):
+    """Loads control points from a JSON file."""
+    with open(json_path, 'r') as f:
+        data = json.load(f)
+    
+    control_points = {}
+    points_data = data.get("pixel_to_geo", data)
+
+    for k, v in points_data.items():
+        try:
+            x_str, y_str = k.split(',')
+            control_points[(int(x_str), int(y_str))] = tuple(v)
+        except ValueError:
+            print(f"Warning: Could not parse control point key: {k}. Skipping.")
+            continue
+    if not control_points:
+        raise ValueError("No valid control points loaded. Check the JSON file format.")
+    return control_points
+
+def affine_transform(pixels, control_points):
+    """Compute affine transform based on control_points and apply it."""
     import numpy as np
     from numpy.linalg import lstsq
 
-    src = np.array(list(CONTROL_POINTS.keys()), dtype=np.float32)
-    dst = np.array([CONTROL_POINTS[k] for k in CONTROL_POINTS], dtype=np.float32)
+    if not control_points or len(control_points) < 3:
+        raise ValueError("At least 3 control points are required for affine transformation.")
+
+    src = np.array(list(control_points.keys()), dtype=np.float32)
+    dst = np.array([control_points[k] for k in control_points], dtype=np.float32)
 
     A = []
     B = []
@@ -43,13 +58,16 @@ def affine_transform(pixels):
 
     return [apply(p) for p in pixels]
 
-def match_templates(page_img, templates):
+def match_templates(page_img, template_dir):
     """Returns matched locations for each template."""
     matches = {}
     for category in ["existing", "proposed"]:
-        for path in glob(f"{TEMPLATE_DIR}/{category}/*.png"):
+        for path in glob(f"{template_dir}/{category}/*.png"):
             name = os.path.splitext(os.path.basename(path))[0]
             template = cv2.imread(path, 0)
+            if template is None:
+                print(f"Warning: Could not read template image: {path}. Skipping.")
+                continue
             gray = cv2.cvtColor(page_img, cv2.COLOR_BGR2GRAY)
             result = cv2.matchTemplate(gray, template, cv2.TM_CCOEFF_NORMED)
             threshold = 0.82
@@ -59,8 +77,24 @@ def match_templates(page_img, templates):
     return matches
 
 def main():
+    parser = argparse.ArgumentParser(description="Match symbols in a PDF and generate a KMZ file.")
+    parser.add_argument("--pdf-file", required=True, help="Path to the input PDF file.")
+    parser.add_argument("--output-kmz", required=True, help="Path for the generated KMZ file.")
+    parser.add_argument("--control-points-file", required=True, help="Path to the JSON file containing control points.")
+    args = parser.parse_args()
+
+    try:
+        control_points = load_control_points(args.control_points_file)
+    except Exception as e:
+        print(f"Error loading control points: {e}")
+        return
+
     kml = simplekml.Kml()
-    doc = fitz.open(PDF_FILE)
+    try:
+        doc = fitz.open(args.pdf_file)
+    except Exception as e:
+        print(f"Error opening PDF file {args.pdf_file}: {e}")
+        return
 
     for i, page in enumerate(doc):
         print(f"Processing page {i + 1}")
@@ -68,16 +102,29 @@ def main():
         img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
         if pix.n == 4:
             img = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
+        elif pix.n == 1:
+            img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
         matches = match_templates(img, TEMPLATE_DIR)
+        if not matches:
+            print(f"No matches found on page {i+1}.")
+            continue
+            
         for (category, name), points in matches.items():
-            folder = kml.newfolder(name=f"{category.title()} - {name}")
-            for pt in points:
-                lon, lat = affine_transform([pt])[0]
-                folder.newpoint(name=f"{name}", coords=[(lon, lat)])
+            folder = kml.newfolder(name=f"{category.title()} - {name} (Page {i+1})")
+            try:
+                transformed_points = affine_transform([pt for pt in points], control_points)
+                for pt_orig, (lon, lat) in zip(points, transformed_points):
+                    folder.newpoint(name=f"{name}", coords=[(lon, lat)])
+            except ValueError as e:
+                print(f"Skipping points for {name} on page {i+1} due to affine transform error: {e}")
+                continue
 
-    kml.savekmz(OUTPUT_KMZ)
-    print(f"✅ KMZ saved to {OUTPUT_KMZ}")
+    try:
+        kml.savekmz(args.output_kmz)
+        print(f"✅ KMZ saved to {args.output_kmz}")
+    except Exception as e:
+        print(f"Error saving KMZ file {args.output_kmz}: {e}")
 
 if __name__ == "__main__":
     main()

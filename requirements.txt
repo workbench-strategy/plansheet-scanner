@@ -1,4 +1,6 @@
 PyMuPDF
-pdf2image
 opencv-python
 Pillow
+simplekml
+streamlit
+streamlit-drawable-canvas
