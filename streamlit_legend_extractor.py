@@ -1,10 +1,17 @@
 import streamlit as st
+from streamlit.elements.lib.image_utils import image_to_url
+import streamlit.elements.image as st_image
+# Monkey-patch image_to_url into streamlit.elements.image so st_canvas can use it
+st_image.image_to_url = image_to_url  # type: ignore[attr-defined]
 from streamlit_drawable_canvas import st_canvas
 import fitz  # PyMuPDF
 from PIL import Image
+# Disable PIL decompression bomb limit for large page images (use cautiously)
+Image.MAX_IMAGE_PIXELS = None
 import numpy as np
 import os
 import io
+import base64  # add base64 import
 
 # Constants
 OUTPUT_DIR = "templates"
@@ -27,6 +34,11 @@ if 'pdf_doc' not in st.session_state:
     st.session_state.pdf_doc = None
 if 'image_to_display' not in st.session_state:
     st.session_state.image_to_display = None
+if 'initial_drawing' not in st.session_state:
+    # Store canvas drawing JSON; default empty dict to avoid stacking shapes
+    st.session_state.initial_drawing = {}
+if 'overwrite' not in st.session_state:
+    st.session_state.overwrite = False
 
 
 uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
@@ -45,6 +57,15 @@ if uploaded_file is not None:
         if not 0 <= st.session_state.page_number < pdf_doc.page_count:
             st.session_state.page_number = 0
 
+        # Allow user to choose DPI for higher-resolution symbol cropping
+        dpi = st.sidebar.slider(
+            "Image DPI (higher = better resolution)",
+            min_value=50,
+            max_value=400,
+            value=200,
+            step=50,
+            help="Increase this for higher-res crops. Max 400 to avoid OOM"
+        )
         page_number = st.number_input(
             f"Enter page number (0 to {pdf_doc.page_count - 1})", 
             min_value=0, 
@@ -55,15 +76,21 @@ if uploaded_file is not None:
         st.session_state.page_number = page_number # Update session state from input
 
         # Load and display the page if it hasn't been loaded or page number changed
-        if st.session_state.image_to_display is None or st.session_state.current_page_displayed != page_number:
+        if st.session_state.image_to_display is None or st.session_state.current_page_displayed != page_number or st.session_state.current_dpi != dpi:
+            # Load and render page at the chosen DPI
             page = pdf_doc.load_page(st.session_state.page_number)
-            pix = page.get_pixmap(dpi=200)  # Lower DPI for faster web display
+            pix = page.get_pixmap(dpi=dpi)  # type: ignore[attr-defined]
+            # Save current DPI to session to re-render when DPI changes
+            st.session_state.current_dpi = dpi
             img_bytes = pix.tobytes("png")
             st.session_state.image_to_display = Image.open(io.BytesIO(img_bytes))
             st.session_state.current_page_displayed = st.session_state.page_number
 
 
         if st.session_state.image_to_display:
+            # Use displayed PIL image directly as background_image
+            background_image = st.session_state.image_to_display
+             
             img_display_width = st.session_state.image_to_display.width
             img_display_height = st.session_state.image_to_display.height
             
@@ -71,61 +98,107 @@ if uploaded_file is not None:
             st.sidebar.header("Symbol Details")
             symbol_name = st.sidebar.text_input("Symbol Name (e.g., CCTV)")
             category = st.sidebar.selectbox("Category", ["existing", "proposed"])
+            # Buttons: Clear current selection or Save symbol
+            clear_button = st.sidebar.button("Clear Selection")
             save_button = st.sidebar.button("Save Selected Symbol")
 
             st.sidebar.info("Draw a rectangle around the symbol on the image.")
             
+            # Reset drawing if Clear Selection clicked
+            if clear_button:
+                st.session_state.initial_drawing = {}
+                # also reset any error or messages
+                st.sidebar.info("Selection cleared. Draw a new rectangle.")
+             
+             # --- Zoom & Tool Mode ---
+            zoom_pct = st.sidebar.slider(
+                "Zoom (%)", min_value=50, max_value=150, value=100, step=10,
+                help="Zoom image for easier selection (50–150%)"
+            )
+            mode = st.sidebar.radio(
+                "Tool", ["Draw Box", "Pan/Select"], index=0,
+                help="Choose drawing rectangle or panning mode"
+            )
+            # Determine drawing mode
+            draw_mode = "rect" if mode == "Draw Box" else "transform"
+            st.session_state.drawing_mode = draw_mode
+            # Resize image for zoom
+            if zoom_pct != 100:
+                zw = int(img_display_width * zoom_pct / 100)
+                zh = int(img_display_height * zoom_pct / 100)
+                display_img = background_image.resize((zw, zh))
+            else:
+                display_img = background_image
+            # Use display_img in canvas
+             
             # --- Drawable Canvas ---
-            # Adjust canvas size dynamically or set a max width/height
-            # For simplicity, using image dimensions. Consider constraining for very large images.
             canvas_width = img_display_width
             canvas_height = img_display_height
 
+            # Draw or Pan mode with optional initial drawing JSON
             canvas_result = st_canvas(
-                fill_color="rgba(255, 165, 0, 0.3)",  # Orange fill with transparency
-                stroke_width=2,
-                stroke_color=st.session_state.stroke_color,
-                background_image=st.session_state.image_to_display,
-                update_streamlit=True, # Realtime update
-                height=canvas_height,
-                width=canvas_width,
-                drawing_mode=st.session_state.drawing_mode,
-                key="canvas",
-            )
+                 fill_color="rgba(255, 165, 0, 0.3)",  # Orange fill
+                 stroke_width=2,
+                 stroke_color=st.session_state.stroke_color,
+                 background_image=display_img,  # type: ignore[arg-type]
+                 initial_drawing=st.session_state.initial_drawing or {},
+                 update_streamlit=True, # Realtime update
+                 height=canvas_height * zoom_pct // 100,
+                 width=canvas_width * zoom_pct // 100,
+                 drawing_mode=st.session_state.drawing_mode,
+                 key="canvas",
+             )
+            # Save latest drawing state for next render (enables panning/selection toggle)
+            st.session_state.initial_drawing = canvas_result.json_data or {}
 
-            if save_button and canvas_result.json_data is not None:
-                objects = canvas_result.json_data["objects"]
-                if objects and objects[0]["type"] == "rect": # Assuming the last drawn object is the one to save
-                    rect = objects[-1] # Get the last drawn rectangle
-                    left, top, width, height = int(rect["left"]), int(rect["top"]), int(rect["width"]), int(rect["height"])
-                    
-                    if not symbol_name.strip():
-                        st.sidebar.error("Symbol name cannot be empty.")
-                    elif width > 0 and height > 0:
-                        # Crop from the original high-res image if needed, or from displayed one
-                        # For now, cropping from the displayed image (which has DPI 200)
-                        # Ensure coordinates are within image bounds
-                        img_to_crop = st.session_state.image_to_display.copy()
-                        
-                        # Convert to RGB if it's RGBA (PIL requirement for some saves)
-                        if img_to_crop.mode == 'RGBA':
-                            img_to_crop = img_to_crop.convert('RGB')
-                        
-                        cropped_symbol = img_to_crop.crop((left, top, left + width, top + height))
-                        
-                        category_folder = os.path.join(OUTPUT_DIR, category.lower())
-                        save_path = os.path.join(category_folder, f"{symbol_name}.png")
-                        
-                        try:
-                            cropped_symbol.save(save_path)
-                            st.sidebar.success(f"Symbol '{symbol_name}' saved to {save_path}")
-                            # Optionally clear the drawing or the last object
-                        except Exception as e:
-                            st.sidebar.error(f"Error saving symbol: {e}")
-                    else:
-                        st.sidebar.warning("No valid rectangle drawn or selected.")
-                else:
-                    st.sidebar.warning("Please draw a rectangle first.")
+            if save_button and canvas_result.json_data:
+                 objects = canvas_result.json_data["objects"]
+                 if objects and objects[0]["type"] == "rect":
+                     rect = objects[-1]  # Get the last drawn rectangle
+                     left = int(rect["left"] * 100 / zoom_pct)
+                     top = int(rect["top"] * 100 / zoom_pct)
+                     width = int(rect["width"] * 100 / zoom_pct)
+                     height = int(rect["height"] * 100 / zoom_pct)
+                     
+                     if not symbol_name.strip():
+                         st.sidebar.error("Symbol name cannot be empty.")
+                     elif width > 0 and height > 0:
+                         # Crop from the original high-res image if needed, or from displayed one
+                         # For now, cropping from the displayed image (which has DPI 200)
+                         # Ensure coordinates are within image bounds
+                         img_to_crop = st.session_state.image_to_display.copy()
+                         
+                         # Convert to RGB if it's RGBA (PIL requirement for some saves)
+                         if img_to_crop.mode == 'RGBA':
+                             img_to_crop = img_to_crop.convert('RGB')
+                         
+                         cropped_symbol = img_to_crop.crop((left, top, left + width, top + height))
+                         
+                         category_folder = os.path.join(OUTPUT_DIR, category.lower())
+                         save_path = os.path.join(category_folder, f"{symbol_name}.png")
+                         # confirm overwrite
+                         overwrite_confirm = st.sidebar.checkbox(
+                             "Overwrite existing file?", key="overwrite"
+                         )
+                         if os.path.exists(save_path) and not overwrite_confirm:
+                             st.sidebar.warning(
+                                 "Check 'Overwrite existing file?' to replace the template, or use a different name."
+                         )
+                         else:
+                             try:
+                                 cropped_symbol.save(save_path)
+                                 st.sidebar.success(
+                                     f"Symbol '{symbol_name}' saved to {save_path}"
+                                 )
+                                 # clear the rectangle and reset overwrite flag
+                                 st.session_state.initial_drawing = {}
+                                 st.session_state.overwrite = False
+                             except Exception as e:
+                                 st.sidebar.error(f"Error saving symbol: {e}")
+                     else:
+                         st.sidebar.warning("No valid rectangle drawn or selected.")
+                 else:
+                     st.sidebar.warning("Please draw a rectangle first.")
         else:
             st.info("Upload a PDF and select a page to begin.")
 
