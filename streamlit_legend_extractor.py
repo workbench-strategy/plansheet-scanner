@@ -1,4 +1,7 @@
 import streamlit as st
+import logging
+# Suppress 'missing ScriptRunContext' warnings from Streamlit
+logging.getLogger('streamlit').setLevel(logging.ERROR)
 from streamlit.elements.lib.image_utils import image_to_url
 import streamlit.elements.image as st_image
 # Monkey-patch image_to_url into streamlit.elements.image so st_canvas can use it
@@ -12,6 +15,8 @@ import numpy as np
 import os
 import io
 import base64  # add base64 import
+import cv2
+from glob import glob
 
 # Constants
 OUTPUT_DIR = "templates"
@@ -106,10 +111,11 @@ if uploaded_file is not None:
             
             # Reset drawing if Clear Selection clicked
             if clear_button:
+                # Clear canvas drawing state and rerun to reset widget
                 st.session_state.initial_drawing = {}
-                # also reset any error or messages
                 st.sidebar.info("Selection cleared. Draw a new rectangle.")
-             
+                st.rerun()
+
              # --- Zoom & Tool Mode ---
             zoom_pct = st.sidebar.slider(
                 "Zoom (%)", min_value=50, max_value=150, value=100, step=10,
@@ -209,6 +215,51 @@ if uploaded_file is not None:
 
 else:
     st.info("Upload a PDF file to get started.")
+
+# --- Plan File Processing ---
+st.sidebar.markdown("---")
+st.sidebar.header("Plan File Processing")
+plan_file = st.sidebar.file_uploader("Choose Plan‐Sheets PDF", type="pdf", key="plan_pdf")
+rot_step = st.sidebar.select_slider(
+    "Rotation Step",
+    options=[0, 15, 30, 45, 90],
+    value=0,
+    help="Rotate each symbol template by ±this step when searching"
+)
+threshold = st.sidebar.slider(
+    "Match Threshold",
+    min_value=0.50,
+    max_value=0.99,
+    value=0.82,
+    step=0.01,
+    help="Lower → more (but fuzzier) matches; Higher → stricter"
+)
+
+template_pngs_exist = bool(glob("templates/*/*.png"))
+
+if plan_file is not None and template_pngs_exist:
+    # load plan PDF into PIL or OpenCV images, one per page
+    doc = fitz.open(stream=plan_file.read(), filetype="pdf")
+    for page in doc:
+        pix = page.get_pixmap(dpi=200)  # type: ignore[attr-defined]
+        img = cv2.cvtColor(
+            np.frombuffer(pix.samples, np.uint8).reshape(pix.height, pix.width, pix.n),
+            cv2.COLOR_BGRA2BGR
+        )
+        results = []
+        for tpl_path in glob("templates/*/*.png"):
+            tpl = cv2.imread(tpl_path, cv2.IMREAD_UNCHANGED)
+            for angle in range(0, 360, rot_step or 360):
+                M = cv2.getRotationMatrix2D((tpl.shape[1]//2, tpl.shape[0]//2), angle, 1.0)
+                tpl_rot = cv2.warpAffine(tpl, M, (tpl.shape[1], tpl.shape[0]))
+                res = cv2.matchTemplate(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY),
+                                        cv2.cvtColor(tpl_rot, cv2.COLOR_BGR2GRAY),
+                                        cv2.TM_CCOEFF_NORMED)
+                loc = np.where(res >= threshold)
+                for pt in zip(*loc[::-1]):
+                    results.append((tpl_path, angle, pt, float(res[pt[::-1]])))
+        # Display or export these `results` however you like… e.g. overlay on the page,
+        # list as a DataFrame, or hand off to your KMZ generator.
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("Developed for plan sheet scanning.")
