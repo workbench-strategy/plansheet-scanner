@@ -1,0 +1,66 @@
+# PlanSheet Scanner
+
+A modular tool for extracting, processing, and georeferencing legend symbols from engineering plan sheets (PDFs). Built for flexibility, reproducibility, and easy extension.
+
+## Features
+
+- **Legend Symbol Extraction**: Use OpenCV to interactively select and save legend symbols from PDF plan sheets.
+- **Modular Structure**: All core logic is in `src/core/`, with CLI wrappers in `src/cli/`.
+- **Ready for Automation**: Easily integrate with other scripts or pipelines.
+
+## Quickstart
+
+### 1. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Extract Legend Symbols
+
+```bash
+python src/core/legend_extractor.py path_to_your_pdf.pdf --page 0 --output_dir templates/existing
+```
+
+- Use your mouse to draw rectangles around each symbol in the legend.
+- Each selection is saved as a PNG in the output directory.
+- Press `ESC` when done.
+
+### 3. Directory Structure
+
+See `docs/02-Directory_Structure_Guide.md` for full details. Key folders:
+
+- `src/core/` — Core logic modules
+- `src/cli/` — CLI entry points
+- `templates/existing/` — Saved legend symbol images
+- `tests/` — Unit/integration tests
+- `docs/` — Documentation
+
+## Next Steps
+
+1. **Test Extraction**: Try extracting symbols from your own PDF. Confirm images appear in `templates/existing/`.
+2. **Refine Extraction**: Adjust DPI, selection logic, or output format as needed in `src/core/legend_extractor.py`.
+3. **Integrate**: Use extracted symbols in downstream tasks (e.g., symbol matching, georeferencing, KMZ generation).
+4. **Add Tests**: Place test scripts in `tests/` to ensure reliability as you enhance features.
+5. **Enhance**:
+    - Add batch extraction, auto-detection, or template matching.
+    - Improve CLI UX (e.g., add more options, error handling).
+    - Integrate with other modules (see `src/core/`).
+6. **Document**: Update this README and `docs/` as you refine workflows.
+
+## Room for Refinement & Enhancement
+
+- **Automation**: Add non-interactive/batch extraction for large PDFs.
+- **Symbol Classification**: Integrate ML or template matching for auto-labeling.
+- **Web UI**: Build a Streamlit or Flask interface for easier use.
+- **Deployment**: Add Docker, GCP, or RPi deployment scripts as needed.
+- **Testing**: Expand `tests/` with real-world PDFs and edge cases.
+- **Pre-commit Hooks**: Add `.pre-commit-config.yaml` for linting/formatting.
+
+## Contributing
+
+Pull requests and issues are welcome! See `docs/` for architecture and best practices.
+
+---
+
+For more, see the documentation in `docs/` and comments in each module.

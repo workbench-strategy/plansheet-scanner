@@ -1,6 +1,12 @@
 PyMuPDF
-pdf2image
 opencv-python
+<<<<<<< HEAD:config/requirements.txt
 pytesseract
 Pillow
 tinkter
+=======
+Pillow
+simplekml
+streamlit
+streamlit-drawable-canvas
+>>>>>>> 0d87d2ef0905c76b1b409a597d20537b5f24502e:requirements.txt
