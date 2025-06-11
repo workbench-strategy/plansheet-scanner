@@ -1,4 +1,0 @@
-PyMuPDF
-pdf2image
-opencv-python
-Pillow

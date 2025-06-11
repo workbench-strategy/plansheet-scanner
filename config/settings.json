@@ -1,0 +1,33 @@
+{
+    "setup_commands": [
+      {
+        "command": "python -m venv .venv",
+        "description": "Create a virtual environment named '.venv' in the current directory."
+      },
+      {
+        "command": ".venv\\Scripts\\activate && pip install -r requirements.txt",
+        "description": "Activate the virtual environment and install dependencies on Windows."
+      },
+      {
+        "command": "source .venv/bin/activate && pip install -r requirements.txt",
+        "description": "Activate the virtual environment and install dependencies on macOS/Linux."
+      },
+      {
+        "command": "python -c \"import os; [os.makedirs(p, exist_ok=True) for p in ['images', 'output', 'symbols']]\"",
+        "description": "Ensure required directories exist."
+      }
+    ],
+    "requirements": [
+      "PyMuPDF",
+      "opencv-python",
+      "pytesseract",
+      "Pillow",
+      "tk"
+    ],
+    "post_setup_notes": [
+      "Make sure Tesseract OCR is installed separately and available in your system PATH.",
+      "This config is used by setup scripts to automate environment setup.",
+      "You may run setup_env.py to execute these commands in order."
+    ]
+  }
+  
