@@ -391,6 +391,14 @@ class AICodeCompanion:
         self.highlighter = CodeHighlighter(self.analyzer)
         self.retriever = IntelligentDocumentRetriever(self.embedding_model)
         
+        # Initialize interdisciplinary reviewer
+        try:
+            from src.core.interdisciplinary_reviewer import InterdisciplinaryReviewer
+            self.idr_reviewer = InterdisciplinaryReviewer()
+        except ImportError:
+            logging.warning("Interdisciplinary reviewer not available")
+            self.idr_reviewer = None
+        
         # Initialize code generation model
         try:
             self.code_generator = CodeT5ForConditionalGeneration.from_pretrained("Salesforce/codet5-base")
@@ -468,6 +476,34 @@ class AICodeCompanion:
     def get_code_citations(self, code: str) -> List[CodeCitation]:
         """Find citations for given code in the indexed codebase."""
         return self.retriever.search_similar_code(code)
+    
+    def perform_interdisciplinary_review(self, file_path: str, frameworks: List[str] = None, domain: str = 'general') -> Dict[str, Any]:
+        """Perform comprehensive interdisciplinary review (IDR) of code."""
+        if not self.idr_reviewer:
+            return {'error': 'Interdisciplinary reviewer not available'}
+        
+        try:
+            result = self.idr_reviewer.perform_review(file_path, frameworks, domain)
+            return {
+                'file_path': result.file_path,
+                'overall_risk_score': result.overall_risk_score,
+                'perspectives': {
+                    name: {
+                        'name': perspective.name,
+                        'description': perspective.description,
+                        'risk_level': perspective.risk_level,
+                        'confidence': perspective.confidence,
+                        'findings': perspective.findings
+                    }
+                    for name, perspective in result.perspectives.items()
+                },
+                'recommendations': result.recommendations,
+                'compliance_status': result.compliance_status,
+                'business_impact': result.business_impact
+            }
+        except Exception as e:
+            logging.error(f"Error performing IDR: {e}")
+            return {'error': str(e)}
     
     def _detect_language(self, file_path: str) -> str:
         """Detect programming language from file extension."""

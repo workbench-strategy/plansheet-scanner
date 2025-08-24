@@ -40,7 +40,7 @@ def main():
     # Navigation
     page = st.sidebar.selectbox(
         "Choose a feature:",
-        ["📊 Code Analysis", "🔍 Code Search", "💡 Code Suggestions", "📚 Code Citations", "⚙️ Settings"]
+        ["📊 Code Analysis", "🔍 Code Search", "💡 Code Suggestions", "📚 Code Citations", "🔬 Interdisciplinary Review", "⚙️ Settings"]
     )
     
     if page == "📊 Code Analysis":
@@ -51,6 +51,8 @@ def main():
         show_code_suggestions()
     elif page == "📚 Code Citations":
         show_code_citations()
+    elif page == "🔬 Interdisciplinary Review":
+        show_interdisciplinary_review()
     elif page == "⚙️ Settings":
         show_settings()
 
@@ -406,6 +408,139 @@ def show_code_citations():
                 citations = st.session_state.companion.get_code_citations(code)
             
             display_search_results(citations)
+
+def show_interdisciplinary_review():
+    """Show interdisciplinary review interface."""
+    st.title("🔬 Interdisciplinary Review")
+    st.markdown("Comprehensive code analysis from multiple disciplinary perspectives")
+    
+    # File upload
+    uploaded_file = st.file_uploader(
+        "Upload a code file for interdisciplinary review:",
+        type=['py', 'js', 'java', 'cpp', 'c', 'cs', 'php', 'rb', 'go', 'rs', 'swift', 'kt'],
+        help="Upload a code file for comprehensive review"
+    )
+    
+    if uploaded_file:
+        # Save temporarily
+        temp_path = f"/tmp/{uploaded_file.name}"
+        with open(temp_path, 'w') as f:
+            f.write(uploaded_file.getvalue().decode())
+        
+        # Configuration
+        col1, col2 = st.columns(2)
+        
+        with col1:
+            frameworks = st.multiselect(
+                "Compliance Frameworks:",
+                ['gdpr', 'sox', 'hipaa', 'pci', 'iso27001'],
+                default=['gdpr', 'sox', 'hipaa'],
+                help="Select compliance frameworks to check"
+            )
+        
+        with col2:
+            domain = st.selectbox(
+                "Business Domain:",
+                ['general', 'healthcare', 'finance', 'ecommerce', 'education', 'government'],
+                help="Select the business domain for context"
+            )
+        
+        if st.button("Perform Interdisciplinary Review"):
+            with st.spinner("Performing comprehensive review..."):
+                result = st.session_state.companion.perform_interdisciplinary_review(
+                    temp_path, frameworks, domain
+                )
+            
+            # Clean up
+            os.remove(temp_path)
+            
+            if 'error' not in result:
+                display_idr_results(result)
+            else:
+                st.error(f"Review failed: {result['error']}")
+
+def display_idr_results(result):
+    """Display interdisciplinary review results."""
+    
+    # Overall risk score
+    st.subheader("📊 Overall Assessment")
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.metric("Risk Score", f"{result['overall_risk_score']:.2f}")
+    
+    with col2:
+        compliant_count = sum(result['compliance_status'].values())
+        total_frameworks = len(result['compliance_status'])
+        st.metric("Compliance", f"{compliant_count}/{total_frameworks}")
+    
+    with col3:
+        total_findings = sum(len(p['findings']) for p in result['perspectives'].values())
+        st.metric("Total Findings", total_findings)
+    
+    # Perspectives
+    st.subheader("🔍 Review Perspectives")
+    
+    for perspective_name, perspective in result['perspectives'].items():
+        with st.expander(f"{perspective['name']} ({perspective['risk_level'].upper()} risk)"):
+            col1, col2 = st.columns([2, 1])
+            
+            with col1:
+                st.write(f"**Description:** {perspective['description']}")
+                st.write(f"**Confidence:** {perspective['confidence']:.2f}")
+                
+                if perspective['findings']:
+                    st.write(f"**Findings ({len(perspective['findings'])}):**")
+                    for i, finding in enumerate(perspective['findings'], 1):
+                        severity_color = {
+                            'critical': '🔴',
+                            'high': '🟠',
+                            'medium': '🟡',
+                            'low': '🟢'
+                        }.get(finding.get('severity', 'medium'), '⚪')
+                        
+                        st.write(f"{severity_color} **{finding.get('description', 'Finding')}**")
+                        if 'recommendation' in finding:
+                            st.write(f"   💡 {finding['recommendation']}")
+                else:
+                    st.success("✅ No issues found")
+            
+            with col2:
+                # Risk level indicator
+                risk_colors = {
+                    'low': 'green',
+                    'medium': 'orange',
+                    'high': 'red',
+                    'critical': 'darkred'
+                }
+                st.markdown(f"""
+                <div style="background-color: {risk_colors.get(perspective['risk_level'], 'gray')}; 
+                           color: white; padding: 10px; border-radius: 5px; text-align: center;">
+                    {perspective['risk_level'].upper()} RISK
+                </div>
+                """, unsafe_allow_html=True)
+    
+    # Compliance status
+    st.subheader("✅ Compliance Status")
+    compliance_cols = st.columns(len(result['compliance_status']))
+    
+    for i, (framework, compliant) in enumerate(result['compliance_status'].items()):
+        with compliance_cols[i]:
+            if compliant:
+                st.success(f"✅ {framework.upper()}")
+            else:
+                st.error(f"❌ {framework.upper()}")
+    
+    # Recommendations
+    if result['recommendations']:
+        st.subheader("💡 Recommendations")
+        for i, rec in enumerate(result['recommendations'], 1):
+            st.info(f"{i}. {rec}")
+    
+    # Business impact
+    if result['business_impact']:
+        st.subheader("🏢 Business Impact")
+        st.json(result['business_impact'])
 
 def show_settings():
     """Show settings interface."""

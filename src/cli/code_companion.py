@@ -219,6 +219,66 @@ def cite_command(args):
     
     return 0
 
+def idr_command(args):
+    """Handle the interdisciplinary review command."""
+    companion = AICodeCompanion()
+    
+    if not os.path.exists(args.file):
+        print(f"❌ Error: File {args.file} not found.")
+        return 1
+    
+    print(f"🔍 Performing interdisciplinary review of {args.file}...")
+    print(f"📋 Frameworks: {', '.join(args.frameworks)}")
+    print(f"🏢 Domain: {args.domain}")
+    
+    result = companion.perform_interdisciplinary_review(args.file, args.frameworks, args.domain)
+    
+    if 'error' in result:
+        print(f"❌ Error: {result['error']}")
+        return 1
+    
+    # Display results
+    print(f"\n📊 Interdisciplinary Review Results")
+    print("=" * 60)
+    print(f"File: {result['file_path']}")
+    print(f"Overall Risk Score: {result['overall_risk_score']:.2f}")
+    
+    # Display perspectives
+    print(f"\n🔍 Review Perspectives:")
+    for perspective_name, perspective in result['perspectives'].items():
+        print(f"\n{perspective['name']} ({perspective['risk_level'].upper()} risk)")
+        print(f"  Description: {perspective['description']}")
+        print(f"  Confidence: {perspective['confidence']:.2f}")
+        
+        if perspective['findings']:
+            print(f"  Findings ({len(perspective['findings'])}):")
+            for i, finding in enumerate(perspective['findings'][:3], 1):  # Show top 3
+                print(f"    {i}. {finding.get('description', 'Finding')}")
+                if 'recommendation' in finding:
+                    print(f"       Recommendation: {finding['recommendation']}")
+        else:
+            print("  No issues found")
+    
+    # Display compliance status
+    print(f"\n✅ Compliance Status:")
+    for framework, compliant in result['compliance_status'].items():
+        status = "✅ Compliant" if compliant else "❌ Non-compliant"
+        print(f"  {framework.title()}: {status}")
+    
+    # Display recommendations
+    if result['recommendations']:
+        print(f"\n💡 Top Recommendations:")
+        for i, rec in enumerate(result['recommendations'][:5], 1):  # Show top 5
+            print(f"  {i}. {rec}")
+    
+    # Save results if requested
+    if args.output:
+        with open(args.output, 'w') as f:
+            json.dump(result, f, indent=2, default=str)
+        print(f"\n💾 Results saved to {args.output}")
+    
+    return 0
+
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
@@ -270,6 +330,15 @@ Examples:
     cite_parser.add_argument('--file', help='File containing code')
     cite_parser.add_argument('--directory', help='Directory to search in')
     cite_parser.set_defaults(func=cite_command)
+    
+    # IDR command
+    idr_parser = subparsers.add_parser('idr', help='Perform interdisciplinary review')
+    idr_parser.add_argument('file', help='File to review')
+    idr_parser.add_argument('--frameworks', nargs='+', default=['gdpr', 'sox', 'hipaa'], 
+                           help='Compliance frameworks to check')
+    idr_parser.add_argument('--domain', default='general', help='Business domain')
+    idr_parser.add_argument('--output', help='Save results to JSON file')
+    idr_parser.set_defaults(func=idr_command)
     
     args = parser.parse_args()
     
