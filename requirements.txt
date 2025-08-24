@@ -16,3 +16,5 @@ jedi>=0.18.0
 pandas>=1.5.0
 numpy>=1.21.0
 scikit-learn>=1.1.0
+# Traffic Plan Reviewer dependencies
+plotly>=5.0.0
