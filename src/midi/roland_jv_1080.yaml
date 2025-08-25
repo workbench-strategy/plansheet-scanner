@@ -1,0 +1,183 @@
+---
+# Roland JV-1080 Configuration YAML
+# 
+# This file contains parameter definitions and addresses for the Roland JV-1080 synthesizer.
+# It is used by the jv1080_manager.py module to interact with the device via MIDI SysEx.
+
+common_info:
+  manufacturer_id_hex: "41"  # Roland
+  model_id_hex: "6A"         # JV-1080
+  command_id_dt1_hex: "12"   # Data Set 1 (Send data to JV)
+  command_id_rq1_hex: "11"   # Data Request 1 (Request data from JV)
+  
+# Bank information for bulk dumps
+banks:
+  patch:
+    description: "Patch (Tone) Bank"
+    address_format:
+      - "11"      # First byte is always 11h for patches
+      - { bank_offset: "04" }  # Second byte depends on bank number (multiply by 4)
+      - "00"      # Third byte is always 00h
+      - "00"      # Fourth byte is always 00h
+    size: "2000"  # 8192 bytes for a full patch bank
+    patch_size: "00E0"  # 224 bytes per patch
+  
+  performance:
+    description: "Performance Bank"
+    address_format:
+      - "10"      # First byte is always 10h for performances
+      - { bank_offset: "02" }  # Second byte depends on bank number (multiply by 2)
+      - "00"      # Third byte is always 00h
+      - "00"      # Fourth byte is always 00h
+    size: "1000"  # 4096 bytes for a full performance bank
+    perf_size: "0100"  # 256 bytes per performance
+    
+  rhythm:
+    description: "Rhythm Set"
+    address_format:
+      - "11"      # First byte is always 11h for rhythm sets
+      - "00"      # Second byte is always 00h for rhythm sets
+      - "01"      # Third byte is always 01h for rhythm sets
+      - "00"      # Fourth byte is always 00h
+    size: "2000"  # 8192 bytes for rhythm data
+
+# Parameter group definitions
+parameter_groups:
+  system:
+    description: "System Parameters"
+    parameters:
+      master_tune:
+        description: "Master Tune (415.3Hz - 466.2Hz)"
+        address_hex: ["00", "00", "00", "00"]
+        size_hex: ["00", "00", "00", "02"]
+        data_type: "word"
+        range: [0, 127]
+        
+      master_level:
+        description: "Master Level"
+        address_hex: ["00", "00", "00", "02"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 127]
+        
+      master_pan:
+        description: "Master Pan"
+        address_hex: ["00", "00", "00", "03"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 127]
+        
+      midi_rx_channel:
+        description: "MIDI Receive Channel"
+        address_hex: ["00", "00", "00", "0C"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 15]
+  
+  patch_common:
+    description: "Patch Common Parameters"
+    parameters:
+      patch_name:
+        description: "Patch Name (12 characters)"
+        address_hex: ["11", "00", "00", "00"]
+        size_hex: ["00", "00", "00", "0C"]
+        data_type: "string"
+        
+      patch_level:
+        description: "Patch Level"
+        address_hex: ["11", "00", "00", "0C"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 127]
+        
+      patch_pan:
+        description: "Patch Pan"
+        address_hex: ["11", "00", "00", "0D"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 127]
+        
+      analog_feel:
+        description: "Analog Feel Depth"
+        address_hex: ["11", "00", "00", "0E"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 127]
+      
+  tone:
+    description: "Tone Parameters"
+    parameters:
+      tone_switch:
+        description: "Tone Switch (On/Off)"
+        address_hex: ["11", "00", "01", "00"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 1]
+        
+      wave_group:
+        description: "Wave Group"
+        address_hex: ["11", "00", "01", "01"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 3]
+        
+      wave_bank:
+        description: "Wave Bank"
+        address_hex: ["11", "00", "01", "02"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 15]
+        
+      wave_number:
+        description: "Wave Number"
+        address_hex: ["11", "00", "01", "03"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 127]
+  
+  performance_common:
+    description: "Performance Common Parameters"
+    parameters:
+      performance_name:
+        description: "Performance Name (12 characters)"
+        address_hex: ["10", "00", "00", "00"]
+        size_hex: ["00", "00", "00", "0C"]
+        data_type: "string"
+        
+      performance_level:
+        description: "Performance Level"
+        address_hex: ["10", "00", "00", "0C"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 127]
+        
+      keyboard_mode:
+        description: "Keyboard Mode (Single, Layer, Split)"
+        address_hex: ["10", "00", "00", "10"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 2]
+  
+  part:
+    description: "Part Parameters"
+    parameters:
+      part_switch:
+        description: "Part Switch (On/Off)"
+        address_hex: ["10", "00", "10", "00"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 1]
+        
+      part_rx_channel:
+        description: "Part MIDI Receive Channel"
+        address_hex: ["10", "00", "10", "01"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 16]  # 0-15 = channel 1-16, 16 = OFF
+        
+      part_level:
+        description: "Part Level"
+        address_hex: ["10", "00", "10", "02"]
+        size_hex: ["00", "00", "00", "01"]
+        data_type: "byte"
+        range: [0, 127]

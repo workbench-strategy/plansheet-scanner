@@ -1,0 +1,224 @@
+2025-08-15 09:46:33,361 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_094633
+2025-08-15 09:46:33,362 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 09:46:33,368 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 09:46:33,368 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 09:46:33,375 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 09:46:33,376 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 09:46:33,377 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 09:46:33,377 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 09:46:33,382 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables\M01-17-ITS-Tolling-2b.pdf
+2025-08-15 09:46:33,511 - CableMatcherPipeline - ERROR - Error in pipeline stage PDFSearchStage: '0,3'
+2025-08-15 09:47:09,032 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_094709
+2025-08-15 09:47:09,033 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 09:47:09,038 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 09:47:09,038 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 09:47:09,043 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 09:47:09,044 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 09:47:09,044 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 09:47:09,045 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 09:47:09,048 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables\M01-17-ITS-Tolling-2b.pdf
+2025-08-15 09:47:09,168 - CableMatcherPipeline - ERROR - Error in pipeline stage PDFSearchStage: '0,3'
+2025-08-15 09:47:58,146 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_094758
+2025-08-15 09:47:58,146 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 09:47:58,152 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 09:47:58,153 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 09:47:58,159 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 09:47:58,159 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 09:47:58,160 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 09:47:58,160 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 09:47:58,165 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables\M01-17-ITS-Tolling-2b.pdf
+2025-08-15 09:51:19,669 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_095119
+2025-08-15 09:51:19,670 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 09:51:19,671 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 09:51:19,672 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 09:51:19,676 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 09:51:19,676 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 09:51:19,677 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 09:51:19,677 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 09:51:19,679 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: test_output\test_smaller.pdf
+2025-08-15 09:51:35,558 - CableMatcherPipeline - INFO - Search completed with 62 total matches
+2025-08-15 09:51:35,559 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 09:51:36,893 - CableMatcherPipeline - INFO - Highlighted PDF saved to: test_output\test_smaller_20250815_095119_highlighted.pdf
+2025-08-15 09:51:36,893 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 09:51:36,897 - CableMatcherPipeline - INFO - Summary report saved to: test_output\test_smaller_20250815_095119_report.json
+2025-08-15 09:51:36,897 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 09:57:35,214 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_095735
+2025-08-15 09:57:35,215 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 09:57:35,220 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 09:57:35,221 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 09:57:35,226 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 09:57:35,227 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 09:57:35,228 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 09:57:35,229 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 09:57:35,233 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables\M01-17-ITS-Tolling-2b.pdf
+2025-08-15 09:59:37,325 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 09:59:37,326 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 09:59:59,849 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_095735_highlighted.pdf
+2025-08-15 09:59:59,850 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 09:59:59,853 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_095735_report.json
+2025-08-15 09:59:59,854 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 11:50:20,807 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_115020
+2025-08-15 11:50:20,807 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 11:50:20,813 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 11:50:20,815 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 11:50:20,822 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 11:50:20,823 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 11:50:20,823 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 11:50:20,824 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 11:50:20,830 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 11:52:34,038 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 11:52:34,038 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 11:53:00,126 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_115020_highlighted.pdf
+2025-08-15 11:53:00,127 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 11:53:00,133 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_115020_report.json
+2025-08-15 11:53:00,134 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 11:54:31,883 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_115431
+2025-08-15 11:54:31,884 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 11:54:31,889 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 11:54:31,889 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 11:54:31,896 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 11:54:31,896 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 11:54:31,897 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 11:54:31,897 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 11:54:31,900 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 11:56:43,059 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 11:56:43,060 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 11:57:11,241 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_115431_highlighted.pdf
+2025-08-15 11:57:11,243 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 11:57:11,248 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_115431_report.json
+2025-08-15 11:57:11,249 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 12:02:39,053 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_120239
+2025-08-15 12:02:39,053 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 12:02:39,057 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 12:02:39,058 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 12:02:39,063 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 12:02:39,064 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 12:02:39,064 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 12:02:39,065 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 12:02:39,068 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 12:05:17,190 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 12:05:17,191 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 12:05:51,085 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_120239_highlighted.pdf
+2025-08-15 12:05:51,086 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 12:05:51,092 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_120239_report.json
+2025-08-15 12:05:51,093 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 12:42:52,394 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_124252
+2025-08-15 12:42:52,395 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 12:42:52,402 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 12:42:52,403 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 12:42:52,409 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 12:42:52,409 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 12:42:52,410 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 12:42:52,411 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 12:42:52,415 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 12:44:54,192 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 12:44:54,193 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 12:45:17,524 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_124252_highlighted.pdf
+2025-08-15 12:45:17,525 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 12:45:17,528 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_124252_report.json
+2025-08-15 12:45:17,529 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 13:14:06,831 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_131406
+2025-08-15 13:14:06,832 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 13:14:06,836 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 13:14:06,837 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 13:14:06,842 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 13:14:06,842 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 13:14:06,843 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 13:14:06,844 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 13:14:06,848 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 13:16:13,129 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 13:16:13,130 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 13:16:41,212 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_131406_highlighted.pdf
+2025-08-15 13:16:41,213 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 13:16:41,220 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_131406_report.json
+2025-08-15 13:16:41,221 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 13:17:22,427 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_131722
+2025-08-15 13:17:22,428 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 13:17:22,439 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 13:17:22,440 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 13:17:22,448 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 13:17:22,449 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 13:17:22,450 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 13:17:22,452 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 13:17:22,458 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 13:19:34,680 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 13:19:34,681 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 13:19:34,684 - CableMatcherPipeline - INFO - PDF has 15 pages
+2025-08-15 13:19:34,777 - CableMatcherPipeline - INFO - Skipping legend page (page 1)
+2025-08-15 13:19:57,500 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_131722_highlighted.pdf
+2025-08-15 13:19:57,501 - CableMatcherPipeline - INFO - Creating separate legend file: output\M01-17-ITS-Tolling-2b_20250815_131722_legend.pdf
+2025-08-15 13:19:57,524 - CableMatcherPipeline - INFO - Legend PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_131722_legend.pdf
+2025-08-15 13:19:57,525 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 13:19:57,532 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_131722_report.json
+2025-08-15 13:19:57,533 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 13:33:31,861 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_133331
+2025-08-15 13:33:31,862 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 13:33:31,868 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 13:33:31,869 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 13:33:31,875 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 13:33:31,876 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 13:33:31,876 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 13:33:31,877 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 13:33:31,880 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 13:35:56,981 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 13:35:56,982 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 13:35:56,987 - CableMatcherPipeline - INFO - PDF has 15 pages
+2025-08-15 13:35:57,137 - CableMatcherPipeline - INFO - Skipping legend page (page 1)
+2025-08-15 13:36:33,051 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_133331_highlighted.pdf
+2025-08-15 13:36:33,053 - CableMatcherPipeline - INFO - Creating separate legend file: output\M01-17-ITS-Tolling-2b_20250815_133331_legend.pdf
+2025-08-15 13:36:33,098 - CableMatcherPipeline - INFO - Legend PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_133331_legend.pdf
+2025-08-15 13:36:33,101 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 13:36:33,108 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_133331_report.json
+2025-08-15 13:36:33,109 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 13:41:26,660 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_134126
+2025-08-15 13:41:26,661 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 13:41:26,665 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 13:41:26,666 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 13:41:26,673 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 13:41:26,673 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 13:41:26,674 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 13:41:26,675 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 13:41:26,678 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 13:43:40,846 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 13:43:40,847 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 13:43:40,853 - CableMatcherPipeline - INFO - PDF has 15 pages
+2025-08-15 13:43:40,978 - CableMatcherPipeline - INFO - Skipping legend page (page 1)
+2025-08-15 13:44:07,997 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_134126_highlighted.pdf
+2025-08-15 13:44:07,998 - CableMatcherPipeline - INFO - Creating separate legend file: output\M01-17-ITS-Tolling-2b_20250815_134126_legend.pdf
+2025-08-15 13:44:08,035 - CableMatcherPipeline - INFO - Legend PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_134126_legend.pdf
+2025-08-15 13:44:08,036 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 13:44:08,041 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_134126_report.json
+2025-08-15 13:44:08,042 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-15 13:51:40,174 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250815_135140
+2025-08-15 13:51:40,176 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-15 13:51:40,185 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-15 13:51:40,186 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-15 13:51:40,192 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-15 13:51:40,192 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-15 13:51:40,193 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-15 13:51:40,194 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-15 13:51:40,199 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: Tables/M01-17-ITS-Tolling-2b.pdf
+2025-08-15 13:53:48,710 - CableMatcherPipeline - INFO - Search completed with 792 total matches
+2025-08-15 13:53:48,711 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-15 13:53:48,716 - CableMatcherPipeline - INFO - PDF has 15 pages
+2025-08-15 13:53:48,810 - CableMatcherPipeline - INFO - Skipping legend page (page 1)
+2025-08-15 13:54:11,937 - CableMatcherPipeline - INFO - Highlighted PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_135140_highlighted.pdf
+2025-08-15 13:54:11,938 - CableMatcherPipeline - INFO - Creating separate legend file: output\M01-17-ITS-Tolling-2b_20250815_135140_legend.pdf
+2025-08-15 13:54:11,963 - CableMatcherPipeline - INFO - Legend PDF saved to: output\M01-17-ITS-Tolling-2b_20250815_135140_legend.pdf
+2025-08-15 13:54:11,964 - CableMatcherPipeline - INFO - Running pipeline stage 6/6: ReportGenerationStage
+2025-08-15 13:54:11,968 - CableMatcherPipeline - INFO - Summary report saved to: output\M01-17-ITS-Tolling-2b_20250815_135140_report.json
+2025-08-15 13:54:11,969 - CableMatcherPipeline - INFO - Pipeline completed successfully
+2025-08-18 11:14:02,417 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250818_111402
+2025-08-18 11:14:02,417 - CableMatcherPipeline - INFO - Running pipeline stage 1/6: DataValidationStage
+2025-08-18 11:14:02,417 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-18 11:14:02,417 - CableMatcherPipeline - INFO - Running pipeline stage 2/6: CSVExtractionStage
+2025-08-18 11:14:02,429 - CableMatcherPipeline - INFO - Extracted 14 cable records from CSV
+2025-08-18 11:14:02,429 - CableMatcherPipeline - INFO - Running pipeline stage 3/6: VariationGenerationStage
+2025-08-18 11:14:02,429 - CableMatcherPipeline - INFO - Generated variations for 14 cables
+2025-08-18 11:14:02,430 - CableMatcherPipeline - INFO - Running pipeline stage 4/6: PDFSearchStage
+2025-08-18 11:14:02,431 - CableMatcherPipeline - INFO - Searching for 14 entities in PDF: docs/One-Line/Pages from M01-17-ITS-Tolling-2b.pdf
+2025-08-18 11:14:13,564 - CableMatcherPipeline - INFO - Search completed with 440 total matches
+2025-08-18 11:14:13,564 - CableMatcherPipeline - INFO - Running pipeline stage 5/6: PDFHighlightingStage
+2025-08-18 11:14:13,581 - CableMatcherPipeline - INFO - PDF has 4 pages
+2025-08-18 11:14:13,619 - CableMatcherPipeline - INFO - Skipping legend page (page 1)
+2025-08-18 11:14:13,666 - CableMatcherPipeline - ERROR - Error in pipeline stage PDFHighlightingStage: 'PDFHighlightingStage' object has no attribute '_station_to_float'

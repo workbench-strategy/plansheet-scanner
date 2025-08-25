@@ -1,0 +1,1167 @@
+{
+  "generated_at": "2025-08-15T11:57:11.244676",
+  "input_files": {
+    "pdf": "Tables/M01-17-ITS-Tolling-2b.pdf",
+    "csv": "Tables/WIM_Equipment.csv"
+  },
+  "summary": {
+    "total_entities": 14,
+    "entities_found": 12,
+    "entities_not_found": 2,
+    "total_matches": 792,
+    "metrics": {
+      "exact_matches": 596,
+      "variation_matches": 196,
+      "new_cable_matches": 79,
+      "station_callouts": 0,
+      "duplicate_avoidance": 1451
+    }
+  },
+  "entity_details": {
+    "FTC Distribution": {
+      "count": 40,
+      "pages": [
+        1,
+        2,
+        3,
+        12,
+        13
+      ],
+      "variations": {
+        "FTC Distribution": 26,
+        "Distribution FTC": 3,
+        "FTC Dist": 11
+      },
+      "station_references": [],
+      "new_instances_count": 6,
+      "locations_note": "Only showing 20 of 40 total locations",
+      "location_samples": [
+        {
+          "page": 1,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 1,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 1,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 1,
+          "variation": "Distribution FTC"
+        },
+        {
+          "page": 1,
+          "variation": "FTC Dist"
+        },
+        {
+          "page": 1,
+          "variation": "FTC Dist"
+        },
+        {
+          "page": 1,
+          "variation": "FTC Dist"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Dist"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Dist"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Dist"
+        },
+        {
+          "page": 3,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 3,
+          "variation": "Distribution FTC"
+        },
+        {
+          "page": 3,
+          "variation": "Distribution FTC"
+        },
+        {
+          "page": 3,
+          "variation": "FTC Dist"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Distribution"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Distribution"
+        }
+      ]
+    },
+    "FTC Toll/TRS": {
+      "count": 15,
+      "pages": [
+        12,
+        13
+      ],
+      "variations": {
+        "FTC Toll/TRS": 15
+      },
+      "station_references": [],
+      "new_instances_count": 0,
+      "location_samples": [
+        {
+          "page": 12,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "FTC Toll/TRS"
+        }
+      ]
+    },
+    "FTC Mainline": {
+      "count": 37,
+      "pages": [
+        1,
+        2,
+        3,
+        12,
+        13
+      ],
+      "variations": {
+        "FTC Mainline": 23,
+        "Mainline FTC": 4,
+        "FTC Main": 10
+      },
+      "station_references": [],
+      "new_instances_count": 0,
+      "locations_note": "Only showing 20 of 37 total locations",
+      "location_samples": [
+        {
+          "page": 1,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 1,
+          "variation": "Mainline FTC"
+        },
+        {
+          "page": 1,
+          "variation": "Mainline FTC"
+        },
+        {
+          "page": 1,
+          "variation": "Mainline FTC"
+        },
+        {
+          "page": 1,
+          "variation": "FTC Main"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Main"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Main"
+        },
+        {
+          "page": 2,
+          "variation": "FTC Main"
+        },
+        {
+          "page": 3,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 3,
+          "variation": "Mainline FTC"
+        },
+        {
+          "page": 3,
+          "variation": "FTC Main"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Mainline"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Main"
+        },
+        {
+          "page": 12,
+          "variation": "FTC Main"
+        }
+      ]
+    },
+    "I-5 SB Distribution": {
+      "count": 10,
+      "pages": [
+        1,
+        2,
+        3,
+        12,
+        13
+      ],
+      "variations": {
+        "I-5 SB Distribution": 4,
+        "I-5 SB Dist": 6
+      },
+      "station_references": [],
+      "new_instances_count": 2,
+      "location_samples": [
+        {
+          "page": 1,
+          "variation": "I-5 SB Distribution"
+        },
+        {
+          "page": 1,
+          "variation": "I-5 SB Dist"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 SB Distribution"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 SB Dist"
+        },
+        {
+          "page": 3,
+          "variation": "I-5 SB Distribution"
+        },
+        {
+          "page": 3,
+          "variation": "I-5 SB Dist"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 SB Distribution"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 SB Dist"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 SB Dist"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 SB Dist"
+        }
+      ]
+    },
+    "I-5 SB Mainline": {
+      "count": 52,
+      "pages": [
+        1,
+        2,
+        3,
+        12,
+        13
+      ],
+      "variations": {
+        "I-5 SB Mainline": 37,
+        "I-5 SB Main": 15
+      },
+      "station_references": [],
+      "new_instances_count": 2,
+      "locations_note": "Only showing 20 of 52 total locations",
+      "location_samples": [
+        {
+          "page": 1,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 1,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 1,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 1,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 1,
+          "variation": "I-5 SB Main"
+        },
+        {
+          "page": 1,
+          "variation": "I-5 SB Main"
+        },
+        {
+          "page": 1,
+          "variation": "I-5 SB Main"
+        },
+        {
+          "page": 1,
+          "variation": "I-5 SB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 SB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 SB Main"
+        },
+        {
+          "page": 3,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 3,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 3,
+          "variation": "I-5 SB Main"
+        },
+        {
+          "page": 3,
+          "variation": "I-5 SB Main"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 SB Mainline"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 SB Mainline"
+        }
+      ]
+    },
+    "I-5 NB Mainline": {
+      "count": 99,
+      "pages": [
+        2,
+        3,
+        12,
+        13
+      ],
+      "variations": {
+        "I-5 NB Mainline": 69,
+        "I-5 NB Main": 30
+      },
+      "station_references": [],
+      "new_instances_count": 9,
+      "locations_note": "Only showing 20 of 99 total locations",
+      "location_samples": [
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Mainline"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        },
+        {
+          "page": 2,
+          "variation": "I-5 NB Main"
+        }
+      ]
+    },
+    "I-5 NB Distribution": {
+      "count": 66,
+      "pages": [
+        3,
+        12,
+        13
+      ],
+      "variations": {
+        "I-5 NB Distribution": 54,
+        "I-5 NB Dist": 12
+      },
+      "station_references": [],
+      "new_instances_count": 0,
+      "locations_note": "Only showing 20 of 66 total locations",
+      "location_samples": [
+        {
+          "page": 3,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 3,
+          "variation": "I-5 NB Dist"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 NB Dist"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 NB Dist"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 NB Dist"
+        },
+        {
+          "page": 12,
+          "variation": "I-5 NB Dist"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "I-5 NB Distribution"
+        }
+      ]
+    },
+    "SR 167 SB Distribution": {
+      "count": 74,
+      "pages": [
+        3,
+        4,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "variations": {
+        "SR 167 SB Distribution": 51,
+        "SR 167 SB Dist": 23
+      },
+      "station_references": [],
+      "new_instances_count": 0,
+      "locations_note": "Only showing 20 of 74 total locations",
+      "location_samples": [
+        {
+          "page": 3,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 3,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 3,
+          "variation": "SR 167 SB Dist"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Dist"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 SB Dist"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 SB Dist"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 SB Dist"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 SB Distribution"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 SB Dist"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 SB Dist"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 SB Dist"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 SB Dist"
+        }
+      ]
+    },
+    "SR 167 NB Distribution": {
+      "count": 50,
+      "pages": [
+        3,
+        9,
+        11,
+        13,
+        14,
+        15
+      ],
+      "variations": {
+        "SR 167 NB Distribution": 38,
+        "SR 167 NB Dist": 12
+      },
+      "station_references": [],
+      "new_instances_count": 0,
+      "locations_note": "Only showing 20 of 50 total locations",
+      "location_samples": [
+        {
+          "page": 3,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 3,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 3,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 3,
+          "variation": "SR 167 NB Dist"
+        },
+        {
+          "page": 3,
+          "variation": "SR 167 NB Dist"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 9,
+          "variation": "SR 167 NB Dist"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 NB Dist"
+        },
+        {
+          "page": 11,
+          "variation": "SR 167 NB Dist"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 NB Dist"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 NB Dist"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 NB Dist"
+        },
+        {
+          "page": 14,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 14,
+          "variation": "SR 167 NB Distribution"
+        },
+        {
+          "page": 14,
+          "variation": "SR 167 NB Distribution"
+        }
+      ]
+    },
+    "SR 167 SB Mainline": {
+      "count": 160,
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        13,
+        14,
+        15
+      ],
+      "variations": {
+        "SR 167 SB Mainline": 122,
+        "SR 167 SB Main": 38
+      },
+      "station_references": [],
+      "new_instances_count": 30,
+      "locations_note": "Only showing 20 of 160 total locations",
+      "location_samples": [
+        {
+          "page": 4,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 SB Main"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 SB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 SB Main"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 SB Main"
+        }
+      ]
+    },
+    "SR 167 NB Mainline": {
+      "count": 163,
+      "pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        13,
+        14,
+        15
+      ],
+      "variations": {
+        "SR 167 NB Mainline": 131,
+        "SR 167 NB Main": 32
+      },
+      "station_references": [],
+      "new_instances_count": 30,
+      "locations_note": "Only showing 20 of 163 total locations",
+      "location_samples": [
+        {
+          "page": 4,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Main"
+        },
+        {
+          "page": 4,
+          "variation": "SR 167 NB Main"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 NB Mainline"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 NB Main"
+        },
+        {
+          "page": 5,
+          "variation": "SR 167 NB Main"
+        }
+      ]
+    },
+    "SR 167 NB Mainline (Weigh Station)": {
+      "count": 0,
+      "pages": [],
+      "variations": {},
+      "station_references": [],
+      "new_instances_count": 0,
+      "location_samples": []
+    },
+    "SR 167 Toll/TRS": {
+      "count": 26,
+      "pages": [
+        13,
+        14,
+        15
+      ],
+      "variations": {
+        "SR 167 Toll/TRS": 26
+      },
+      "station_references": [],
+      "new_instances_count": 0,
+      "locations_note": "Only showing 20 of 26 total locations",
+      "location_samples": [
+        {
+          "page": 13,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 13,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 14,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 14,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 14,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 14,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 15,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 15,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 15,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 15,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 15,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 15,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 15,
+          "variation": "SR 167 Toll/TRS"
+        },
+        {
+          "page": 15,
+          "variation": "SR 167 Toll/TRS"
+        }
+      ]
+    },
+    "WIM Distribution": {
+      "count": 0,
+      "pages": [],
+      "variations": {},
+      "station_references": [],
+      "new_instances_count": 0,
+      "location_samples": []
+    }
+  }
+}
