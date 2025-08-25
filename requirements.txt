@@ -14,3 +14,27 @@ matplotlib>=3.4.0
 mido>=1.2.10
 python-rtmidi>=1.4.9
 PyYAML>=6.0
+PyMuPDF
+opencv-python
+Pillow
+simplekml
+streamlit
+streamlit-drawable-canvas
+# AI/ML dependencies for Code Companion
+torch>=1.12.0
+transformers>=4.20.0
+sentence-transformers>=2.2.0
+openai>=0.27.0
+# Code analysis dependencies
+astroid>=2.14.0
+jedi>=0.18.0
+# Additional utilities
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.1.0
+# Traffic Plan Reviewer dependencies
+plotly>=5.0.0
+# Machine Learning dependencies for adaptive learning
+torch>=1.12.0
+scikit-learn>=1.1.0
+joblib>=1.1.0
