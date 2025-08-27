@@ -1,0 +1,30 @@
+{
+  "drawing_id": "real_ITS_Ramp Meter_Markup JNA 170615",
+  "project_name": "014224",
+  "sheet_number": "I-405",
+  "sheet_title": "Its Ramp Meter Markup Jna 170615",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 1,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: ITS_Ramp Meter_Markup JNA 170615.pdf",
+  "file_path": "as_built_drawings\\ITS_Ramp Meter_Markup JNA 170615.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:38:00.414632"
+}

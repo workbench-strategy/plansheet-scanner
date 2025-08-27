@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-470",
+  "project_name": "SR-167 Interchange - Variation 470",
+  "sheet_number": "TP-470",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 9,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Timing coordination problems - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "timing",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Missing pedestrian signals"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_470.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.568022"
+}

@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-376",
+  "project_name": "Highway Widening - Variation 376",
+  "sheet_number": "BR-376",
+  "sheet_title": "Bridge Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 8,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Inadequate concrete cover"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - structural installation successful",
+  "file_path": "as_built_376.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.469137"
+}

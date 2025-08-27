@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-404",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 404",
+  "sheet_number": "TS-404",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 11,
+    "complexity": "medium"
+  },
+  "as_built_changes": [
+    {
+      "description": "Timing coordination problems - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "timing",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_404.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.499470"
+}

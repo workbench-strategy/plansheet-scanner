@@ -1,0 +1,30 @@
+{
+  "drawing_id": "real_ATMS_EastgateToSR900_As-builts_Sunset_ITS",
+  "project_name": "160320",
+  "sheet_number": "I-90",
+  "sheet_title": "Atms Eastgatetosr900 As-Builts Sunset Its",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 1,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: ATMS_EastgateToSR900_As-builts_Sunset_ITS.pdf",
+  "file_path": "as_built_drawings\\ATMS_EastgateToSR900_As-builts_Sunset_ITS.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:37:59.355169"
+}

@@ -1,0 +1,30 @@
+{
+  "drawing_id": "real_FWLE_SR509_OverlapITS_220322 509 1b ITS Plans_only",
+  "project_name": "99460",
+  "sheet_number": "I-5",
+  "sheet_title": "Fwle Sr509 Overlapits 220322 509 1B Its Plans Only",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 2,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: FWLE_SR509_OverlapITS_220322 509 1b ITS Plans_only.pdf",
+  "file_path": "as_built_drawings\\FWLE_SR509_OverlapITS_220322 509 1b ITS Plans_only.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:37:59.621083"
+}

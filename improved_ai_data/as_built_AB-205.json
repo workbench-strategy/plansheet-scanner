@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-205",
+  "project_name": "Highway Widening - Variation 205",
+  "sheet_number": "S-205",
+  "sheet_title": "Structural Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 11,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate concrete cover - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - structural elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: coordination problems",
+  "file_path": "as_built_205.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.272368"
+}

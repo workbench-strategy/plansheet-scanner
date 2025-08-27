@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-311",
+  "project_name": "Local Street Improvement - Variation 311",
+  "sheet_number": "TP-311",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 4,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate detector coverage - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Missing pedestrian signals"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_311.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.389221"
+}

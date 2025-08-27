@@ -1,0 +1,30 @@
+{
+  "drawing_id": "real_From ATMS_C7766_I-90_ImpactsAtSunsetpdf",
+  "project_name": "Unknown Project",
+  "sheet_number": "Unknown",
+  "sheet_title": "From Atms C7766 I-90 Impactsatsunsetpdf",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 1,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: From ATMS_C7766_I-90_ImpactsAtSunsetpdf.pdf",
+  "file_path": "as_built_drawings\\From ATMS_C7766_I-90_ImpactsAtSunsetpdf.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:37:59.398904"
+}

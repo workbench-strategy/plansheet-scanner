@@ -1,0 +1,40 @@
+{
+  "drawing_file": "traffic_plan_001.pdf",
+  "extraction_timestamp": "2025-08-27T11:31:07.676749",
+  "symbols": [
+    {
+      "symbol_id": "TS_001",
+      "symbol_type": "traffic_signal",
+      "discipline": "traffic",
+      "location": {
+        "x": 150,
+        "y": 200
+      },
+      "confidence": 0.95,
+      "visual_description": "circle with traffic light",
+      "legend_reference": "TS",
+      "notes": "traffic signal installed per plan"
+    },
+    {
+      "symbol_id": "JB_001",
+      "symbol_type": "junction_box",
+      "discipline": "electrical",
+      "location": {
+        "x": 300,
+        "y": 150
+      },
+      "confidence": 0.88,
+      "visual_description": "square with JB",
+      "legend_reference": "JB",
+      "notes": "junction box to be provided"
+    }
+  ],
+  "metadata": {
+    "total_symbols": 2,
+    "disciplines_found": [
+      "traffic",
+      "electrical"
+    ],
+    "processing_notes": "Successfully extracted symbols from drawing"
+  }
+}

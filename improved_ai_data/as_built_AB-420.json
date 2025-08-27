@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-420",
+  "project_name": "Local Street Improvement - Variation 420",
+  "sheet_number": "EC-420",
+  "sheet_title": "Electrical Equipment Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 10,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Missing grounding - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "missing",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_420.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.505524"
+}

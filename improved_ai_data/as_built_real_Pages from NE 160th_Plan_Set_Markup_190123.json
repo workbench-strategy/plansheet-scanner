@@ -1,0 +1,30 @@
+{
+  "drawing_id": "real_Pages from NE 160th_Plan_Set_Markup_190123",
+  "project_name": "018941",
+  "sheet_number": "I-405",
+  "sheet_title": "Pages From Ne 160Th Plan Set Markup 190123",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 1,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: Pages from NE 160th_Plan_Set_Markup_190123.pdf",
+  "file_path": "as_built_drawings\\Pages from NE 160th_Plan_Set_Markup_190123.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:38:01.364625"
+}

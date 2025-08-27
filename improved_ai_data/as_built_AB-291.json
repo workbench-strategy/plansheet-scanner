@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-291",
+  "project_name": "Highway Widening - Variation 291",
+  "sheet_number": "TM-291",
+  "sheet_title": "Signal Timing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 12,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Missing pedestrian signals - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "missing",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Sign placement conflicts"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_291.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.375209"
+}

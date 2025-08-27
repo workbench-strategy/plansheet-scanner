@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-390",
+  "project_name": "Local Street Improvement - Variation 390",
+  "sheet_number": "T-390",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 8,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Signal head visibility issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "signal",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Missing pedestrian signals"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_390.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.485085"
+}

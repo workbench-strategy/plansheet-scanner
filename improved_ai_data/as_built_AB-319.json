@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-319",
+  "project_name": "Highway Widening - Variation 319",
+  "sheet_number": "TP-319",
+  "sheet_title": "Traffic Marking Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 10,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Signal head visibility issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "signal",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_319.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.404846"
+}

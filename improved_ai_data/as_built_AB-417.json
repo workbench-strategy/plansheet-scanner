@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-417",
+  "project_name": "Local Street Improvement - Variation 417",
+  "sheet_number": "C-417",
+  "sheet_title": "Erosion Control - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 9,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Insufficient pipe slopes - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "insufficient",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Flooding problems"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_417.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.505524"
+}

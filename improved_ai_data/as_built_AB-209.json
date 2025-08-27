@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-209",
+  "project_name": "SR-167 Interchange - Variation 209",
+  "sheet_number": "E-209",
+  "sheet_title": "Electrical Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 12,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Overfilled conduit - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "overfilled",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Missing grounding"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: coordination problems",
+  "file_path": "as_built_209.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.287997"
+}

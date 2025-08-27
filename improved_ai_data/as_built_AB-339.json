@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-339",
+  "project_name": "Local Street Improvement - Variation 339",
+  "sheet_number": "G-339",
+  "sheet_title": "Grading Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 4,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction difficulty encountered: coordination problems",
+  "file_path": "as_built_339.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.420470"
+}

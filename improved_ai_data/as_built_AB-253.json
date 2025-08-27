@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-253",
+  "project_name": "Local Street Improvement - Variation 253",
+  "sheet_number": "TM-253",
+  "sheet_title": "Traffic Marking Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 10,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Signal head visibility issues"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_253.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.334163"
+}

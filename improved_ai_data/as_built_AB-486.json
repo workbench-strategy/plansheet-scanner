@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-486",
+  "project_name": "SR-167 Interchange - Variation 486",
+  "sheet_number": "E-486",
+  "sheet_title": "Electrical Equipment Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 8,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Overfilled conduit"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_486.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.572027"
+}

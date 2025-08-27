@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-447",
+  "project_name": "Local Street Improvement - Variation 447",
+  "sheet_number": "EC-447",
+  "sheet_title": "Electrical Equipment Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 11,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Inaccessible junction boxes"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_447.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.536773"
+}

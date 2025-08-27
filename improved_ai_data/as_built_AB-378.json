@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-378",
+  "project_name": "SR-167 Interchange - Variation 378",
+  "sheet_number": "EL-378",
+  "sheet_title": "Power Distribution - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 3,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Missing grounding - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "missing",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Overfilled conduit"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_378.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.472128"
+}

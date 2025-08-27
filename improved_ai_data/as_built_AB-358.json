@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-358",
+  "project_name": "Local Street Improvement - Variation 358",
+  "sheet_number": "EC-358",
+  "sheet_title": "Electrical Conduit Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 11,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Overfilled conduit - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "overfilled",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_358.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.448627"
+}

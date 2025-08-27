@@ -1,0 +1,32 @@
+{
+  "drawing_id": "real_As-builts Extracted for North End 405",
+  "project_name": "18204",
+  "sheet_number": "Unknown",
+  "sheet_title": "As-Builts Extracted For North End 405",
+  "discipline": "unknown",
+  "original_design": {
+    "elements": 1,
+    "complexity": "medium"
+  },
+  "as_built_changes": [
+    {
+      "description": "Limited text content - may need manual review",
+      "code_violation": false,
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "WSDOT_General_Standards"
+  ],
+  "review_notes": [
+    "General engineering review completed"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: As-builts Extracted for North End 405.pdf",
+  "file_path": "as_built_drawings\\As-builts Extracted for North End 405.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:37:59.087041"
+}
