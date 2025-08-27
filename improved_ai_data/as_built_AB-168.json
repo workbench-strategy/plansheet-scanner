@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-168",
+  "project_name": "Local Street Improvement - Variation 168",
+  "sheet_number": "TM-168",
+  "sheet_title": "Signal Timing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 8,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Missing pedestrian signals - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "missing",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_168.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.262846"
+}

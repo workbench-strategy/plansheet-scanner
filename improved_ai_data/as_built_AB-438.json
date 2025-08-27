@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-438",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 438",
+  "sheet_number": "ST-438",
+  "sheet_title": "Structural Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 3,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - structural elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction difficulty encountered: coordination problems",
+  "file_path": "as_built_438.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.521148"
+}

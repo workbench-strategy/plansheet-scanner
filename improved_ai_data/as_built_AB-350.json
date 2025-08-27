@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-350",
+  "project_name": "SR-167 Interchange - Variation 350",
+  "sheet_number": "D-350",
+  "sheet_title": "Drainage Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 5,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_350.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.436096"
+}

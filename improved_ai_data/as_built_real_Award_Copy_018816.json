@@ -1,0 +1,36 @@
+{
+  "drawing_id": "real_Award_Copy_018816",
+  "project_name": "Unknown Project",
+  "sheet_number": "P-0053",
+  "sheet_title": "Award Copy 018816",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 1,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Complex drawing - field modifications may be required",
+      "code_violation": false,
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "AASHTO",
+    "WSDOT_Structural_Standards",
+    "ACI_Standards"
+  ],
+  "review_notes": [
+    "Structural elements reviewed",
+    "Load ratings verified",
+    "Foundation systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: Award_Copy_018816.pdf",
+  "file_path": "as_built_drawings\\Award_Copy_018816.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:37:59.372179"
+}

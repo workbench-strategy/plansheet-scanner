@@ -1,0 +1,18 @@
+{
+  "drawing_id": "005",
+  "sheet_number": "E-002",
+  "sheet_title": "Electrical Plan",
+  "discipline": "electrical",
+  "notes": "Electrical equipment installation",
+  "code_references": [
+    "NEC",
+    "WSDOT Electrical"
+  ],
+  "review_comments": [
+    "Undersized conduit detected",
+    "Violation: conduit too small"
+  ],
+  "approval_status": "rejected",
+  "file_path": "electrical_002.pdf",
+  "timestamp": "2025-08-25T15:21:53.748107"
+}

@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-342",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 342",
+  "sheet_number": "D-342",
+  "sheet_title": "Drainage Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 4,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_342.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.420470"
+}

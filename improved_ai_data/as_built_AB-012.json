@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-012",
+  "project_name": "Local Street Improvement - Variation 12",
+  "sheet_number": "EP-012",
+  "sheet_title": "Electrical Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 10,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inaccessible junction boxes - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inaccessible",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_012.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.096400"
+}

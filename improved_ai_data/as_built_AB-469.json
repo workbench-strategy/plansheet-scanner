@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-469",
+  "project_name": "Local Street Improvement - Variation 469",
+  "sheet_number": "G-469",
+  "sheet_title": "Storm Drainage - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 5,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_469.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.568022"
+}

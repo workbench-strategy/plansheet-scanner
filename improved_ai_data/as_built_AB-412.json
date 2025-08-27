@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-412",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 412",
+  "sheet_number": "T-412",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 8,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Timing coordination problems"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_412.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.505524"
+}

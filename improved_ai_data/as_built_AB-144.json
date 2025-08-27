@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-144",
+  "project_name": "SR-167 Interchange - Variation 144",
+  "sheet_number": "ST-144",
+  "sheet_title": "Bridge Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 11,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Load rating issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "load",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Insufficient reinforcement"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - structural installation successful",
+  "file_path": "as_built_144.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.243583"
+}

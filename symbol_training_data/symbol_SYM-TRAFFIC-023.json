@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-TRAFFIC-023",
+  "symbol_name": "stop_sign",
+  "symbol_type": "traffic",
+  "visual_description": "octagon or STOP text shown on plan",
+  "legend_reference": "Ref: STOP",
+  "notes_description": "intersection to be provided",
+  "common_variations": [
+    "STOP",
+    "STOP SIGN",
+    "HALT"
+  ],
+  "context_clues": [
+    "signal timing",
+    "pedestrian",
+    "vehicle"
+  ],
+  "file_path": "plan_site_plan_023.pdf",
+  "confidence": 0.9610542048725658,
+  "usage_frequency": 9,
+  "timestamp": "2025-08-25T16:07:22.706258"
+}

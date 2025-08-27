@@ -1,0 +1,51 @@
+{
+  "drawing_source": "test_drawing.pdf",
+  "training_examples": [
+    {
+      "symbol_id": "TS_001",
+      "symbol_name": "traffic_signal",
+      "symbol_type": "traffic",
+      "visual_description": "circle with traffic light",
+      "legend_reference": "TS",
+      "notes_description": "traffic signal installed per plan",
+      "common_variations": [
+        "TS",
+        "TRAFFIC_SIGNAL"
+      ],
+      "context_clues": [
+        "intersection",
+        "roadway",
+        "electrical"
+      ],
+      "file_path": "test_drawing.pdf",
+      "confidence": 0.95,
+      "usage_frequency": 1,
+      "source": "as_built_drawing",
+      "extraction_timestamp": "2025-08-27T09:30:17.634290"
+    },
+    {
+      "symbol_id": "JB_001",
+      "symbol_name": "junction_box",
+      "symbol_type": "electrical",
+      "visual_description": "square with JB",
+      "legend_reference": "JB",
+      "notes_description": "junction box to be provided",
+      "common_variations": [
+        "JB",
+        "JUNCTION_BOX"
+      ],
+      "context_clues": [
+        "intersection",
+        "roadway",
+        "electrical"
+      ],
+      "file_path": "test_drawing.pdf",
+      "confidence": 0.88,
+      "usage_frequency": 1,
+      "source": "as_built_drawing",
+      "extraction_timestamp": "2025-08-27T09:30:17.634290"
+    }
+  ],
+  "total_examples": 2,
+  "created_timestamp": "2025-08-27T09:30:17.634290"
+}

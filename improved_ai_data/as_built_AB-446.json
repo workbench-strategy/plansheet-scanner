@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-446",
+  "project_name": "SR-167 Interchange - Variation 446",
+  "sheet_number": "G-446",
+  "sheet_title": "Culvert Details - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 11,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Erosion control issues"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_446.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.536773"
+}

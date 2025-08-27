@@ -1,0 +1,39 @@
+{
+  "drawing_id": "AB-079",
+  "project_name": "SR-167 Interchange - Variation 79",
+  "sheet_number": "T-001-79",
+  "sheet_title": "Traffic Signal Plan - As Built - Variation 79",
+  "discipline": "traffic",
+  "original_design": {
+    "signal_heads": 4,
+    "detector_loops": 8
+  },
+  "as_built_changes": [
+    {
+      "description": "Signal head relocated due to utility conflict",
+      "code_violation": true,
+      "indicators": [
+        "utility conflict",
+        "relocation required"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "MUTCD 2A.01",
+    "WSDOT Traffic Standards"
+  ],
+  "review_notes": [
+    "Signal head visibility meets requirements",
+    "Detector coverage adequate"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "visibility": "good",
+    "coverage": "adequate"
+  },
+  "construction_notes": "Installation completed per approved plans (variation 79)",
+  "file_path": "sample_as_built_079.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:15:16.023359"
+}

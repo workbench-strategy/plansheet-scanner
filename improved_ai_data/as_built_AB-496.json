@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-496",
+  "project_name": "SR-167 Interchange - Variation 496",
+  "sheet_number": "E-496",
+  "sheet_title": "Electrical Equipment Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 3,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Missing grounding - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "missing",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Voltage drop issues"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_496.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.587656"
+}

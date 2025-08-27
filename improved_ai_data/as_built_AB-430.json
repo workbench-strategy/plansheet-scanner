@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-430",
+  "project_name": "Local Street Improvement - Variation 430",
+  "sheet_number": "T-430",
+  "sheet_title": "Traffic Control Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 6,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_430.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.521148"
+}

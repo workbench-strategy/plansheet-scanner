@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-074",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 74",
+  "sheet_number": "TP-074",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 9,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Timing coordination problems"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_074.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.162915"
+}

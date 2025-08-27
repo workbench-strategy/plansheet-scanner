@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-111",
+  "project_name": "Local Street Improvement - Variation 111",
+  "sheet_number": "E-111",
+  "sheet_title": "Electrical Details - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 3,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Undersized conduit"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_111.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.211258"
+}

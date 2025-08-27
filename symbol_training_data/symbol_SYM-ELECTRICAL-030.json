@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-ELECTRICAL-030",
+  "symbol_name": "conduit",
+  "symbol_type": "electrical",
+  "visual_description": "line or pipe symbol marked with",
+  "legend_reference": "Symbol: COND",
+  "notes_description": "electrical as shown",
+  "common_variations": [
+    "COND",
+    "CONDUIT",
+    "PIPE"
+  ],
+  "context_clues": [
+    "junction",
+    "conduit",
+    "panel"
+  ],
+  "file_path": "plan_traffic_plan_030.pdf",
+  "confidence": 0.9158581034419931,
+  "usage_frequency": 2,
+  "timestamp": "2025-08-25T16:03:09.431196"
+}

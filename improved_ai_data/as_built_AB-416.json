@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-416",
+  "project_name": "Local Street Improvement - Variation 416",
+  "sheet_number": "ST-416",
+  "sheet_title": "Bridge Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 6,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Insufficient reinforcement - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "insufficient",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Load rating issues"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - structural installation successful",
+  "file_path": "as_built_416.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.505524"
+}

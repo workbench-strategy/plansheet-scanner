@@ -1,0 +1,30 @@
+{
+  "drawing_id": "real_Special_Provisions_014343",
+  "project_name": "Unknown Project",
+  "sheet_number": "M-005",
+  "sheet_title": "Special Provisions 014343",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 1,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: Special_Provisions_014343.pdf",
+  "file_path": "as_built_drawings\\Special_Provisions_014343.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:38:01.398703"
+}

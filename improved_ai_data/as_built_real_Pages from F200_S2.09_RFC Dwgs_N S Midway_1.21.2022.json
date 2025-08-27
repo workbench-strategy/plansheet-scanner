@@ -1,0 +1,30 @@
+{
+  "drawing_id": "real_Pages from F200_S2.09_RFC Dwgs_N S Midway_1.21.2022",
+  "project_name": "313856",
+  "sheet_number": "I-5",
+  "sheet_title": "Pages From F200 S2.09 Rfc Dwgs N S Midway 1.21.2022",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 2,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: Pages from F200_S2.09_RFC Dwgs_N S Midway_1.21.2022.pdf",
+  "file_path": "as_built_drawings\\Pages from F200_S2.09_RFC Dwgs_N S Midway_1.21.2022.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:38:01.100426"
+}

@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-041",
+  "symbol_name": "column",
+  "symbol_type": "structural",
+  "visual_description": "vertical rectangle or column symbol marked with",
+  "legend_reference": "COL",
+  "notes_description": "support as shown",
+  "common_variations": [
+    "COL",
+    "COLUMN",
+    "POST"
+  ],
+  "context_clues": [
+    "support",
+    "column",
+    "concrete"
+  ],
+  "file_path": "plan_electrical_plan_041.pdf",
+  "confidence": 0.9646324426788218,
+  "usage_frequency": 1,
+  "timestamp": "2025-08-25T16:03:09.446141"
+}

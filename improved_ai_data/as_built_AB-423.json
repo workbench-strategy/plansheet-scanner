@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-423",
+  "project_name": "SR-167 Interchange - Variation 423",
+  "sheet_number": "TM-423",
+  "sheet_title": "Signal Timing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 10,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Signal head visibility issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "signal",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: coordination problems",
+  "file_path": "as_built_423.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.505524"
+}

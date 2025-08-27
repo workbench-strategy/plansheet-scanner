@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-387",
+  "project_name": "Local Street Improvement - Variation 387",
+  "sheet_number": "T-387",
+  "sheet_title": "Signal Timing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 10,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate detector coverage - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Sign placement conflicts"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_387.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.481098"
+}

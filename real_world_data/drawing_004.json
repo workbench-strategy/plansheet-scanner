@@ -1,0 +1,18 @@
+{
+  "drawing_id": "004",
+  "sheet_number": "T-002",
+  "sheet_title": "Traffic Signal Plan",
+  "discipline": "traffic",
+  "notes": "Signal timing and coordination",
+  "code_references": [
+    "MUTCD",
+    "WSDOT Standards"
+  ],
+  "review_comments": [
+    "Timing coordination issue found",
+    "Violation: inadequate detector coverage"
+  ],
+  "approval_status": "conditional",
+  "file_path": "traffic_002.pdf",
+  "timestamp": "2025-08-25T15:21:53.747106"
+}

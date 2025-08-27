@@ -1,0 +1,32 @@
+{
+  "drawing_id": "real_18204_DraftAs-BuiltsVol6Full",
+  "project_name": "002665",
+  "sheet_number": "I-405",
+  "sheet_title": "18204 Draftas-Builtsvol6Full",
+  "discipline": "unknown",
+  "original_design": {
+    "elements": 1,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Complex drawing - field modifications may be required",
+      "code_violation": false,
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "WSDOT_General_Standards"
+  ],
+  "review_notes": [
+    "General engineering review completed"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: 18204_DraftAs-BuiltsVol6Full.pdf",
+  "file_path": "as_built_drawings\\18204_DraftAs-BuiltsVol6Full.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:37:58.918917"
+}

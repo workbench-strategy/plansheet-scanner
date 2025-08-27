@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-DRAINAGE-017",
+  "symbol_name": "catch_basin",
+  "symbol_type": "drainage",
+  "visual_description": "circle or square with CB displayed as",
+  "legend_reference": "Symbol: CB",
+  "notes_description": "catch basin specified",
+  "common_variations": [
+    "CB",
+    "CATCH BASIN",
+    "INLET"
+  ],
+  "context_clues": [
+    "pipe",
+    "gradient",
+    "water"
+  ],
+  "file_path": "plan_structural_plan_017.pdf",
+  "confidence": 0.8342832512641154,
+  "usage_frequency": 10,
+  "timestamp": "2025-08-25T16:03:09.430121"
+}

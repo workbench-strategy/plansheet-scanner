@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-TRAFFIC-039",
+  "symbol_name": "stop_sign",
+  "symbol_type": "traffic",
+  "visual_description": "octagon or STOP text shown on plan",
+  "legend_reference": "Legend reference: STOP",
+  "notes_description": "intersection specified",
+  "common_variations": [
+    "STOP",
+    "STOP SIGN",
+    "HALT"
+  ],
+  "context_clues": [
+    "crosswalk",
+    "pedestrian",
+    "traffic control"
+  ],
+  "file_path": "plan_drainage_plan_039.pdf",
+  "confidence": 0.8273583777724448,
+  "usage_frequency": 3,
+  "timestamp": "2025-08-25T16:07:22.709759"
+}

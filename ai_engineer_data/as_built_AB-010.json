@@ -1,0 +1,39 @@
+{
+  "drawing_id": "AB-010",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 10",
+  "sheet_number": "E-001-10",
+  "sheet_title": "Electrical Plan - As Built - Variation 10",
+  "discipline": "electrical",
+  "original_design": {
+    "conduit_size": "2 inch",
+    "junction_boxes": 6
+  },
+  "as_built_changes": [
+    {
+      "description": "Conduit size increased to 3 inch for future capacity",
+      "code_violation": false,
+      "indicators": [
+        "capacity upgrade",
+        "future planning"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "NEC Article 300",
+    "NEC Article 400"
+  ],
+  "review_notes": [
+    "Conduit sizing meets NEC requirements",
+    "Grounding system properly installed"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "conduit": "adequate",
+    "grounding": "proper"
+  },
+  "construction_notes": "Electrical system installed per NEC requirements (variation 10)",
+  "file_path": "sample_as_built_010.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:15:15.885799"
+}

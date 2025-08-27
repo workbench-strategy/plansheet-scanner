@@ -1,0 +1,36 @@
+{
+  "drawing_id": "real_Asbuilts_ITS_SR509_Phase1_Stage1b",
+  "project_name": "Unknown Project",
+  "sheet_number": "Unknown",
+  "sheet_title": "Asbuilts Its Sr509 Phase1 Stage1B",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 1,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Limited text content - may need manual review",
+      "code_violation": false,
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: Asbuilts_ITS_SR509_Phase1_Stage1b.pdf",
+  "file_path": "as_built_drawings\\Asbuilts_ITS_SR509_Phase1_Stage1b.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:37:59.121288"
+}

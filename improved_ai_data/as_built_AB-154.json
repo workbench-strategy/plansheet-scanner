@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-154",
+  "project_name": "Highway Widening - Variation 154",
+  "sheet_number": "C-154",
+  "sheet_title": "Culvert Details - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 12,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction difficulty encountered: access issues",
+  "file_path": "as_built_154.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.245907"
+}

@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-061",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 61",
+  "sheet_number": "C-061",
+  "sheet_title": "Erosion Control - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 12,
+    "complexity": "medium"
+  },
+  "as_built_changes": [
+    {
+      "description": "Erosion control issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "erosion",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_061.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.159327"
+}

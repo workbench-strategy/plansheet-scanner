@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-083",
+  "project_name": "Local Street Improvement - Variation 83",
+  "sheet_number": "D-083",
+  "sheet_title": "Storm Drainage - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 5,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Flooding problems - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "flooding",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_083.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.179421"
+}

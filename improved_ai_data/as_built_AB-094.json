@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-094",
+  "project_name": "Highway Widening - Variation 94",
+  "sheet_number": "G-094",
+  "sheet_title": "Storm Drainage - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 4,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_094.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.179421"
+}

@@ -1,0 +1,30 @@
+{
+  "drawing_id": "real_SR509_AsBuilt_SR99_Fiber_Lighting_S206",
+  "project_name": "03831",
+  "sheet_number": "d-6",
+  "sheet_title": "Sr509 Asbuilt Sr99 Fiber Lighting S206",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 1,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "MUTCD",
+    "WSDOT_Traffic_Standards",
+    "ITE_Standards"
+  ],
+  "review_notes": [
+    "Traffic control devices reviewed",
+    "Signal timing verified",
+    "ITS systems checked"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Real as-built drawing: SR509_AsBuilt_SR99_Fiber_Lighting_S206.pdf",
+  "file_path": "as_built_drawings\\SR509_AsBuilt_SR99_Fiber_Lighting_S206.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:38:01.459027"
+}

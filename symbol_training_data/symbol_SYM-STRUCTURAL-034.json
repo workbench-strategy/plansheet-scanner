@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-034",
+  "symbol_name": "column",
+  "symbol_type": "structural",
+  "visual_description": "vertical rectangle or column symbol shown on plan",
+  "legend_reference": "Symbol: COL",
+  "notes_description": "column specified",
+  "common_variations": [
+    "COL",
+    "COLUMN",
+    "POST"
+  ],
+  "context_clues": [
+    "foundation",
+    "support",
+    "reinforcement"
+  ],
+  "file_path": "plan_structural_plan_034.pdf",
+  "confidence": 0.8440955036229583,
+  "usage_frequency": 1,
+  "timestamp": "2025-08-25T16:03:09.439919"
+}

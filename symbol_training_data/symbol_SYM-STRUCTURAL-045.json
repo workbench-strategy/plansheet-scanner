@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-045",
+  "symbol_name": "column",
+  "symbol_type": "structural",
+  "visual_description": "vertical rectangle or column symbol marked with",
+  "legend_reference": "See legend: COL",
+  "notes_description": "support specified",
+  "common_variations": [
+    "COL",
+    "COLUMN",
+    "POST"
+  ],
+  "context_clues": [
+    "steel",
+    "column",
+    "support"
+  ],
+  "file_path": "plan_drainage_plan_045.pdf",
+  "confidence": 0.9442787574396337,
+  "usage_frequency": 6,
+  "timestamp": "2025-08-25T16:07:22.709759"
+}

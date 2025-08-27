@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-466",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 466",
+  "sheet_number": "EL-466",
+  "sheet_title": "Power Distribution - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 7,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Overfilled conduit"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_466.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.552398"
+}

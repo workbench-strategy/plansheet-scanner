@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-059",
+  "project_name": "Local Street Improvement - Variation 59",
+  "sheet_number": "CV-059",
+  "sheet_title": "Erosion Control - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 7,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Erosion control issues"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_059.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.146357"
+}

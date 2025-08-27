@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-ELECTRICAL-020",
+  "symbol_name": "junction_box",
+  "symbol_type": "electrical",
+  "visual_description": "square or rectangle with X or JB marked with",
+  "legend_reference": "See legend: JB",
+  "notes_description": "junction box specified",
+  "common_variations": [
+    "JB",
+    "JUNCTION BOX",
+    "ELECTRICAL BOX"
+  ],
+  "context_clues": [
+    "panel",
+    "electrical",
+    "conduit"
+  ],
+  "file_path": "plan_site_plan_020.pdf",
+  "confidence": 0.9879748420398775,
+  "usage_frequency": 4,
+  "timestamp": "2025-08-25T16:03:09.431196"
+}

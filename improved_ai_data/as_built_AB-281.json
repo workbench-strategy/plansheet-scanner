@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-281",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 281",
+  "sheet_number": "EP-281",
+  "sheet_title": "Electrical Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 12,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_281.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.364313"
+}

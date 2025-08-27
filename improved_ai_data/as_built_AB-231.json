@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-231",
+  "project_name": "Highway Widening - Variation 231",
+  "sheet_number": "G-231",
+  "sheet_title": "Culvert Details - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 11,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Erosion control issues"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_231.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.312072"
+}

@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-103",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 103",
+  "sheet_number": "EL-103",
+  "sheet_title": "Electrical Details - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 4,
+    "complexity": "medium"
+  },
+  "as_built_changes": [
+    {
+      "description": "Undersized conduit - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "undersized",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_103.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.196204"
+}

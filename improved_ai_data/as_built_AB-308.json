@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-308",
+  "project_name": "SR-167 Interchange - Variation 308",
+  "sheet_number": "BR-308",
+  "sheet_title": "Structural Details - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 12,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate concrete cover - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Load rating issues"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - structural installation successful",
+  "file_path": "as_built_308.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.389221"
+}

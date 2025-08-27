@@ -1,0 +1,27 @@
+{
+  "drawing_id": "SR-99_Highway_Widening_T-002",
+  "project_name": "SR-99 Highway Widening",
+  "sheet_number": "T-002",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 6,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "SR-99_Highway_Widening_T-002.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:17:21.256282"
+}

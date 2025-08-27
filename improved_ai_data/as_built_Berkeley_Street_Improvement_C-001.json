@@ -1,0 +1,27 @@
+{
+  "drawing_id": "Berkeley_Street_Improvement_C-001",
+  "project_name": "Berkeley Street Improvement",
+  "sheet_number": "C-001",
+  "sheet_title": "Drainage Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 5,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "Berkeley_Street_Improvement_C-001.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T11:17:21.259306"
+}

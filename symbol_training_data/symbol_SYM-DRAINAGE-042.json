@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-DRAINAGE-042",
+  "symbol_name": "manhole",
+  "symbol_type": "drainage",
+  "visual_description": "circle with MH represented as",
+  "legend_reference": "MH",
+  "notes_description": "access as shown",
+  "common_variations": [
+    "MH",
+    "MANHOLE",
+    "ACCESS"
+  ],
+  "context_clues": [
+    "outlet",
+    "inlet",
+    "pipe"
+  ],
+  "file_path": "plan_drainage_plan_042.pdf",
+  "confidence": 0.9746824413307165,
+  "usage_frequency": 1,
+  "timestamp": "2025-08-25T16:03:09.446843"
+}

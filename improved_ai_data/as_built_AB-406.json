@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-406",
+  "project_name": "SR-167 Interchange - Variation 406",
+  "sheet_number": "TS-406",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 5,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate detector coverage - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Timing coordination problems"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: coordination problems",
+  "file_path": "as_built_406.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.501463"
+}

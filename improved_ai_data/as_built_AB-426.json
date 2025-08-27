@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-426",
+  "project_name": "Local Street Improvement - Variation 426",
+  "sheet_number": "D-426",
+  "sheet_title": "Grading Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 11,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Flooding problems - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "flooding",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_426.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.521148"
+}

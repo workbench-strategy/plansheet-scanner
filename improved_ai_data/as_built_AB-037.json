@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-037",
+  "project_name": "Highway Widening - Variation 37",
+  "sheet_number": "C-037",
+  "sheet_title": "Storm Drainage - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 12,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Poor inlet spacing"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_037.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.129967"
+}

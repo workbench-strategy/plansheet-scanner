@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-297",
+  "project_name": "Local Street Improvement - Variation 297",
+  "sheet_number": "EP-297",
+  "sheet_title": "Electrical Details - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 12,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Voltage drop issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "voltage",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_297.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T10:00:24.381189"
+}

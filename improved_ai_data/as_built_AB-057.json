@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-057",
+  "project_name": "Local Street Improvement - Variation 57",
+  "sheet_number": "C-057",
+  "sheet_title": "Erosion Control - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 12,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Erosion control issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "erosion",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_057.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.146357"
+}
