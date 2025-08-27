@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-ELECTRICAL-029",
+  "symbol_name": "junction_box",
+  "symbol_type": "electrical",
+  "visual_description": "square or rectangle with X or JB shown on plan",
+  "legend_reference": "Symbol: JB",
+  "notes_description": "junction box specified",
+  "common_variations": [
+    "JB",
+    "JUNCTION BOX",
+    "ELECTRICAL BOX"
+  ],
+  "context_clues": [
+    "junction",
+    "circuit",
+    "electrical"
+  ],
+  "file_path": "plan_structural_plan_029.pdf",
+  "confidence": 0.9510064698207026,
+  "usage_frequency": 8,
+  "timestamp": "2025-08-25T16:03:09.431196"
+}

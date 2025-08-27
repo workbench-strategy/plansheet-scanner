@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-120",
+  "project_name": "SR-167 Interchange - Variation 120",
+  "sheet_number": "TM-120",
+  "sheet_title": "Traffic Control Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 3,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Timing coordination problems - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "timing",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_120.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.213235"
+}

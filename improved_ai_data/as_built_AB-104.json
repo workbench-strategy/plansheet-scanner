@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-104",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 104",
+  "sheet_number": "S-104",
+  "sheet_title": "Foundation Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 8,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Load rating issues"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction difficulty encountered: access issues",
+  "file_path": "as_built_104.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.196204"
+}

@@ -1,0 +1,21 @@
+{
+  "symbol_id": "SYM-TRAFFIC-018",
+  "symbol_name": "yield_sign",
+  "symbol_type": "traffic",
+  "visual_description": "triangle or YIELD text represented as",
+  "legend_reference": "Ref: YIELD",
+  "notes_description": "yield installed per plan",
+  "common_variations": [
+    "YIELD",
+    "GIVE WAY"
+  ],
+  "context_clues": [
+    "pedestrian",
+    "vehicle",
+    "intersection"
+  ],
+  "file_path": "plan_drainage_plan_018.pdf",
+  "confidence": 0.8640518336101817,
+  "usage_frequency": 1,
+  "timestamp": "2025-08-25T16:07:22.691340"
+}

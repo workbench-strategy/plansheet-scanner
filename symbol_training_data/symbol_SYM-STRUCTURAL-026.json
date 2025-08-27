@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-026",
+  "symbol_name": "column",
+  "symbol_type": "structural",
+  "visual_description": "vertical rectangle or column symbol indicated by symbol",
+  "legend_reference": "Symbol: COL",
+  "notes_description": "column to be provided",
+  "common_variations": [
+    "COL",
+    "COLUMN",
+    "POST"
+  ],
+  "context_clues": [
+    "concrete",
+    "beam",
+    "support"
+  ],
+  "file_path": "plan_site_plan_026.pdf",
+  "confidence": 0.845051652571039,
+  "usage_frequency": 9,
+  "timestamp": "2025-08-25T16:07:22.706258"
+}

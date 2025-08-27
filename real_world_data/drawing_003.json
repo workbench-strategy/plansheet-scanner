@@ -1,0 +1,18 @@
+{
+  "drawing_id": "003",
+  "sheet_number": "S-001",
+  "sheet_title": "Structural Plan",
+  "discipline": "structural",
+  "notes": "Bridge structure and reinforcement",
+  "code_references": [
+    "AASHTO",
+    "WSDOT Structural"
+  ],
+  "review_comments": [
+    "Load ratings meet requirements",
+    "Reinforcement adequate"
+  ],
+  "approval_status": "approved",
+  "file_path": "structural_001.pdf",
+  "timestamp": "2025-08-25T15:21:53.745747"
+}

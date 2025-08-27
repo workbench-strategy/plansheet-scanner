@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-093",
+  "project_name": "Local Street Improvement - Variation 93",
+  "sheet_number": "C-093",
+  "sheet_title": "Grading Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 8,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate drainage capacity - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_093.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.179421"
+}

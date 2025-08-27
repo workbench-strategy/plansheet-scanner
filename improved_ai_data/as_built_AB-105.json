@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-105",
+  "project_name": "Local Street Improvement - Variation 105",
+  "sheet_number": "S-105",
+  "sheet_title": "Structural Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 10,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - structural elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction difficulty encountered: access issues",
+  "file_path": "as_built_105.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.196204"
+}

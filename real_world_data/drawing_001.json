@@ -1,0 +1,18 @@
+{
+  "drawing_id": "001",
+  "sheet_number": "T-001",
+  "sheet_title": "Traffic Signal Plan",
+  "discipline": "traffic",
+  "notes": "Signal heads and detector loops shown",
+  "code_references": [
+    "MUTCD",
+    "WSDOT Standards"
+  ],
+  "review_comments": [
+    "Design meets requirements",
+    "No violations found"
+  ],
+  "approval_status": "approved",
+  "file_path": "traffic_001.pdf",
+  "timestamp": "2025-08-25T15:21:53.741234"
+}

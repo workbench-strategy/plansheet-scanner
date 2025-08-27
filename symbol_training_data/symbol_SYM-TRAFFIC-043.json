@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-TRAFFIC-043",
+  "symbol_name": "traffic_signal",
+  "symbol_type": "traffic",
+  "visual_description": "circle with arrows or lights marked with",
+  "legend_reference": "TS",
+  "notes_description": "signal as shown",
+  "common_variations": [
+    "TS",
+    "TRAFFIC SIGNAL",
+    "SIGNAL"
+  ],
+  "context_clues": [
+    "vehicle",
+    "signal timing",
+    "pedestrian"
+  ],
+  "file_path": "plan_structural_plan_043.pdf",
+  "confidence": 0.9040895462859336,
+  "usage_frequency": 5,
+  "timestamp": "2025-08-25T16:07:22.709759"
+}

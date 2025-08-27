@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-ELECTRICAL-014",
+  "symbol_name": "conduit",
+  "symbol_type": "electrical",
+  "visual_description": "line or pipe symbol marked with",
+  "legend_reference": "Legend reference: COND",
+  "notes_description": "pipe to be provided",
+  "common_variations": [
+    "COND",
+    "CONDUIT",
+    "PIPE"
+  ],
+  "context_clues": [
+    "wiring",
+    "electrical",
+    "circuit"
+  ],
+  "file_path": "plan_traffic_plan_014.pdf",
+  "confidence": 0.9822282152015265,
+  "usage_frequency": 9,
+  "timestamp": "2025-08-25T16:03:09.428184"
+}

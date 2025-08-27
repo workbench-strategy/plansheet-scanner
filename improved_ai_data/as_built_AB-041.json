@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-041",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 41",
+  "sheet_number": "C-041",
+  "sheet_title": "Drainage Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 6,
+    "complexity": "medium"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate drainage capacity - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Inadequate drainage capacity"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_041.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.135982"
+}

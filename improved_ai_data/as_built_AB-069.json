@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-069",
+  "project_name": "Local Street Improvement - Variation 69",
+  "sheet_number": "G-069",
+  "sheet_title": "Grading Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 11,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Insufficient pipe slopes - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "insufficient",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_069.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.162915"
+}

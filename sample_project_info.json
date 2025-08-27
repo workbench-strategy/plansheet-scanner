@@ -1,0 +1,16 @@
+{
+  "budget": 500000,
+  "duration_months": 6,
+  "complexity_score": 0.7,
+  "project_type": "intersection",
+  "agency": "WSDOT",
+  "region": "Seattle",
+  "contractor": "ABC Construction",
+  "engineer": "XYZ Engineering",
+  "review_date": "2025-08-25",
+  "weather_conditions": "dry",
+  "traffic_volume": "medium",
+  "intersection_type": "signalized",
+  "lanes": 4,
+  "pedestrian_volume": "high"
+}

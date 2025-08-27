@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-040",
+  "project_name": "SR-167 Interchange - Variation 40",
+  "sheet_number": "EC-040",
+  "sheet_title": "Electrical Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 10,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Voltage drop issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "voltage",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Inaccessible junction boxes"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_040.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.133966"
+}

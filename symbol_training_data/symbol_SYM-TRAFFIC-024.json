@@ -1,0 +1,21 @@
+{
+  "symbol_id": "SYM-TRAFFIC-024",
+  "symbol_name": "yield_sign",
+  "symbol_type": "traffic",
+  "visual_description": "triangle or YIELD text indicated by symbol",
+  "legend_reference": "Symbol: YIELD",
+  "notes_description": "yield to be provided",
+  "common_variations": [
+    "YIELD",
+    "GIVE WAY"
+  ],
+  "context_clues": [
+    "vehicle",
+    "roadway",
+    "traffic control"
+  ],
+  "file_path": "plan_structural_plan_024.pdf",
+  "confidence": 0.8937566052410728,
+  "usage_frequency": 1,
+  "timestamp": "2025-08-25T16:07:22.706258"
+}

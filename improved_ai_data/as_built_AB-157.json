@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-157",
+  "project_name": "SR-167 Interchange - Variation 157",
+  "sheet_number": "CV-157",
+  "sheet_title": "Storm Drainage - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 12,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate drainage capacity - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_157.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.245907"
+}

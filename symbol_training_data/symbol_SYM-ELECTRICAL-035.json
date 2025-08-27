@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-ELECTRICAL-035",
+  "symbol_name": "conduit",
+  "symbol_type": "electrical",
+  "visual_description": "line or pipe symbol shown on plan",
+  "legend_reference": "See legend: COND",
+  "notes_description": "conduit required",
+  "common_variations": [
+    "COND",
+    "CONDUIT",
+    "PIPE"
+  ],
+  "context_clues": [
+    "wiring",
+    "junction",
+    "electrical"
+  ],
+  "file_path": "plan_drainage_plan_035.pdf",
+  "confidence": 0.9530990380198763,
+  "usage_frequency": 4,
+  "timestamp": "2025-08-25T16:07:22.709759"
+}

@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-017",
+  "project_name": "SR-167 Interchange - Variation 17",
+  "sheet_number": "CV-017",
+  "sheet_title": "Erosion Control - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 3,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_017.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.110279"
+}

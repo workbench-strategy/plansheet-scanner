@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-036",
+  "symbol_name": "column",
+  "symbol_type": "structural",
+  "visual_description": "vertical rectangle or column symbol marked with",
+  "legend_reference": "Symbol: COL",
+  "notes_description": "column installed per plan",
+  "common_variations": [
+    "COL",
+    "COLUMN",
+    "POST"
+  ],
+  "context_clues": [
+    "column",
+    "foundation",
+    "reinforcement"
+  ],
+  "file_path": "plan_drainage_plan_036.pdf",
+  "confidence": 0.950269263249794,
+  "usage_frequency": 6,
+  "timestamp": "2025-08-25T16:07:22.709759"
+}

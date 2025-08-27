@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-136",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 136",
+  "sheet_number": "B-136",
+  "sheet_title": "Bridge Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 4,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - structural elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction difficulty encountered: access issues",
+  "file_path": "as_built_136.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.229450"
+}

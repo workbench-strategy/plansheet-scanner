@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-TRAFFIC-014",
+  "symbol_name": "traffic_signal",
+  "symbol_type": "traffic",
+  "visual_description": "circle with arrows or lights represented as",
+  "legend_reference": "Legend reference: TS",
+  "notes_description": "traffic light installed per plan",
+  "common_variations": [
+    "TS",
+    "TRAFFIC SIGNAL",
+    "SIGNAL"
+  ],
+  "context_clues": [
+    "signal timing",
+    "pedestrian",
+    "traffic control"
+  ],
+  "file_path": "plan_traffic_plan_014.pdf",
+  "confidence": 0.8008042788374657,
+  "usage_frequency": 2,
+  "timestamp": "2025-08-25T16:07:22.691340"
+}

@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-046",
+  "symbol_name": "beam",
+  "symbol_type": "structural",
+  "visual_description": "rectangular shape or beam symbol displayed as",
+  "legend_reference": "Legend reference: BEAM",
+  "notes_description": "girder to be provided",
+  "common_variations": [
+    "BEAM",
+    "GIRDER",
+    "STRUCTURAL"
+  ],
+  "context_clues": [
+    "concrete",
+    "reinforcement",
+    "load"
+  ],
+  "file_path": "plan_traffic_plan_046.pdf",
+  "confidence": 0.8904083596389937,
+  "usage_frequency": 8,
+  "timestamp": "2025-08-25T16:03:09.448900"
+}

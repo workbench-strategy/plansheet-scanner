@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-001",
+  "symbol_name": "column",
+  "symbol_type": "structural",
+  "visual_description": "vertical rectangle or column symbol displayed as",
+  "legend_reference": "See legend: COL",
+  "notes_description": "column as shown",
+  "common_variations": [
+    "COL",
+    "COLUMN",
+    "POST"
+  ],
+  "context_clues": [
+    "support",
+    "reinforcement",
+    "foundation"
+  ],
+  "file_path": "plan_traffic_plan_001.pdf",
+  "confidence": 0.9372525559370557,
+  "usage_frequency": 3,
+  "timestamp": "2025-08-25T16:07:22.689037"
+}

@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-039",
+  "symbol_name": "beam",
+  "symbol_type": "structural",
+  "visual_description": "rectangular shape or beam symbol marked with",
+  "legend_reference": "Ref: BEAM",
+  "notes_description": "girder required",
+  "common_variations": [
+    "BEAM",
+    "GIRDER",
+    "STRUCTURAL"
+  ],
+  "context_clues": [
+    "foundation",
+    "reinforcement",
+    "beam"
+  ],
+  "file_path": "plan_traffic_plan_039.pdf",
+  "confidence": 0.9194949232786874,
+  "usage_frequency": 4,
+  "timestamp": "2025-08-25T16:03:09.444141"
+}
