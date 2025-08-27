@@ -222,3 +222,27 @@
 2025-08-18 11:14:13,581 - CableMatcherPipeline - INFO - PDF has 4 pages
 2025-08-18 11:14:13,619 - CableMatcherPipeline - INFO - Skipping legend page (page 1)
 2025-08-18 11:14:13,666 - CableMatcherPipeline - ERROR - Error in pipeline stage PDFHighlightingStage: 'PDFHighlightingStage' object has no attribute '_station_to_float'
+2025-08-27 15:32:25,117 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250827_153225
+2025-08-27 15:32:25,117 - CableMatcherPipeline - INFO - Running pipeline stage 1/7: DataValidationStage
+2025-08-27 15:32:25,117 - CableMatcherPipeline - ERROR - Error in pipeline stage DataValidationStage: CSV file does not contain a 'Cable Type' column
+2025-08-27 15:32:43,730 - CableMatcherPipeline - INFO - Starting entity matching pipeline with timestamp 20250827_153243
+2025-08-27 15:32:43,730 - CableMatcherPipeline - INFO - Running pipeline stage 1/7: DataValidationStage
+2025-08-27 15:32:43,732 - CableMatcherPipeline - INFO - Data validation completed: CSV and PDF files are valid
+2025-08-27 15:32:43,732 - CableMatcherPipeline - INFO - Running pipeline stage 2/7: CSVExtractionStage
+2025-08-27 15:32:43,735 - CableMatcherPipeline - INFO - Extracted 1 cable records from CSV
+2025-08-27 15:32:43,735 - CableMatcherPipeline - INFO - Running pipeline stage 3/7: VariationGenerationStage
+2025-08-27 15:32:43,735 - CableMatcherPipeline - INFO - Generated variations for 1 cables
+2025-08-27 15:32:43,735 - CableMatcherPipeline - INFO - Running pipeline stage 4/7: OCRPreprocessingStage
+2025-08-27 15:33:19,774 - root - INFO - OCR preprocessing complete for 7 pages at 300 dpi
+2025-08-27 15:33:19,791 - CableMatcherPipeline - INFO - Running pipeline stage 5/7: PDFSearchStage
+2025-08-27 15:33:19,793 - CableMatcherPipeline - INFO - Searching for 1 entities in PDF: /workspace/scripts/plans.pdf
+2025-08-27 15:33:21,180 - CableMatcherPipeline - INFO - Search completed with 0 total matches
+2025-08-27 15:33:21,180 - CableMatcherPipeline - INFO - Running pipeline stage 6/7: PDFHighlightingStage
+2025-08-27 15:33:21,181 - CableMatcherPipeline - INFO - PDF has 7 pages
+2025-08-27 15:33:21,211 - CableMatcherPipeline - INFO - Skipping legend page (page 1)
+2025-08-27 15:33:21,550 - CableMatcherPipeline - INFO - Highlighted PDF saved to: /workspace/output/plans_20250827_153243_highlighted.pdf
+2025-08-27 15:33:21,550 - CableMatcherPipeline - INFO - Creating separate legend file: /workspace/output/plans_20250827_153243_legend.pdf
+2025-08-27 15:33:21,556 - CableMatcherPipeline - INFO - Legend PDF saved to: /workspace/output/plans_20250827_153243_legend.pdf
+2025-08-27 15:33:21,556 - CableMatcherPipeline - INFO - Running pipeline stage 7/7: ReportGenerationStage
+2025-08-27 15:33:21,557 - CableMatcherPipeline - INFO - Summary report saved to: /workspace/output/plans_20250827_153243_report.json
+2025-08-27 15:33:21,557 - CableMatcherPipeline - INFO - Pipeline completed successfully
