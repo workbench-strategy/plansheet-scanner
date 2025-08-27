@@ -21,6 +21,7 @@ pdf2image>=1.16.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
 plotly>=5.0.0
+<<<<<<< HEAD
 
 # Utilities and helpers
 tqdm>=4.65.0
@@ -65,3 +66,10 @@ pytest>=6.0.0
 # ipython>=8.0.0
 # black>=22.0.0
 # flake8>=5.0.0
+=======
+# Machine Learning dependencies for adaptive learning
+torch>=1.12.0
+scikit-learn>=1.1.0
+joblib>=1.1.0
+pytesseract>=0.3.10
+>>>>>>> 018a9a8f8365cb195c7615e4952d8ed4d6bce8a6
