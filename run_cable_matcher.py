@@ -78,6 +78,17 @@ def main():
         action="store_true",
         help="Enable one-line diagram mode (optimized for one-line diagrams without north arrow)"
     )
+    parser.add_argument(
+        "--ocr", 
+        action="store_true",
+        help="Enable OCR preprocessing and fallback for image-based PDFs"
+    )
+    parser.add_argument(
+        "--ocr-dpi",
+        type=int,
+        default=300,
+        help="Rendering DPI for OCR preprocessing (higher = slower, more accurate)"
+    )
     
     args = parser.parse_args()
     
@@ -122,7 +133,9 @@ def main():
             output_dir=args.output_dir,
             border_width=args.border_width,
             fill_opacity=args.fill_opacity,
-            one_line_mode=args.one_line_mode
+            one_line_mode=args.one_line_mode,
+            ocr_enabled=args.ocr,
+            ocr_dpi=args.ocr_dpi
         )
         
         # Print success message

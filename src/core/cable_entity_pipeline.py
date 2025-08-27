@@ -20,6 +20,8 @@ from datetime import datetime
 import random
 import fitz  # PyMuPDF
 import pandas as pd
+import cv2
+import numpy as np
 
 # Configure logging
 logging.basicConfig(
@@ -148,6 +150,102 @@ class DataValidationStage(PipelineStage):
             raise ValueError("No PDF path provided")
             
         logger.info(f"Data validation completed: CSV and PDF files are valid")
+        return data
+
+# OCR preprocessing stage
+class OCRPreprocessingStage(PipelineStage):
+    """Optionally render PDF pages to images and run OCR to obtain word boxes.
+
+    Produces per-page artifacts under data["ocr"] with keys:
+      - words: list of {text, bbox, conf}
+      - dpi: render dpi
+      - width, height: image dimensions
+    Also adds data["page_text_fallback"][page_index] as concatenated OCR text.
+    """
+
+    def __init__(self, enabled: bool = False, dpi: int = 300, deskew: bool = True, denoise: bool = True):
+        self.enabled = enabled
+        self.dpi = dpi
+        self.deskew = deskew
+        self.denoise = denoise
+
+    def _deskew_image(self, image_gray: np.ndarray) -> np.ndarray:
+        # Compute skew angle via Hough transform and rotate
+        edges = cv2.Canny(image_gray, 50, 150)
+        lines = cv2.HoughLines(edges, 1, np.pi / 180.0, 200)
+        angle_deg = 0.0
+        if lines is not None and len(lines) > 0:
+            angles = [(theta - np.pi/2) * 180/np.pi for rho, theta in lines[:,0,:]]
+            angle_deg = float(np.median(angles))
+        if abs(angle_deg) < 0.1:
+            return image_gray
+        h, w = image_gray.shape[:2]
+        m = cv2.getRotationMatrix2D((w/2, h/2), angle_deg, 1.0)
+        return cv2.warpAffine(image_gray, m, (w, h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+
+    def _denoise_image(self, image_gray: np.ndarray) -> np.ndarray:
+        # Mild bilateral filter preserves edges for OCR
+        return cv2.bilateralFilter(image_gray, d=5, sigmaColor=50, sigmaSpace=50)
+
+    def process(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        if not self.enabled:
+            data["ocr"] = None
+            return data
+
+        pdf_path = data.get("pdf_path")
+        if not pdf_path:
+            return data
+
+        doc = fitz.open(pdf_path)
+        ocr_results: List[Dict[str, Any]] = []
+        page_text_fallback: Dict[int, str] = {}
+
+        # Lazy import pytesseract to avoid hard dependency if disabled
+        try:
+            import pytesseract
+        except Exception:
+            logging.warning("pytesseract not available; skipping OCR preprocessing")
+            data["ocr"] = None
+            return data
+
+        for page_index, page in enumerate(doc):
+            pix = page.get_pixmap(dpi=self.dpi, alpha=False)
+            img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
+            if pix.n == 4:
+                img = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+            if self.denoise:
+                gray = self._denoise_image(gray)
+            if self.deskew:
+                gray = self._deskew_image(gray)
+
+            # Run OCR with word-level output
+            ocr_data = pytesseract.image_to_data(gray, output_type=pytesseract.Output.DICT)
+            words = []
+            lines_text = []
+            n = len(ocr_data.get("text", []))
+            for i in range(n):
+                text = ocr_data["text"][i].strip()
+                conf = float(ocr_data["conf"][i]) if ocr_data["conf"][i] not in ("-1", "-1.0", "") else -1.0
+                if not text:
+                    continue
+                x, y, w, h = int(ocr_data["left"][i]), int(ocr_data["top"][i]), int(ocr_data["width"][i]), int(ocr_data["height"][i])
+                words.append({"text": text, "bbox": [x, y, x+w, y+h], "conf": conf})
+                lines_text.append(text)
+
+            ocr_results.append({
+                "words": words,
+                "dpi": self.dpi,
+                "width": pix.width,
+                "height": pix.height,
+            })
+            page_text_fallback[page_index] = " ".join(lines_text)
+
+        doc.close()
+        data["ocr"] = ocr_results
+        data["page_text_fallback"] = page_text_fallback
+        logging.info(f"OCR preprocessing complete for {len(ocr_results)} pages at {self.dpi} dpi")
         return data
 
 # CSV extraction stage
@@ -414,8 +512,13 @@ class PDFSearchStage(PipelineStage):
         }
         
         # Search through PDF pages
+        ocr_fallback = data.get("page_text_fallback", {})
+        ocr_words = data.get("ocr")
         for page_idx, page in enumerate(doc):
             page_text = page.get_text()
+            # If extracted text is sparse and OCR fallback exists, use it
+            if (not page_text or len(page_text.strip()) < 10) and ocr_fallback:
+                page_text = ocr_fallback.get(page_idx, page_text)
             logger.debug(f"Scanning page {page_idx+1}")
             
             # First, look for "new" cable references
@@ -430,7 +533,36 @@ class PDFSearchStage(PipelineStage):
             # Search for each entity and its variations
             for original, variations in variations_map.items():
                 for variation in variations:
+                    # Primary: vector text search
                     text_instances = page.search_for(variation)
+                    # Fallback: approximate match using OCR word boxes
+                    if (not text_instances) and ocr_words and page_idx < len(ocr_words):
+                        words = ocr_words[page_idx].get("words", [])
+                        # Simple sliding window over words to reconstruct phrases
+                        tokens = [w["text"] for w in words]
+                        joined = " ".join(tokens)
+                        if variation in joined:
+                            # Approximate: collect boxes of words contributing to the variation substring
+                            start_pos = joined.find(variation)
+                            if start_pos >= 0:
+                                # Map character span back to word indices
+                                char_count = 0
+                                contributing_indices: List[int] = []
+                                for idx, token in enumerate(tokens):
+                                    if char_count + len(token) >= start_pos and len(contributing_indices) == 0:
+                                        contributing_indices.append(idx)
+                                    if contributing_indices:
+                                        # Keep adding until we cover the entire variation span
+                                        if char_count >= start_pos + len(variation):
+                                            break
+                                        contributing_indices.append(idx)
+                                    char_count += len(token) + 1  # include spaces
+                                if contributing_indices:
+                                    x1 = min(words[i]["bbox"][0] for i in contributing_indices)
+                                    y1 = min(words[i]["bbox"][1] for i in contributing_indices)
+                                    x2 = max(words[i]["bbox"][2] for i in contributing_indices)
+                                    y2 = max(words[i]["bbox"][3] for i in contributing_indices)
+                                    text_instances = [fitz.Rect(x1, y1, x2, y2)]
                     
                     if not text_instances:
                         continue
@@ -1222,7 +1354,9 @@ class ReportGenerationStage(PipelineStage):
 # Main pipeline function
 def create_entity_matching_pipeline(
     border_width: float = 1.0,
-    fill_opacity: float = 0.15
+    fill_opacity: float = 0.15,
+    ocr_enabled: bool = False,
+    ocr_dpi: int = 300
 ) -> Pipeline:
     """
     Create the complete entity matching pipeline
@@ -1238,6 +1372,7 @@ def create_entity_matching_pipeline(
         DataValidationStage(),
         CSVExtractionStage(),
         VariationGenerationStage(),
+        OCRPreprocessingStage(enabled=ocr_enabled, dpi=ocr_dpi),
         PDFSearchStage(),
         PDFHighlightingStage(border_width=border_width, fill_opacity=fill_opacity),
         ReportGenerationStage()
@@ -1251,7 +1386,9 @@ def run_pipeline(
     output_dir: str,
     border_width: float = 1.0,
     fill_opacity: float = 0.15,
-    one_line_mode: bool = False
+    one_line_mode: bool = False,
+    ocr_enabled: bool = False,
+    ocr_dpi: int = 300
 ) -> Dict[str, Any]:
     """
     Run the entity matching pipeline
@@ -1270,7 +1407,9 @@ def run_pipeline(
     # Initialize pipeline
     pipeline = create_entity_matching_pipeline(
         border_width=border_width,
-        fill_opacity=fill_opacity
+        fill_opacity=fill_opacity,
+        ocr_enabled=ocr_enabled,
+        ocr_dpi=ocr_dpi
     )
     
     # Create initial data

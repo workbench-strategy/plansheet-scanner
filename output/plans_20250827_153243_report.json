@@ -1,0 +1,30 @@
+{
+  "generated_at": "2025-08-27T15:33:21.557052",
+  "input_files": {
+    "pdf": "/workspace/scripts/plans.pdf",
+    "csv": "/workspace/output/smoke_test.csv"
+  },
+  "summary": {
+    "total_entities": 1,
+    "entities_found": 0,
+    "entities_not_found": 1,
+    "total_matches": 0,
+    "metrics": {
+      "exact_matches": 0,
+      "variation_matches": 0,
+      "new_cable_matches": 0,
+      "station_callouts": 0,
+      "duplicate_avoidance": 0
+    }
+  },
+  "entity_details": {
+    "CAT6": {
+      "count": 0,
+      "pages": [],
+      "variations": {},
+      "station_references": [],
+      "new_instances_count": 0,
+      "location_samples": []
+    }
+  }
+}
