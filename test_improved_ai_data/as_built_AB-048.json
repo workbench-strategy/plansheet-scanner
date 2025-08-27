@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-048",
+  "project_name": "SR-167 Interchange - Variation 48",
+  "sheet_number": "TP-048",
+  "sheet_title": "Traffic Control Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 5,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_048.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.189840"
+}

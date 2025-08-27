@@ -118,6 +118,9 @@ class ImprovedAIEngineerTrainer:
         
         # Load existing data
         self._load_training_data()
+        
+        # Load existing models if available
+        self._load_models()
     
     def generate_diverse_training_data(self, num_examples: int = 200):
         """Generate diverse training data with realistic variations."""
@@ -442,6 +445,9 @@ class ImprovedAIEngineerTrainer:
         
         # Save scaler
         self.feature_scaler = scaler
+        
+        # Save models to disk
+        self._save_models()
     
     def _train_error_detector(self, X: np.ndarray, y: np.ndarray):
         """Train design error detection model."""
@@ -539,29 +545,42 @@ class ImprovedAIEngineerTrainer:
     
     def _extract_features_from_dict(self, drawing_info: Dict[str, Any]) -> List[float]:
         """Extract features from drawing info dictionary."""
-        # Simplified feature extraction for new drawings
+        # Enhanced feature extraction for new drawings
         features = []
         
         # Basic text features
-        text = f"{drawing_info.get('sheet_title', '')} {drawing_info.get('notes', '')}".lower()
+        text = f"{drawing_info.get('sheet_title', '')} {drawing_info.get('construction_notes', '')}".lower()
         features.extend([len(text), len(text.split()), len(set(text.split()))])
         
-        # Code reference counts (simplified)
+        # Code reference counts
         for discipline, codes in self.code_knowledge_base.items():
             for code_name in codes.keys():
                 features.extend([text.count(code_name.lower()), 0])  # code refs, violations
         
         # Drawing type features
-        features.extend([0, 0, 0])  # plan, detail, section
+        sheet_title = drawing_info.get('sheet_title', '').lower()
+        features.append(1 if "plan" in sheet_title else 0)
+        features.append(1 if "detail" in sheet_title else 0)
+        features.append(1 if "section" in sheet_title else 0)
         
-        # Discipline features
-        features.extend([0, 0, 0, 0])  # traffic, electrical, structural, drainage
+        # Discipline features based on sheet title and content
+        discipline = drawing_info.get('discipline', '').lower()
+        features.append(1 if "traffic" in discipline or "signal" in sheet_title else 0)
+        features.append(1 if "electrical" in discipline or "electrical" in sheet_title else 0)
+        features.append(1 if "structural" in discipline or "structural" in sheet_title else 0)
+        features.append(1 if "drainage" in discipline or "drainage" in sheet_title else 0)
         
         # Approval status features
-        features.extend([0, 0, 0])  # approved, rejected, conditional
+        approval_status = drawing_info.get('approval_status', '').lower()
+        features.append(1 if approval_status == "approved" else 0)
+        features.append(1 if approval_status == "rejected" else 0)
+        features.append(1 if approval_status == "conditional" else 0)
         
         # Issue indicators
-        features.extend([0, 0, 0, 0])  # changes, notes, difficult, error
+        features.append(len(drawing_info.get('as_built_changes', [])))
+        features.append(len(drawing_info.get('review_notes', [])))
+        features.append(1 if "difficult" in text else 0)
+        features.append(1 if "error" in text else 0)
         
         return features
     
@@ -680,6 +699,82 @@ class ImprovedAIEngineerTrainer:
             "review_patterns": len(self.review_patterns),
             "models_trained": self.violation_detector is not None
         }
+    
+    def _save_models(self):
+        """Save trained models to disk."""
+        try:
+            import joblib
+            
+            # Save violation detector
+            if self.violation_detector is not None:
+                joblib.dump(self.violation_detector, self.model_dir / "violation_detector.pkl")
+            
+            # Save error detector
+            if hasattr(self, 'error_detector') and self.error_detector is not None:
+                joblib.dump(self.error_detector, self.model_dir / "error_detector.pkl")
+            
+            # Save discipline classifier
+            if hasattr(self, 'discipline_classifier') and self.discipline_classifier is not None:
+                joblib.dump(self.discipline_classifier, self.model_dir / "discipline_classifier.pkl")
+            
+            # Save scaler
+            if self.feature_scaler is not None:
+                joblib.dump(self.feature_scaler, self.model_dir / "feature_scaler.pkl")
+            
+            # Save label encoder
+            if hasattr(self, 'label_encoder') and self.label_encoder is not None:
+                joblib.dump(self.label_encoder, self.model_dir / "label_encoder.pkl")
+            
+            print(f"✅ Models saved to {self.model_dir}")
+            
+        except Exception as e:
+            print(f"Warning: Could not save models: {e}")
+    
+    def _load_models(self):
+        """Load trained models from disk."""
+        try:
+            import joblib
+            
+            # Load violation detector
+            violation_model_path = self.model_dir / "violation_detector.pkl"
+            if violation_model_path.exists():
+                self.violation_detector = joblib.load(violation_model_path)
+                print(f"✅ Loaded violation detector from {violation_model_path}")
+            
+            # Load error detector
+            error_model_path = self.model_dir / "error_detector.pkl"
+            if error_model_path.exists():
+                self.error_detector = joblib.load(error_model_path)
+                print(f"✅ Loaded error detector from {error_model_path}")
+            
+            # Load discipline classifier
+            discipline_model_path = self.model_dir / "discipline_classifier.pkl"
+            if discipline_model_path.exists():
+                self.discipline_classifier = joblib.load(discipline_model_path)
+                print(f"✅ Loaded discipline classifier from {discipline_model_path}")
+            
+            # Load scaler
+            scaler_path = self.model_dir / "feature_scaler.pkl"
+            if scaler_path.exists():
+                self.feature_scaler = joblib.load(scaler_path)
+                print(f"✅ Loaded feature scaler from {scaler_path}")
+            
+            # Load label encoder
+            encoder_path = self.model_dir / "label_encoder.pkl"
+            if encoder_path.exists():
+                self.label_encoder = joblib.load(encoder_path)
+                print(f"✅ Loaded label encoder from {encoder_path}")
+            
+        except Exception as e:
+            print(f"Warning: Could not load models: {e}")
+    
+    def save_models(self):
+        """Public method to save models."""
+        self._save_models()
+    
+    def load_models(self):
+        """Public method to load models."""
+        self._load_models()
 
 def main():
     """Main function to demonstrate improved AI engineer training."""

@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-031",
+  "project_name": "Local Street Improvement - Variation 31",
+  "sheet_number": "TM-031",
+  "sheet_title": "Traffic Control Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 7,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction difficulty encountered: access issues",
+  "file_path": "as_built_031.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.155728"
+}

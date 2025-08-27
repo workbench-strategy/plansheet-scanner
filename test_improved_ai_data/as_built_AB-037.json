@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-037",
+  "project_name": "Local Street Improvement - Variation 37",
+  "sheet_number": "TP-037",
+  "sheet_title": "Traffic Marking Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 3,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Timing coordination problems - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "timing",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_037.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.171351"
+}

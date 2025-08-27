@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-039",
+  "project_name": "SR-167 Interchange - Variation 39",
+  "sheet_number": "BR-039",
+  "sheet_title": "Structural Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 12,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - structural elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: coordination problems",
+  "file_path": "as_built_039.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.171351"
+}

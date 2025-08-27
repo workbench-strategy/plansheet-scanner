@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-003",
+  "project_name": "SR-167 Interchange - Variation 3",
+  "sheet_number": "BR-003",
+  "sheet_title": "Reinforcement Details - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 4,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - structural elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - structural installation successful",
+  "file_path": "as_built_003.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.105673"
+}

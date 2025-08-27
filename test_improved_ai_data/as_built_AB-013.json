@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-013",
+  "project_name": "SR-167 Interchange - Variation 13",
+  "sheet_number": "CV-013",
+  "sheet_title": "Grading Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 9,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Inadequate drainage capacity"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_013.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.127340"
+}

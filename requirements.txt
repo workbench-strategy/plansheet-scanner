@@ -18,7 +18,52 @@ numpy>=1.21.0
 scikit-learn>=1.1.0
 # Traffic Plan Reviewer dependencies
 plotly>=5.0.0
+
+# Utilities and helpers
+tqdm>=4.65.0
+colorama>=0.4.6
+python-dateutil>=2.8.0
+PyYAML>=6.0
+
+# Testing and development
+pytest>=6.0.0
+
 # Machine Learning dependencies for adaptive learning
 torch>=1.12.0
 scikit-learn>=1.1.0
 joblib>=1.1.0
+pytesseract>=0.3.10
+
+# =============================================================================
+# Optional Dependencies (uncomment if needed)
+# =============================================================================
+
+# Web interface (if using Streamlit)
+# streamlit>=1.10.0
+# streamlit-drawable-canvas>=0.9.0
+
+# Advanced ML models (if using transformers)
+# transformers>=4.20.0
+# sentence-transformers>=2.2.0
+
+# Code analysis (if using code companion features)
+# astroid>=2.14.0
+# jedi>=0.18.0
+
+# External APIs (if using OpenAI or other services)
+# openai>=0.27.0
+
+# MIDI functionality (if using MIDI features)
+# mido>=1.2.10
+# python-rtmidi>=1.4.9
+
+# KML generation (if using mapping features)
+# simplekml>=1.3.0
+
+# =============================================================================
+# Development and Debugging (optional)
+# =============================================================================
+# jupyter>=1.0.0
+# ipython>=8.0.0
+# black>=22.0.0
+# flake8>=5.0.0

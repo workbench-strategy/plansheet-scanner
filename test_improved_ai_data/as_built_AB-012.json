@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-012",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 12",
+  "sheet_number": "C-012",
+  "sheet_title": "Drainage Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 4,
+    "complexity": "medium"
+  },
+  "as_built_changes": [
+    {
+      "description": "Flooding problems - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "flooding",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Poor inlet spacing"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_012.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.125350"
+}

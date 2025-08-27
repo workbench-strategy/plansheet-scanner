@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-004",
+  "project_name": "Local Street Improvement - Variation 4",
+  "sheet_number": "C-004",
+  "sheet_title": "Erosion Control - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 4,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate drainage capacity - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Insufficient pipe slopes"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_004.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.108882"
+}

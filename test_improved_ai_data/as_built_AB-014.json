@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-014",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 14",
+  "sheet_number": "D-014",
+  "sheet_title": "Storm Drainage - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 6,
+    "complexity": "medium"
+  },
+  "as_built_changes": [
+    {
+      "description": "Insufficient pipe slopes - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "insufficient",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_014.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.129756"
+}

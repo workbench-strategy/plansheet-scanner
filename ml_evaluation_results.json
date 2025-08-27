@@ -1,0 +1,73 @@
+{
+  "system_overview": {
+    "available_as_builts": 23,
+    "existing_models": 5
+  },
+  "component_analysis": {
+    "Improved AI Trainer": {
+      "status": "available",
+      "file_size": 37498,
+      "file_size_mb": 0.03576087951660156
+    },
+    "Foundation Trainer": {
+      "status": "available",
+      "file_size": 26361,
+      "file_size_mb": 0.025139808654785156
+    },
+    "Adaptive Reviewer": {
+      "status": "available",
+      "file_size": 24120,
+      "file_size_mb": 0.02300262451171875
+    },
+    "As-Built Processor": {
+      "status": "available",
+      "file_size": 11970,
+      "file_size_mb": 0.011415481567382812
+    },
+    "Background Training Service": {
+      "status": "available",
+      "file_size": 18099,
+      "file_size_mb": 0.01726055145263672
+    }
+  },
+  "performance_metrics": {
+    "training_time": 0.316103458404541,
+    "prediction_time": 0.0,
+    "error": "float division by zero"
+  },
+  "data_quality": {
+    "available_sample_directories": 4,
+    "sample_coverage": 100.0,
+    "training_data_files": 502
+  },
+  "recommendations": [
+    {
+      "category": "Integration",
+      "priority": "Medium",
+      "recommendation": "Integrate ML models with the main pipeline",
+      "action": "Connect trained models to the cable entity pipeline"
+    },
+    {
+      "category": "Monitoring",
+      "priority": "Medium",
+      "recommendation": "Set up performance monitoring and logging",
+      "action": "Configure the background training service for continuous monitoring"
+    },
+    {
+      "category": "Validation",
+      "priority": "High",
+      "recommendation": "Validate ML predictions against real as-built data",
+      "action": "Test models on actual as-built drawings and measure accuracy"
+    }
+  ],
+  "capabilities": {
+    "Symbol Recognition": "Available via symbol training system",
+    "Code Violation Detection": "Available via improved AI trainer",
+    "Design Error Detection": "Available via improved AI trainer",
+    "Discipline Classification": "Available via improved AI trainer",
+    "Adaptive Learning": "Available via adaptive reviewer",
+    "Background Training": "Available via background training service",
+    "As-Built Processing": "Available via as-built processor",
+    "Multi-Modal Learning": "Available via foundation trainer"
+  }
+}

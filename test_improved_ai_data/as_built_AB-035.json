@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-035",
+  "project_name": "SR-167 Interchange - Variation 35",
+  "sheet_number": "T-035",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 12,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Sign placement conflicts"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_035.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.155728"
+}

@@ -1,0 +1,44 @@
+{
+  "review_metadata": {
+    "review_date": "2025-08-27T11:39:01.051438",
+    "reviewer": "ML-Powered Plan Review System",
+    "version": "1.0"
+  },
+  "review_results": {
+    "plan_info": {
+      "sheet_title": "Storm Drainage System - L200",
+      "discipline": "drainage",
+      "project_name": "L200 Local Road Improvements",
+      "construction_notes": "Storm water collection and conveyance system",
+      "as_built_changes": [
+        {
+          "description": "Culvert size increased due to field conditions",
+          "severity": "moderate"
+        }
+      ]
+    },
+    "ml_analysis": {
+      "has_code_violations": false,
+      "has_design_errors": false,
+      "predicted_discipline": "drainage",
+      "violation_confidence": 0.51,
+      "error_confidence": 0.999990800875341,
+      "discipline_confidence": 0.65,
+      "recommendations": [
+        "Verify drainage capacity and inlet spacing",
+        "Check pipe slopes and erosion control"
+      ],
+      "overall_confidence": 0.999990800875341
+    },
+    "issues": [
+      {
+        "tag": "high",
+        "category": "Storm Water",
+        "title": "Storm Water Management",
+        "description": "Verify storm water collection and conveyance systems.",
+        "recommendation": "Check drainage calculations and pipe sizing."
+      }
+    ],
+    "review_summary": "\ud83d\udcca REVIEW SUMMARY:\n   \ud83d\udd34 Critical Issues: 0\n   \ud83d\udfe0 High Priority: 1\n   \ud83d\udfe1 Medium Priority: 0\n   \ud83d\udfe2 Low Priority: 0\n   \ud83d\udccb Total Issues: 1"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-006",
+  "project_name": "Local Street Improvement - Variation 6",
+  "sheet_number": "EL-006",
+  "sheet_title": "Electrical Details - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 12,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inaccessible junction boxes - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inaccessible",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Undersized conduit"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction difficulty encountered: access issues",
+  "file_path": "as_built_006.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.112750"
+}

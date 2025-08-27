@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-047",
+  "project_name": "SR-167 Interchange - Variation 47",
+  "sheet_number": "TP-047",
+  "sheet_title": "Traffic Signing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 9,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_047.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-27T09:30:17.189840"
+}

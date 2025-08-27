@@ -1,0 +1,60 @@
+{
+  "review_metadata": {
+    "review_date": "2025-08-27T11:39:00.985791",
+    "reviewer": "ML-Powered Plan Review System",
+    "version": "1.0"
+  },
+  "review_results": {
+    "plan_info": {
+      "sheet_title": "Traffic Signal Plan - I-5 at 272nd Ave",
+      "discipline": "traffic",
+      "project_name": "I-5 Corridor Improvements",
+      "construction_notes": "New traffic signal installation with ITS integration",
+      "as_built_changes": [
+        {
+          "description": "Signal timing modified during construction",
+          "severity": "minor"
+        }
+      ]
+    },
+    "ml_analysis": {
+      "has_code_violations": true,
+      "has_design_errors": false,
+      "predicted_discipline": "traffic",
+      "violation_confidence": 0.54,
+      "error_confidence": 0.999990800875341,
+      "discipline_confidence": 0.82,
+      "recommendations": [
+        "Review for code compliance violations",
+        "Check against applicable building codes and standards",
+        "Verify MUTCD compliance for traffic control devices",
+        "Check signal timing and coordination"
+      ],
+      "overall_confidence": 0.999990800875341
+    },
+    "issues": [
+      {
+        "tag": "high",
+        "category": "Traffic Control",
+        "title": "MUTCD Compliance Review Required",
+        "description": "Traffic control devices must comply with Manual on Uniform Traffic Control Devices.",
+        "recommendation": "Verify signal timing, signing, and pavement markings meet MUTCD standards."
+      },
+      {
+        "tag": "medium",
+        "category": "Signal Systems",
+        "title": "Signal Coordination Analysis",
+        "description": "Check signal coordination with adjacent intersections.",
+        "recommendation": "Review signal timing and coordination parameters."
+      },
+      {
+        "tag": "high",
+        "category": "Code Compliance",
+        "title": "Code Compliance Review Required",
+        "description": "ML analysis detected potential code compliance issues.",
+        "recommendation": "Review plan against applicable building codes and standards."
+      }
+    ],
+    "review_summary": "\ud83d\udcca REVIEW SUMMARY:\n   \ud83d\udd34 Critical Issues: 0\n   \ud83d\udfe0 High Priority: 2\n   \ud83d\udfe1 Medium Priority: 1\n   \ud83d\udfe2 Low Priority: 0\n   \ud83d\udccb Total Issues: 3"
+  }
+}

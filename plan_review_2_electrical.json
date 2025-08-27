@@ -1,0 +1,60 @@
+{
+  "review_metadata": {
+    "review_date": "2025-08-27T11:39:01.009157",
+    "reviewer": "ML-Powered Plan Review System",
+    "version": "1.0"
+  },
+  "review_results": {
+    "plan_info": {
+      "sheet_title": "Electrical Power Distribution - SR 509",
+      "discipline": "electrical",
+      "project_name": "SR 509 Widening Project",
+      "construction_notes": "Power distribution for roadway lighting and signals",
+      "as_built_changes": [
+        {
+          "description": "Additional conduit installed for future expansion",
+          "severity": "minor"
+        }
+      ]
+    },
+    "ml_analysis": {
+      "has_code_violations": true,
+      "has_design_errors": false,
+      "predicted_discipline": "electrical",
+      "violation_confidence": 0.52,
+      "error_confidence": 0.999990800875341,
+      "discipline_confidence": 0.69,
+      "recommendations": [
+        "Review for code compliance violations",
+        "Check against applicable building codes and standards",
+        "Verify NEC compliance for electrical installations",
+        "Check conduit sizing and grounding"
+      ],
+      "overall_confidence": 0.999990800875341
+    },
+    "issues": [
+      {
+        "tag": "critical",
+        "category": "Electrical Safety",
+        "title": "NEC Compliance Verification",
+        "description": "Electrical installations must comply with National Electrical Code.",
+        "recommendation": "Review electrical design for NEC compliance, especially grounding and bonding."
+      },
+      {
+        "tag": "high",
+        "category": "Power Systems",
+        "title": "Power Distribution Analysis",
+        "description": "Verify adequate power capacity and distribution.",
+        "recommendation": "Check load calculations and power distribution design."
+      },
+      {
+        "tag": "high",
+        "category": "Code Compliance",
+        "title": "Code Compliance Review Required",
+        "description": "ML analysis detected potential code compliance issues.",
+        "recommendation": "Review plan against applicable building codes and standards."
+      }
+    ],
+    "review_summary": "\ud83d\udcca REVIEW SUMMARY:\n   \ud83d\udd34 Critical Issues: 1\n   \ud83d\udfe0 High Priority: 2\n   \ud83d\udfe1 Medium Priority: 0\n   \ud83d\udfe2 Low Priority: 0\n   \ud83d\udccb Total Issues: 3"
+  }
+}

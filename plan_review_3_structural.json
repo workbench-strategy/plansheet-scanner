@@ -1,0 +1,46 @@
+{
+  "review_metadata": {
+    "review_date": "2025-08-27T11:39:01.031241",
+    "reviewer": "ML-Powered Plan Review System",
+    "version": "1.0"
+  },
+  "review_results": {
+    "plan_info": {
+      "sheet_title": "Bridge Foundation Design - I-90",
+      "discipline": "structural",
+      "project_name": "I-90 Bridge Rehabilitation",
+      "construction_notes": "Foundation design for bridge pier rehabilitation",
+      "as_built_changes": []
+    },
+    "ml_analysis": {
+      "has_code_violations": false,
+      "has_design_errors": false,
+      "predicted_discipline": "structural",
+      "violation_confidence": 0.65,
+      "error_confidence": 0.999990800875341,
+      "discipline_confidence": 0.58,
+      "recommendations": [
+        "Verify AASHTO compliance for structural elements",
+        "Check load ratings and reinforcement details"
+      ],
+      "overall_confidence": 0.999990800875341
+    },
+    "issues": [
+      {
+        "tag": "critical",
+        "category": "Structural Safety",
+        "title": "AASHTO Design Standards",
+        "description": "Structural elements must meet AASHTO design standards.",
+        "recommendation": "Verify load ratings, design loads, and structural calculations."
+      },
+      {
+        "tag": "high",
+        "category": "Foundation",
+        "title": "Foundation Design Review",
+        "description": "Check foundation design for soil conditions and loads.",
+        "recommendation": "Review geotechnical reports and foundation design."
+      }
+    ],
+    "review_summary": "\ud83d\udcca REVIEW SUMMARY:\n   \ud83d\udd34 Critical Issues: 1\n   \ud83d\udfe0 High Priority: 1\n   \ud83d\udfe1 Medium Priority: 0\n   \ud83d\udfe2 Low Priority: 0\n   \ud83d\udccb Total Issues: 2"
+  }
+}
