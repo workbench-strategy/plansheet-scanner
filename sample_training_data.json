@@ -1,0 +1,39 @@
+{
+  "plan_id": "sample_as_built_001",
+  "plan_type": "traffic_signal",
+  "final_elements": [
+    {
+      "type": "signal_head_red",
+      "location": [100, 200],
+      "approved": true,
+      "confidence": 0.95
+    },
+    {
+      "type": "signal_head_green",
+      "location": [100, 220],
+      "approved": true,
+      "confidence": 0.92
+    },
+    {
+      "type": "detector_loop",
+      "location": [80, 180],
+      "approved": true,
+      "confidence": 0.88
+    },
+    {
+      "type": "pedestrian_button",
+      "location": [120, 240],
+      "approved": true,
+      "confidence": 0.85
+    }
+  ],
+  "construction_notes": "All elements installed per approved plans. Signal heads properly aligned. Detector loops functioning correctly. Pedestrian features meet ADA requirements.",
+  "project_info": {
+    "budget": 500000,
+    "duration_months": 6,
+    "complexity_score": 0.7,
+    "project_type": "intersection",
+    "agency": "WSDOT",
+    "region": "Seattle"
+  }
+}

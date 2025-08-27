@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-ELECTRICAL-021",
+  "symbol_name": "conduit",
+  "symbol_type": "electrical",
+  "visual_description": "line or pipe symbol represented as",
+  "legend_reference": "Legend reference: COND",
+  "notes_description": "pipe to be provided",
+  "common_variations": [
+    "COND",
+    "CONDUIT",
+    "PIPE"
+  ],
+  "context_clues": [
+    "electrical",
+    "power",
+    "panel"
+  ],
+  "file_path": "plan_site_plan_021.pdf",
+  "confidence": 0.9343812818673677,
+  "usage_frequency": 6,
+  "timestamp": "2025-08-25T16:03:09.431196"
+}

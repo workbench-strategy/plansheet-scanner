@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-106",
+  "project_name": "Highway Widening - Variation 106",
+  "sheet_number": "TM-106",
+  "sheet_title": "Signal Timing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 11,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_106.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.196204"
+}

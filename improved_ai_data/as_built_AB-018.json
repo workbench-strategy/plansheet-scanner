@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-018",
+  "project_name": "SR-167 Interchange - Variation 18",
+  "sheet_number": "TS-018",
+  "sheet_title": "Traffic Control Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 6,
+    "complexity": "high"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate detector coverage - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Missing pedestrian signals"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_018.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.111280"
+}

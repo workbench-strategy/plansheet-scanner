@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-027",
+  "symbol_name": "beam",
+  "symbol_type": "structural",
+  "visual_description": "rectangular shape or beam symbol displayed as",
+  "legend_reference": "BEAM",
+  "notes_description": "structural to be provided",
+  "common_variations": [
+    "BEAM",
+    "GIRDER",
+    "STRUCTURAL"
+  ],
+  "context_clues": [
+    "support",
+    "load",
+    "column"
+  ],
+  "file_path": "plan_site_plan_027.pdf",
+  "confidence": 0.8981017969648647,
+  "usage_frequency": 7,
+  "timestamp": "2025-08-25T16:07:22.709759"
+}

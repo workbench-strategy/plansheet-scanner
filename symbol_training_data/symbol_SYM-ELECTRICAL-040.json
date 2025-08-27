@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-ELECTRICAL-040",
+  "symbol_name": "conduit",
+  "symbol_type": "electrical",
+  "visual_description": "line or pipe symbol displayed as",
+  "legend_reference": "See legend: COND",
+  "notes_description": "pipe specified",
+  "common_variations": [
+    "COND",
+    "CONDUIT",
+    "PIPE"
+  ],
+  "context_clues": [
+    "electrical",
+    "voltage",
+    "wiring"
+  ],
+  "file_path": "plan_site_plan_040.pdf",
+  "confidence": 0.8197552019250476,
+  "usage_frequency": 10,
+  "timestamp": "2025-08-25T16:07:22.709759"
+}

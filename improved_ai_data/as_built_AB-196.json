@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-196",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 196",
+  "sheet_number": "T-196",
+  "sheet_title": "Traffic Signal Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 10,
+    "complexity": "medium"
+  },
+  "as_built_changes": [
+    {
+      "description": "Timing coordination problems - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "timing",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - traffic installation successful",
+  "file_path": "as_built_196.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.295959"
+}

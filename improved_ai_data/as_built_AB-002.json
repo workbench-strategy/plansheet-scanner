@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-002",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 2",
+  "sheet_number": "D-002",
+  "sheet_title": "Drainage Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 10,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_002.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.092671"
+}

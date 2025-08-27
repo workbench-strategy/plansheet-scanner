@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-027",
+  "project_name": "Local Street Improvement - Variation 27",
+  "sheet_number": "D-027",
+  "sheet_title": "Grading Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 3,
+    "complexity": "low"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_027.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.121070"
+}

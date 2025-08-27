@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-TRAFFIC-032",
+  "symbol_name": "pedestrian_signal",
+  "symbol_type": "traffic",
+  "visual_description": "walking figure or pedestrian symbol displayed as",
+  "legend_reference": "Symbol: PS",
+  "notes_description": "pedestrian to be provided",
+  "common_variations": [
+    "PS",
+    "PED",
+    "WALK"
+  ],
+  "context_clues": [
+    "pedestrian",
+    "intersection",
+    "signal timing"
+  ],
+  "file_path": "plan_site_plan_032.pdf",
+  "confidence": 0.814775175808122,
+  "usage_frequency": 7,
+  "timestamp": "2025-08-25T16:03:09.431196"
+}

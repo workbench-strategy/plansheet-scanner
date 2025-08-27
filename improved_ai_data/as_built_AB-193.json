@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-193",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 193",
+  "sheet_number": "G-193",
+  "sheet_title": "Drainage Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 5,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction difficulty encountered: coordination problems",
+  "file_path": "as_built_193.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.292572"
+}

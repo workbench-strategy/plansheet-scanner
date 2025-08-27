@@ -1,0 +1,84 @@
+{
+  "training_schedule": {
+    "enabled": true,
+    "interval_hours": 4,
+    "max_training_time_minutes": 60,
+    "idle_threshold_percent": 25
+  },
+  "data_management": {
+    "data_dir": "symbol_training_data",
+    "model_dir": "symbol_models",
+    "backup_interval_hours": 12,
+    "max_data_files": 500,
+    "auto_cleanup": true,
+    "as_built_processing": {
+      "enabled": true,
+      "input_dir": "as_built_drawings",
+      "processed_dir": "processed_drawings",
+      "failed_dir": "failed_drawings",
+      "extracted_dir": "extracted_symbols",
+      "auto_process_new_files": true,
+      "process_interval_minutes": 30,
+      "max_files_per_session": 5
+    }
+  },
+  "model_config": {
+    "min_examples": 30,
+    "max_examples": 500,
+    "validation_split": 0.2,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "epochs_per_session": 5
+  },
+  "monitoring": {
+    "log_level": "INFO",
+    "log_file": "logs/symbol_training.log",
+    "status_file": "logs/symbol_training_status.json",
+    "performance_log": "logs/symbol_performance.log",
+    "save_models": true,
+    "save_checkpoints": true
+  },
+  "symbol_specific": {
+    "disciplines": ["traffic", "electrical", "structural", "drainage", "mechanical"],
+    "focus_areas": ["visual_recognition", "legend_parsing", "notes_extraction"],
+    "confidence_threshold": 0.8,
+    "min_symbols_per_discipline": 10
+  },
+  "notifications": {
+    "enabled": false,
+    "email": "",
+    "webhook_url": "",
+    "training_complete": true,
+    "training_failed": true,
+    "system_issues": true
+  },
+  "symbol_knowledge_base": {
+    "traffic": {
+      "signal_symbols": ["traffic_signal", "pedestrian_signal", "detector_loop"],
+      "sign_symbols": ["stop_sign", "yield_sign", "speed_limit"],
+      "marking_symbols": ["crosswalk", "stop_bar", "lane_marking"]
+    },
+    "electrical": {
+      "equipment_symbols": ["junction_box", "panel", "transformer"],
+      "conduit_symbols": ["conduit", "cable", "wire"],
+      "device_symbols": ["light", "outlet", "switch"]
+    },
+    "structural": {
+      "element_symbols": ["beam", "column", "foundation"],
+      "connection_symbols": ["bolt", "weld", "anchor"],
+      "material_symbols": ["concrete", "steel", "rebar"]
+    },
+    "drainage": {
+      "system_symbols": ["catch_basin", "manhole", "inlet"],
+      "pipe_symbols": ["storm_pipe", "sanitary_pipe", "culvert"],
+      "structure_symbols": ["headwall", "endwall", "drop_inlet"]
+    }
+  },
+  "performance_optimization": {
+    "use_gpu": false,
+    "parallel_processing": true,
+    "memory_limit_gb": 4,
+    "cpu_cores": 2,
+    "batch_processing": true
+  }
+}

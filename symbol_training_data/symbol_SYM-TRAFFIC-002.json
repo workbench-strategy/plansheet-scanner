@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-TRAFFIC-002",
+  "symbol_name": "pedestrian_signal",
+  "symbol_type": "traffic",
+  "visual_description": "walking figure or pedestrian symbol indicated by symbol",
+  "legend_reference": "See legend: PS",
+  "notes_description": "crosswalk required",
+  "common_variations": [
+    "PS",
+    "PED",
+    "WALK"
+  ],
+  "context_clues": [
+    "crosswalk",
+    "pedestrian",
+    "vehicle"
+  ],
+  "file_path": "plan_traffic_plan_002.pdf",
+  "confidence": 0.9021582226764594,
+  "usage_frequency": 6,
+  "timestamp": "2025-08-25T16:07:22.691340"
+}

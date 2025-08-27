@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-156",
+  "project_name": "SR-167 Interchange - Variation 156",
+  "sheet_number": "C-156",
+  "sheet_title": "Erosion Control - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 3,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Insufficient pipe slopes"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_156.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.245907"
+}

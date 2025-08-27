@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-169",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 169",
+  "sheet_number": "TP-169",
+  "sheet_title": "Signal Timing Plan - As Built",
+  "discipline": "traffic",
+  "original_design": {
+    "elements": 12,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "TRAFFIC_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - traffic elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction difficulty encountered: material availability",
+  "file_path": "as_built_169.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.262846"
+}

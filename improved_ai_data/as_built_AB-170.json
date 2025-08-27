@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-170",
+  "project_name": "Highway Widening - Variation 170",
+  "sheet_number": "EC-170",
+  "sheet_title": "Electrical Conduit Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 6,
+    "complexity": "high"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "poor"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_170.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.262846"
+}

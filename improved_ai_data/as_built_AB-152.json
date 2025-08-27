@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-152",
+  "project_name": "Local Street Improvement - Variation 152",
+  "sheet_number": "S-152",
+  "sheet_title": "Bridge Plan - As Built",
+  "discipline": "structural",
+  "original_design": {
+    "elements": 11,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Insufficient reinforcement - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "insufficient",
+        "field modification"
+      ],
+      "severity": "major"
+    }
+  ],
+  "code_references": [
+    "STRUCTURAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Load rating issues"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "adequate"
+  },
+  "construction_notes": "Construction completed per approved plans - structural installation successful",
+  "file_path": "as_built_152.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.245907"
+}

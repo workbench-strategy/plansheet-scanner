@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-053",
+  "project_name": "Local Street Improvement - Variation 53",
+  "sheet_number": "G-053",
+  "sheet_title": "Drainage Plan - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 3,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Erosion control issues - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "erosion",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design error found: Insufficient pipe slopes"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction completed per approved plans - drainage installation successful",
+  "file_path": "as_built_053.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.146357"
+}

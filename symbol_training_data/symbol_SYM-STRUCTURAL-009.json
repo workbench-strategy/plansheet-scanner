@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-009",
+  "symbol_name": "beam",
+  "symbol_type": "structural",
+  "visual_description": "rectangular shape or beam symbol marked with",
+  "legend_reference": "See legend: BEAM",
+  "notes_description": "girder installed per plan",
+  "common_variations": [
+    "BEAM",
+    "GIRDER",
+    "STRUCTURAL"
+  ],
+  "context_clues": [
+    "foundation",
+    "concrete",
+    "beam"
+  ],
+  "file_path": "plan_drainage_plan_009.pdf",
+  "confidence": 0.9501142210173085,
+  "usage_frequency": 5,
+  "timestamp": "2025-08-25T16:07:22.691340"
+}

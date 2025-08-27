@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-STRUCTURAL-031",
+  "symbol_name": "column",
+  "symbol_type": "structural",
+  "visual_description": "vertical rectangle or column symbol indicated by symbol",
+  "legend_reference": "See legend: COL",
+  "notes_description": "support required",
+  "common_variations": [
+    "COL",
+    "COLUMN",
+    "POST"
+  ],
+  "context_clues": [
+    "beam",
+    "steel",
+    "column"
+  ],
+  "file_path": "plan_traffic_plan_031.pdf",
+  "confidence": 0.8921690921797528,
+  "usage_frequency": 5,
+  "timestamp": "2025-08-25T16:03:09.431196"
+}

@@ -1,0 +1,52 @@
+{
+  "training_schedule": {
+    "enabled": true,
+    "interval_hours": 6,
+    "max_training_time_minutes": 120,
+    "idle_threshold_percent": 30
+  },
+  "data_management": {
+    "data_dir": "improved_ai_data",
+    "model_dir": "improved_ai_models",
+    "backup_interval_hours": 24,
+    "max_data_files": 1000,
+    "auto_cleanup": true
+  },
+  "model_config": {
+    "min_examples": 50,
+    "max_examples": 1000,
+    "validation_split": 0.2,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "epochs_per_session": 10
+  },
+  "monitoring": {
+    "log_level": "INFO",
+    "log_file": "logs/background_training.log",
+    "status_file": "logs/training_status.json",
+    "performance_log": "logs/performance.log",
+    "save_models": true,
+    "save_checkpoints": true
+  },
+  "notifications": {
+    "enabled": false,
+    "email": "",
+    "webhook_url": "",
+    "training_complete": true,
+    "training_failed": true,
+    "system_issues": true
+  },
+  "engineering_specific": {
+    "disciplines": ["traffic", "electrical", "structural", "drainage", "mechanical", "civil"],
+    "code_standards": ["MUTCD", "NEC", "AASHTO", "IBC", "ASCE"],
+    "project_types": ["highway", "bridge", "intersection", "building", "utility"],
+    "review_focus": ["code_compliance", "design_errors", "constructability", "coordination"]
+  },
+  "performance_optimization": {
+    "use_gpu": false,
+    "parallel_processing": true,
+    "memory_limit_gb": 8,
+    "cpu_cores": 4,
+    "batch_processing": true
+  }
+}

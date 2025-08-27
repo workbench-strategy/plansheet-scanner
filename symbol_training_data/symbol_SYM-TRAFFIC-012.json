@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-TRAFFIC-012",
+  "symbol_name": "pedestrian_signal",
+  "symbol_type": "traffic",
+  "visual_description": "walking figure or pedestrian symbol shown on plan",
+  "legend_reference": "Legend reference: PS",
+  "notes_description": "walk to be provided",
+  "common_variations": [
+    "PS",
+    "PED",
+    "WALK"
+  ],
+  "context_clues": [
+    "traffic control",
+    "vehicle",
+    "crosswalk"
+  ],
+  "file_path": "plan_electrical_plan_012.pdf",
+  "confidence": 0.9040910966627725,
+  "usage_frequency": 6,
+  "timestamp": "2025-08-25T16:03:09.427164"
+}

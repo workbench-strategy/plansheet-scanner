@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-184",
+  "project_name": "Local Street Improvement - Variation 184",
+  "sheet_number": "EC-184",
+  "sheet_title": "Power Distribution - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 6,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Undersized conduit - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "undersized",
+        "field modification"
+      ],
+      "severity": "minor"
+    }
+  ],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "conditional",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_184.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.279583"
+}

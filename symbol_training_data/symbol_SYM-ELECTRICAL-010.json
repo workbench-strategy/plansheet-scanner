@@ -1,0 +1,22 @@
+{
+  "symbol_id": "SYM-ELECTRICAL-010",
+  "symbol_name": "junction_box",
+  "symbol_type": "electrical",
+  "visual_description": "square or rectangle with X or JB marked with",
+  "legend_reference": "JB",
+  "notes_description": "junction box to be provided",
+  "common_variations": [
+    "JB",
+    "JUNCTION BOX",
+    "ELECTRICAL BOX"
+  ],
+  "context_clues": [
+    "circuit",
+    "wiring",
+    "junction"
+  ],
+  "file_path": "plan_drainage_plan_010.pdf",
+  "confidence": 0.9177860378345727,
+  "usage_frequency": 5,
+  "timestamp": "2025-08-25T16:03:09.426119"
+}

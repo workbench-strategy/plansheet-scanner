@@ -1,0 +1,27 @@
+{
+  "drawing_id": "AB-020",
+  "project_name": "I-5 Bridge Rehabilitation - Variation 20",
+  "sheet_number": "E-020",
+  "sheet_title": "Electrical Conduit Plan - As Built",
+  "discipline": "electrical",
+  "original_design": {
+    "elements": 11,
+    "complexity": "medium"
+  },
+  "as_built_changes": [],
+  "code_references": [
+    "ELECTRICAL_Standards",
+    "WSDOT_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - electrical elements meet requirements"
+  ],
+  "approval_status": "approved",
+  "reviewer_feedback": {
+    "quality": "good"
+  },
+  "construction_notes": "Construction completed per approved plans - electrical installation successful",
+  "file_path": "as_built_020.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.114280"
+}

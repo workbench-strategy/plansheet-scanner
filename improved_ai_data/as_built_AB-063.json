@@ -1,0 +1,37 @@
+{
+  "drawing_id": "AB-063",
+  "project_name": "Local Street Improvement - Variation 63",
+  "sheet_number": "D-063",
+  "sheet_title": "Erosion Control - As Built",
+  "discipline": "drainage",
+  "original_design": {
+    "elements": 11,
+    "complexity": "low"
+  },
+  "as_built_changes": [
+    {
+      "description": "Inadequate drainage capacity - field modification required",
+      "code_violation": true,
+      "indicators": [
+        "inadequate",
+        "field modification"
+      ],
+      "severity": "critical"
+    }
+  ],
+  "code_references": [
+    "DRAINAGE_Standards",
+    "City_Requirements"
+  ],
+  "review_notes": [
+    "Design review completed - drainage elements meet requirements"
+  ],
+  "approval_status": "rejected",
+  "reviewer_feedback": {
+    "quality": "excellent"
+  },
+  "construction_notes": "Construction difficulty encountered: access issues",
+  "file_path": "as_built_063.pdf",
+  "confidence": 1.0,
+  "timestamp": "2025-08-25T15:17:15.161327"
+}
