@@ -1,0 +1,139 @@
+{
+  "total_plans": 3,
+  "highlighted_plans": [
+    {
+      "plan_id": "018109 SR 005 MP 111,95 - 123,60 @ Marvin Rd To Thorne Lane (5-344E, 345E, 402E, 407.5, 409) - ITS Improvements - Plans",
+      "highlighted_file": "real_highlighted_plans\\highlighted_001.png",
+      "analysis": {
+        "discipline": "traffic",
+        "confidence": 0.999990800875341,
+        "has_violations": true,
+        "has_errors": false,
+        "recommendations": [
+          "Review for code compliance violations",
+          "Check against applicable building codes and standards",
+          "Verify MUTCD compliance for traffic control devices",
+          "Check signal timing and coordination"
+        ],
+        "issues": [
+          {
+            "tag": "high",
+            "category": "Traffic Control",
+            "title": "MUTCD Compliance Review Required",
+            "description": "Traffic control devices must comply with Manual on Uniform Traffic Control Devices.",
+            "recommendation": "Verify signal timing, signing, and pavement markings meet MUTCD standards."
+          },
+          {
+            "tag": "medium",
+            "category": "Signal Systems",
+            "title": "Signal Coordination Analysis",
+            "description": "Check signal coordination with adjacent intersections.",
+            "recommendation": "Review signal timing and coordination parameters."
+          },
+          {
+            "tag": "high",
+            "category": "ITS Systems",
+            "title": "ITS System Integration",
+            "description": "Intelligent Transportation Systems require proper integration.",
+            "recommendation": "Verify ITS equipment compatibility and communication protocols."
+          },
+          {
+            "tag": "high",
+            "category": "Code Compliance",
+            "title": "Code Compliance Review Required",
+            "description": "ML analysis detected potential code compliance issues.",
+            "recommendation": "Review plan against applicable building codes and standards."
+          }
+        ],
+        "elements_to_highlight": [
+          {
+            "type": "signal",
+            "pattern": "TS",
+            "confidence": 0.8
+          }
+        ],
+        "critical_areas": [
+          {
+            "category": "Traffic Control",
+            "title": "MUTCD Compliance Review Required",
+            "description": "Traffic control devices must comply with Manual on Uniform Traffic Control Devices."
+          },
+          {
+            "category": "ITS Systems",
+            "title": "ITS System Integration",
+            "description": "Intelligent Transportation Systems require proper integration."
+          },
+          {
+            "category": "Code Compliance",
+            "title": "Code Compliance Review Required",
+            "description": "ML analysis detected potential code compliance issues."
+          }
+        ],
+        "as_built_changes": [
+          {
+            "description": "As-built drawing from construction",
+            "severity": "minor",
+            "type": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "plan_id": "160th_ITS_PlanSet_Markup_190416",
+      "highlighted_file": "real_highlighted_plans\\highlighted_002.png",
+      "analysis": {
+        "discipline": "unknown",
+        "confidence": 0.999990800875341,
+        "has_violations": false,
+        "has_errors": false,
+        "recommendations": [],
+        "issues": [],
+        "elements_to_highlight": [
+          {
+            "type": "signal",
+            "pattern": "TS",
+            "confidence": 0.8
+          }
+        ],
+        "critical_areas": [],
+        "as_built_changes": [
+          {
+            "description": "As-built drawing from construction",
+            "severity": "minor",
+            "type": "unknown"
+          }
+        ]
+      }
+    },
+    {
+      "plan_id": "17761_007761_As-Built",
+      "highlighted_file": "real_highlighted_plans\\highlighted_003.png",
+      "analysis": {
+        "discipline": "unknown",
+        "confidence": 0.999990800875341,
+        "has_violations": false,
+        "has_errors": false,
+        "recommendations": [],
+        "issues": [],
+        "elements_to_highlight": [],
+        "critical_areas": [],
+        "as_built_changes": [
+          {
+            "description": "As-built drawing from construction",
+            "severity": "minor",
+            "type": "unknown"
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total_elements": 2,
+    "total_violations": 3,
+    "total_changes": 3,
+    "disciplines_found": [
+      "traffic",
+      "unknown"
+    ]
+  }
+}

@@ -1,0 +1,1843 @@
+{
+  "timestamp": "2025-08-27T14:59:07.432381",
+  "plan_path": "as_built_drawings\\018109 SR 005 MP 111,95 - 123,60 @ Marvin Rd To Thorne Lane (5-344E, 345E, 402E, 407.5, 409) - ITS Improvements - Plans.pdf",
+  "summary": {
+    "total_elements": 56,
+    "confidence_score": 0.7999954004376705,
+    "detection_methods": [
+      "visual",
+      "ml"
+    ]
+  },
+  "ml_analysis": {
+    "discipline": "electrical",
+    "confidence": 0.999990800875341,
+    "has_violations": true,
+    "recommendations": [
+      "Review for code compliance violations",
+      "Check against applicable building codes and standards",
+      "Verify NEC compliance for electrical installations",
+      "Check conduit sizing and grounding"
+    ],
+    "issues": [
+      {
+        "tag": "critical",
+        "category": "Electrical Safety",
+        "title": "NEC Compliance Verification",
+        "description": "Electrical installations must comply with National Electrical Code.",
+        "recommendation": "Review electrical design for NEC compliance, especially grounding and bonding."
+      },
+      {
+        "tag": "high",
+        "category": "Power Systems",
+        "title": "Power Distribution Analysis",
+        "description": "Verify adequate power capacity and distribution.",
+        "recommendation": "Check load calculations and power distribution design."
+      },
+      {
+        "tag": "high",
+        "category": "Code Compliance",
+        "title": "Code Compliance Review Required",
+        "description": "ML analysis detected potential code compliance issues.",
+        "recommendation": "Review plan against applicable building codes and standards."
+      }
+    ],
+    "construction_notes": "Real as-built drawing: 018109 SR 005 MP 111,95 - 123,60 @ Marvin Rd To Thorne Lane (5-344E, 345E, 402E, 407.5, 409) - ITS Improvements - Plans.pdf",
+    "as_built_changes": [
+      {
+        "description": "As-built drawing from construction",
+        "severity": "minor"
+      }
+    ]
+  },
+  "text_analysis": {
+    "text_content": "",
+    "conduit_matches": {},
+    "total_matches": 0
+  },
+  "visual_analysis": {
+    "conduit_lines": [
+      {
+        "start": [
+          704,
+          793
+        ],
+        "end": [
+          775,
+          793
+        ],
+        "length": 71.0,
+        "thickness": 4.9,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          387,
+          755
+        ],
+        "end": [
+          387,
+          697
+        ],
+        "length": 58.0,
+        "thickness": 4.8,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          531,
+          1033
+        ],
+        "end": [
+          702,
+          1033
+        ],
+        "length": 171.0,
+        "thickness": 3.3,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          459,
+          1386
+        ],
+        "end": [
+          593,
+          1386
+        ],
+        "length": 134.0,
+        "thickness": 4.4,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          285,
+          1402
+        ],
+        "end": [
+          443,
+          1402
+        ],
+        "length": 158.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          298,
+          1152
+        ],
+        "end": [
+          375,
+          1152
+        ],
+        "length": 77.0,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          666,
+          754
+        ],
+        "end": [
+          666,
+          700
+        ],
+        "length": 54.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          895,
+          1063
+        ],
+        "end": [
+          959,
+          1064
+        ],
+        "length": 64.00781202322104,
+        "thickness": 4.8,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          725,
+          1034
+        ],
+        "end": [
+          800,
+          1032
+        ],
+        "length": 75.02666192761077,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          551,
+          1042
+        ],
+        "end": [
+          646,
+          1045
+        ],
+        "length": 95.04735661763561,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          501,
+          1403
+        ],
+        "end": [
+          721,
+          1403
+        ],
+        "length": 220.0,
+        "thickness": 4.7,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          263,
+          1371
+        ],
+        "end": [
+          367,
+          1371
+        ],
+        "length": 104.0,
+        "thickness": 3.7,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          613,
+          850
+        ],
+        "end": [
+          734,
+          850
+        ],
+        "length": 121.0,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          150,
+          753
+        ],
+        "end": [
+          150,
+          697
+        ],
+        "length": 56.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          630,
+          1059
+        ],
+        "end": [
+          703,
+          1059
+        ],
+        "length": 73.0,
+        "thickness": 3.6,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          419,
+          1048
+        ],
+        "end": [
+          488,
+          1046
+        ],
+        "length": 69.02897942168927,
+        "thickness": 4.6,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          255,
+          1032
+        ],
+        "end": [
+          377,
+          1032
+        ],
+        "length": 122.0,
+        "thickness": 3.4,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          189,
+          1058
+        ],
+        "end": [
+          241,
+          1058
+        ],
+        "length": 52.0,
+        "thickness": 3.5,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          390,
+          1172
+        ],
+        "end": [
+          447,
+          1172
+        ],
+        "length": 57.0,
+        "thickness": 3.5,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          516,
+          1171
+        ],
+        "end": [
+          657,
+          1176
+        ],
+        "length": 141.088624630053,
+        "thickness": 3.4,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          574,
+          1155
+        ],
+        "end": [
+          671,
+          1154
+        ],
+        "length": 97.0051545022222,
+        "thickness": 3.3,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          629,
+          1034
+        ],
+        "end": [
+          683,
+          1034
+        ],
+        "length": 54.0,
+        "thickness": 3.8,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          278,
+          1173
+        ],
+        "end": [
+          351,
+          1171
+        ],
+        "length": 73.02739212103907,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          417,
+          1053
+        ],
+        "end": [
+          488,
+          1050
+        ],
+        "length": 71.06335201775947,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          894,
+          1060
+        ],
+        "end": [
+          964,
+          1060
+        ],
+        "length": 70.0,
+        "thickness": 4.2,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          214,
+          403
+        ],
+        "end": [
+          315,
+          403
+        ],
+        "length": 101.0,
+        "thickness": 4.7,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          213,
+          414
+        ],
+        "end": [
+          334,
+          422
+        ],
+        "length": 121.26417442921878,
+        "thickness": 3.1,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          516,
+          1153
+        ],
+        "end": [
+          628,
+          1153
+        ],
+        "length": 112.0,
+        "thickness": 2.9,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          531,
+          1045
+        ],
+        "end": [
+          628,
+          1048
+        ],
+        "length": 97.04638066409278,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          223,
+          1031
+        ],
+        "end": [
+          300,
+          1031
+        ],
+        "length": 77.0,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          852,
+          1034
+        ],
+        "end": [
+          907,
+          1033
+        ],
+        "length": 55.00909015790027,
+        "thickness": 3.4,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          189,
+          1057
+        ],
+        "end": [
+          241,
+          1056
+        ],
+        "length": 52.009614495783374,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          206,
+          753
+        ],
+        "end": [
+          206,
+          698
+        ],
+        "length": 55.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          745,
+          841
+        ],
+        "end": [
+          798,
+          841
+        ],
+        "length": 53.0,
+        "thickness": 4.3,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          347,
+          424
+        ],
+        "end": [
+          459,
+          424
+        ],
+        "length": 112.0,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          629,
+          1057
+        ],
+        "end": [
+          683,
+          1058
+        ],
+        "length": 54.00925846556311,
+        "thickness": 3.8,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          1352,
+          502
+        ],
+        "end": [
+          1410,
+          503
+        ],
+        "length": 58.008620049092706,
+        "thickness": 3.3,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          567,
+          1168
+        ],
+        "end": [
+          674,
+          1174
+        ],
+        "length": 107.16809226630845,
+        "thickness": 3.8,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          518,
+          1175
+        ],
+        "end": [
+          599,
+          1175
+        ],
+        "length": 81.0,
+        "thickness": 2.7,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          298,
+          1149
+        ],
+        "end": [
+          375,
+          1149
+        ],
+        "length": 77.0,
+        "thickness": 3.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          852,
+          1030
+        ],
+        "end": [
+          908,
+          1030
+        ],
+        "length": 56.0,
+        "thickness": 3.5,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          214,
+          416
+        ],
+        "end": [
+          293,
+          421
+        ],
+        "length": 79.1580697086532,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          895,
+          291
+        ],
+        "end": [
+          895,
+          190
+        ],
+        "length": 101.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          1098,
+          499
+        ],
+        "end": [
+          1156,
+          499
+        ],
+        "length": 58.0,
+        "thickness": 2.9,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          214,
+          1164
+        ],
+        "end": [
+          264,
+          1164
+        ],
+        "length": 50.0,
+        "thickness": 4.2,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          392,
+          415
+        ],
+        "end": [
+          459,
+          420
+        ],
+        "length": 67.1863081289633,
+        "thickness": 4.7,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          585,
+          1158
+        ],
+        "end": [
+          674,
+          1160
+        ],
+        "length": 89.02246907382428,
+        "thickness": 1.4,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          1368,
+          498
+        ],
+        "end": [
+          1427,
+          502
+        ],
+        "length": 59.135437767890075,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          464,
+          1165
+        ],
+        "end": [
+          673,
+          1176
+        ],
+        "length": 209.28927349484493,
+        "thickness": 3.2,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          214,
+          1159
+        ],
+        "end": [
+          264,
+          1160
+        ],
+        "length": 50.00999900019995,
+        "thickness": 4.9,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          744,
+          1035
+        ],
+        "end": [
+          795,
+          1034
+        ],
+        "length": 51.0098029794274,
+        "thickness": 3.9,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          316,
+          410
+        ],
+        "end": [
+          373,
+          414
+        ],
+        "length": 57.14017850864661,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          735,
+          851
+        ],
+        "end": [
+          796,
+          851
+        ],
+        "length": 61.0,
+        "thickness": 4.5,
+        "confidence": 0.7
+      },
+      {
+        "start": [
+          223,
+          1042
+        ],
+        "end": [
+          273,
+          1042
+        ],
+        "length": 50.0,
+        "thickness": 3.7,
+        "confidence": 0.7
+      }
+    ],
+    "junction_boxes": [
+      {
+        "position": [
+          146,
+          1363
+        ],
+        "size": [
+          39,
+          36
+        ],
+        "confidence": 0.6
+      }
+    ],
+    "total_lines": 54,
+    "total_boxes": 1
+  },
+  "conduit_elements": [
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          704,
+          793
+        ],
+        "end": [
+          775,
+          793
+        ],
+        "length": 71.0,
+        "thickness": 4.9,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          387,
+          755
+        ],
+        "end": [
+          387,
+          697
+        ],
+        "length": 58.0,
+        "thickness": 4.8,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          531,
+          1033
+        ],
+        "end": [
+          702,
+          1033
+        ],
+        "length": 171.0,
+        "thickness": 3.3,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          459,
+          1386
+        ],
+        "end": [
+          593,
+          1386
+        ],
+        "length": 134.0,
+        "thickness": 4.4,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          285,
+          1402
+        ],
+        "end": [
+          443,
+          1402
+        ],
+        "length": 158.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          298,
+          1152
+        ],
+        "end": [
+          375,
+          1152
+        ],
+        "length": 77.0,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          666,
+          754
+        ],
+        "end": [
+          666,
+          700
+        ],
+        "length": 54.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          895,
+          1063
+        ],
+        "end": [
+          959,
+          1064
+        ],
+        "length": 64.00781202322104,
+        "thickness": 4.8,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          725,
+          1034
+        ],
+        "end": [
+          800,
+          1032
+        ],
+        "length": 75.02666192761077,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          551,
+          1042
+        ],
+        "end": [
+          646,
+          1045
+        ],
+        "length": 95.04735661763561,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          501,
+          1403
+        ],
+        "end": [
+          721,
+          1403
+        ],
+        "length": 220.0,
+        "thickness": 4.7,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          263,
+          1371
+        ],
+        "end": [
+          367,
+          1371
+        ],
+        "length": 104.0,
+        "thickness": 3.7,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          613,
+          850
+        ],
+        "end": [
+          734,
+          850
+        ],
+        "length": 121.0,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          150,
+          753
+        ],
+        "end": [
+          150,
+          697
+        ],
+        "length": 56.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          630,
+          1059
+        ],
+        "end": [
+          703,
+          1059
+        ],
+        "length": 73.0,
+        "thickness": 3.6,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          419,
+          1048
+        ],
+        "end": [
+          488,
+          1046
+        ],
+        "length": 69.02897942168927,
+        "thickness": 4.6,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          255,
+          1032
+        ],
+        "end": [
+          377,
+          1032
+        ],
+        "length": 122.0,
+        "thickness": 3.4,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          189,
+          1058
+        ],
+        "end": [
+          241,
+          1058
+        ],
+        "length": 52.0,
+        "thickness": 3.5,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          390,
+          1172
+        ],
+        "end": [
+          447,
+          1172
+        ],
+        "length": 57.0,
+        "thickness": 3.5,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          516,
+          1171
+        ],
+        "end": [
+          657,
+          1176
+        ],
+        "length": 141.088624630053,
+        "thickness": 3.4,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          574,
+          1155
+        ],
+        "end": [
+          671,
+          1154
+        ],
+        "length": 97.0051545022222,
+        "thickness": 3.3,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          629,
+          1034
+        ],
+        "end": [
+          683,
+          1034
+        ],
+        "length": 54.0,
+        "thickness": 3.8,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          278,
+          1173
+        ],
+        "end": [
+          351,
+          1171
+        ],
+        "length": 73.02739212103907,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          417,
+          1053
+        ],
+        "end": [
+          488,
+          1050
+        ],
+        "length": 71.06335201775947,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          894,
+          1060
+        ],
+        "end": [
+          964,
+          1060
+        ],
+        "length": 70.0,
+        "thickness": 4.2,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          214,
+          403
+        ],
+        "end": [
+          315,
+          403
+        ],
+        "length": 101.0,
+        "thickness": 4.7,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          213,
+          414
+        ],
+        "end": [
+          334,
+          422
+        ],
+        "length": 121.26417442921878,
+        "thickness": 3.1,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          516,
+          1153
+        ],
+        "end": [
+          628,
+          1153
+        ],
+        "length": 112.0,
+        "thickness": 2.9,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          531,
+          1045
+        ],
+        "end": [
+          628,
+          1048
+        ],
+        "length": 97.04638066409278,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          223,
+          1031
+        ],
+        "end": [
+          300,
+          1031
+        ],
+        "length": 77.0,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          852,
+          1034
+        ],
+        "end": [
+          907,
+          1033
+        ],
+        "length": 55.00909015790027,
+        "thickness": 3.4,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          189,
+          1057
+        ],
+        "end": [
+          241,
+          1056
+        ],
+        "length": 52.009614495783374,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          206,
+          753
+        ],
+        "end": [
+          206,
+          698
+        ],
+        "length": 55.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          745,
+          841
+        ],
+        "end": [
+          798,
+          841
+        ],
+        "length": 53.0,
+        "thickness": 4.3,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          347,
+          424
+        ],
+        "end": [
+          459,
+          424
+        ],
+        "length": 112.0,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          629,
+          1057
+        ],
+        "end": [
+          683,
+          1058
+        ],
+        "length": 54.00925846556311,
+        "thickness": 3.8,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          1352,
+          502
+        ],
+        "end": [
+          1410,
+          503
+        ],
+        "length": 58.008620049092706,
+        "thickness": 3.3,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          567,
+          1168
+        ],
+        "end": [
+          674,
+          1174
+        ],
+        "length": 107.16809226630845,
+        "thickness": 3.8,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          518,
+          1175
+        ],
+        "end": [
+          599,
+          1175
+        ],
+        "length": 81.0,
+        "thickness": 2.7,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          298,
+          1149
+        ],
+        "end": [
+          375,
+          1149
+        ],
+        "length": 77.0,
+        "thickness": 3.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          852,
+          1030
+        ],
+        "end": [
+          908,
+          1030
+        ],
+        "length": 56.0,
+        "thickness": 3.5,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          214,
+          416
+        ],
+        "end": [
+          293,
+          421
+        ],
+        "length": 79.1580697086532,
+        "thickness": 4.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          895,
+          291
+        ],
+        "end": [
+          895,
+          190
+        ],
+        "length": 101.0,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          1098,
+          499
+        ],
+        "end": [
+          1156,
+          499
+        ],
+        "length": 58.0,
+        "thickness": 2.9,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          214,
+          1164
+        ],
+        "end": [
+          264,
+          1164
+        ],
+        "length": 50.0,
+        "thickness": 4.2,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          392,
+          415
+        ],
+        "end": [
+          459,
+          420
+        ],
+        "length": 67.1863081289633,
+        "thickness": 4.7,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          585,
+          1158
+        ],
+        "end": [
+          674,
+          1160
+        ],
+        "length": 89.02246907382428,
+        "thickness": 1.4,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          1368,
+          498
+        ],
+        "end": [
+          1427,
+          502
+        ],
+        "length": 59.135437767890075,
+        "thickness": 4.1,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          464,
+          1165
+        ],
+        "end": [
+          673,
+          1176
+        ],
+        "length": 209.28927349484493,
+        "thickness": 3.2,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          214,
+          1159
+        ],
+        "end": [
+          264,
+          1160
+        ],
+        "length": 50.00999900019995,
+        "thickness": 4.9,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          744,
+          1035
+        ],
+        "end": [
+          795,
+          1034
+        ],
+        "length": 51.0098029794274,
+        "thickness": 3.9,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          316,
+          410
+        ],
+        "end": [
+          373,
+          414
+        ],
+        "length": 57.14017850864661,
+        "thickness": 5.0,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          735,
+          851
+        ],
+        "end": [
+          796,
+          851
+        ],
+        "length": 61.0,
+        "thickness": 4.5,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "conduit_line",
+      "detection_method": "visual",
+      "confidence": 0.7,
+      "details": {
+        "start": [
+          223,
+          1042
+        ],
+        "end": [
+          273,
+          1042
+        ],
+        "length": 50.0,
+        "thickness": 3.7,
+        "confidence": 0.7
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "junction_box",
+      "detection_method": "visual",
+      "confidence": 0.6,
+      "details": {
+        "position": [
+          146,
+          1363
+        ],
+        "size": [
+          39,
+          36
+        ],
+        "confidence": 0.6
+      },
+      "source": "visual_analysis"
+    },
+    {
+      "type": "ml_discipline_confirmation",
+      "detection_method": "ml",
+      "confidence": 0.999990800875341,
+      "details": {
+        "discipline": "electrical",
+        "recommendations": [
+          "Review for code compliance violations",
+          "Check against applicable building codes and standards",
+          "Verify NEC compliance for electrical installations",
+          "Check conduit sizing and grounding"
+        ]
+      },
+      "source": "ml_analysis"
+    }
+  ],
+  "recommendations": [
+    "Medium confidence - review and validate detected elements",
+    "Code violations detected - review compliance requirements"
+  ]
+}

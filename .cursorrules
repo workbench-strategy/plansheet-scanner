@@ -1,0 +1,151 @@
+# Cursor Rules for Plansheet Scanner Workspace
+# This file provides comprehensive agent prompts and development guidelines
+
+## Project Overview
+This is a machine learning-powered plansheet scanner system for analyzing engineering drawings and traffic plans. The system includes adaptive learning, feature extraction, and multiple specialized reviewers.
+
+## Core Architecture
+- `src/core/` - Main application logic
+- `src/core/adaptive_reviewer.py` - ML-powered adaptive learning system
+- `src/core/traffic_plan_reviewer.py` - Traffic plan analysis
+- `src/core/interdisciplinary_reviewer.py` - Multi-discipline review system
+- `src/core/foundation_trainer.py` - Foundation training system
+- `src/core/code_companion.py` - AI code assistance
+
+## Development Guidelines
+
+### Code Style
+- Follow PEP 8 standards
+- Use type hints for all function parameters and return values
+- Add comprehensive docstrings for all classes and methods
+- Use descriptive variable names
+- Keep functions focused and under 50 lines when possible
+
+### Testing Requirements
+- Write unit tests using pytest for all new functionality
+- Test files should be in `tests/` directory
+- Use descriptive test names that explain the expected behavior
+- Include both positive and negative test cases
+- Mock external dependencies appropriately
+
+### ML/Data Science Standards
+- Always validate input data
+- Handle missing values appropriately
+- Use scikit-learn for traditional ML models
+- Use PyTorch for deep learning models
+- Save models using joblib for scikit-learn or torch.save for PyTorch
+- Include feature importance analysis for tree-based models
+
+### Error Handling
+- Use specific exception types
+- Provide meaningful error messages
+- Log errors with appropriate levels (DEBUG, INFO, WARNING, ERROR)
+- Gracefully handle missing dependencies
+
+## Common Agent Prompts
+
+### Feature Implementation
+When implementing new features:
+1. Analyze existing code structure and patterns
+2. Follow established naming conventions
+3. Add comprehensive error handling
+4. Include type hints and docstrings
+5. Write unit tests with pytest
+6. Update relevant documentation
+
+### ML Model Development
+When working with ML models:
+1. Validate input data types and shapes
+2. Handle missing or invalid data gracefully
+3. Provide feature importance analysis for interpretable models
+4. Include model persistence and loading functionality
+5. Add performance metrics and evaluation
+6. Consider model versioning and compatibility
+
+### Integration Tasks
+When integrating new components:
+1. Check for existing similar functionality
+2. Follow established patterns in the codebase
+3. Ensure compatibility with existing systems
+4. Add appropriate logging and monitoring
+5. Update configuration files if needed
+
+## Specific Implementation Examples
+
+### Feature Importance Analysis
+For RandomForest models, implement feature importance calculation:
+```python
+def calculate_feature_importance(self, model_name: str, feature_names: List[str]) -> Dict[str, float]:
+    """
+    Calculate feature importance from trained RandomForest model.
+    
+    Args:
+        model_name: Name of the model to analyze
+        feature_names: List of feature names corresponding to model features
+        
+    Returns:
+        Dictionary with feature names and importance scores sorted descending
+        
+    Raises:
+        ValueError: If model not found or not a tree-based model
+        ValueError: If feature_names length doesn't match model features
+    """
+    # Implementation here
+```
+
+### Testing Pattern
+Follow this testing pattern for new functionality:
+```python
+import pytest
+from unittest.mock import Mock, patch
+import numpy as np
+
+def test_calculate_feature_importance_success():
+    """Test successful feature importance calculation."""
+    # Test implementation here
+
+def test_calculate_feature_importance_invalid_model():
+    """Test error handling for invalid model name."""
+    # Test implementation here
+
+def test_calculate_feature_importance_mismatched_features():
+    """Test error handling for mismatched feature names."""
+    # Test implementation here
+```
+
+## File Organization
+- Keep related functionality in the same module
+- Use `__init__.py` files to define public APIs
+- Group imports: standard library, third-party, local
+- Maintain consistent file structure across modules
+
+## Performance Considerations
+- Use vectorized operations with numpy/pandas when possible
+- Profile code for bottlenecks in data processing
+- Cache expensive computations when appropriate
+- Use appropriate data structures for the task
+
+## Security and Best Practices
+- Never hardcode sensitive information
+- Validate all user inputs
+- Use environment variables for configuration
+- Follow principle of least privilege
+- Sanitize data before processing
+
+## Documentation Standards
+- Update README files for new features
+- Include usage examples in docstrings
+- Document configuration options
+- Maintain changelog for significant changes
+
+## Debugging and Logging
+- Use structured logging with appropriate levels
+- Include context in log messages
+- Use debug logging for development
+- Provide clear error messages for users
+
+## Version Control
+- Write descriptive commit messages
+- Use feature branches for new development
+- Keep commits focused and atomic
+- Update requirements.txt when adding dependencies

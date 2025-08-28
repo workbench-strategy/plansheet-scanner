@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-08-27T14:59:04.399128",
+  "analysis_summary": {
+    "discipline": "traffic",
+    "confidence": 0.999990800875341,
+    "has_violations": true,
+    "has_errors": false
+  },
+  "elements_highlighted": [
+    {
+      "type": "signal",
+      "pattern": "TS",
+      "confidence": 0.8
+    }
+  ],
+  "critical_issues": [
+    {
+      "category": "Traffic Control",
+      "title": "MUTCD Compliance Review Required",
+      "description": "Traffic control devices must comply with Manual on Uniform Traffic Control Devices."
+    },
+    {
+      "category": "ITS Systems",
+      "title": "ITS System Integration",
+      "description": "Intelligent Transportation Systems require proper integration."
+    },
+    {
+      "category": "Code Compliance",
+      "title": "Code Compliance Review Required",
+      "description": "ML analysis detected potential code compliance issues."
+    }
+  ],
+  "as_built_changes": [
+    {
+      "description": "As-built drawing from construction",
+      "severity": "minor",
+      "type": "unknown"
+    }
+  ],
+  "recommendations": [
+    "Review for code compliance violations",
+    "Check against applicable building codes and standards",
+    "Verify MUTCD compliance for traffic control devices",
+    "Check signal timing and coordination"
+  ],
+  "highlighting_legend": {
+    "conduit": "Red - Electrical conduit and piping",
+    "fiber": "Blue - Fiber optic and communication",
+    "junction_box": "Green - Junction boxes and electrical equipment",
+    "signal": "Yellow - Traffic signals and control devices",
+    "violation": "Magenta - Code violations and compliance issues",
+    "change": "Orange - As-built changes and modifications",
+    "critical": "Purple - Critical issues requiring attention"
+  }
+}

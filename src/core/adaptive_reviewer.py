@@ -549,6 +549,89 @@ class AdaptiveReviewer:
         except Exception as e:
             print(f"Error saving {model_name} model: {e}")
 
+    def calculate_feature_importance(self, model_name: str, feature_names: List[str]) -> Dict[str, float]:
+        """
+        Calculate feature importance from trained RandomForest model.
+        
+        Args:
+            model_name: Name of the model to analyze (e.g., 'random_forest', 'gradient_boosting')
+            feature_names: List of feature names corresponding to model features
+            
+        Returns:
+            Dictionary with feature names and importance scores sorted in descending order
+            
+        Raises:
+            ValueError: If model not found or not a tree-based model
+            ValueError: If feature_names length doesn't match model features
+            KeyError: If model_name not in self.models
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        # Validate model name exists
+        if model_name not in self.models:
+            raise KeyError(f"Model '{model_name}' not found. Available models: {list(self.models.keys())}")
+        
+        model = self.models[model_name]
+        
+        # Validate model is tree-based
+        if not hasattr(model, 'feature_importances_'):
+            raise ValueError(f"Model '{model_name}' is not a tree-based model. Tree-based models include RandomForest, GradientBoosting, etc.")
+        
+        # Validate feature names length matches model features
+        if len(feature_names) != len(model.feature_importances_):
+            raise ValueError(
+                f"Feature names length ({len(feature_names)}) doesn't match model features ({len(model.feature_importances_)})"
+            )
+        
+        # Get feature importance scores
+        importance_scores = model.feature_importances_
+        
+        # Create feature name to importance mapping
+        feature_importance = dict(zip(feature_names, importance_scores))
+        
+        # Sort by importance (descending)
+        sorted_importance = dict(sorted(feature_importance.items(), key=lambda x: x[1], reverse=True))
+        
+        logger.info(f"Calculated feature importance for model '{model_name}' with {len(feature_names)} features")
+        logger.debug(f"Top 5 features: {list(sorted_importance.items())[:5]}")
+        
+        return sorted_importance
+
+    def get_feature_importance_json(self, model_name: str, feature_names: List[str]) -> str:
+        """
+        Get feature importance as JSON string with additional metadata.
+        
+        Args:
+            model_name: Name of the model to analyze
+            feature_names: List of feature names corresponding to model features
+            
+        Returns:
+            JSON string with feature importance data and metadata
+        """
+        import json
+        from datetime import datetime
+        
+        # Calculate feature importance
+        importance_dict = self.calculate_feature_importance(model_name, feature_names)
+        
+        # Create comprehensive JSON response
+        result = {
+            "model_name": model_name,
+            "timestamp": datetime.now().isoformat(),
+            "total_features": len(feature_names),
+            "feature_importance": importance_dict,
+            "top_features": list(importance_dict.keys())[:10],  # Top 10 features
+            "importance_summary": {
+                "max_importance": max(importance_dict.values()),
+                "min_importance": min(importance_dict.values()),
+                "mean_importance": sum(importance_dict.values()) / len(importance_dict),
+                "std_importance": np.std(list(importance_dict.values()))
+            }
+        }
+        
+        return json.dumps(result, indent=2)
+
 class FeedbackCollector:
     """Collects and manages feedback for the adaptive reviewer."""
     
