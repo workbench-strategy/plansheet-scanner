@@ -1,0 +1,70 @@
+{
+  "timestamp": "2025-08-27T14:54:04.871153",
+  "analysis_summary": {
+    "discipline": "electrical",
+    "confidence": 0.999990800875341,
+    "has_violations": true,
+    "has_errors": false
+  },
+  "elements_highlighted": [
+    {
+      "type": "conduit",
+      "pattern": "conduit",
+      "confidence": 0.8
+    },
+    {
+      "type": "fiber",
+      "pattern": "fiber",
+      "confidence": 0.8
+    },
+    {
+      "type": "junction_box",
+      "pattern": "junction box",
+      "confidence": 0.8
+    },
+    {
+      "type": "signal",
+      "pattern": "TS",
+      "confidence": 0.8
+    }
+  ],
+  "critical_issues": [
+    {
+      "category": "Electrical Safety",
+      "title": "NEC Compliance Verification",
+      "description": "Electrical installations must comply with National Electrical Code."
+    },
+    {
+      "category": "Power Systems",
+      "title": "Power Distribution Analysis",
+      "description": "Verify adequate power capacity and distribution."
+    },
+    {
+      "category": "Code Compliance",
+      "title": "Code Compliance Review Required",
+      "description": "ML analysis detected potential code compliance issues."
+    }
+  ],
+  "as_built_changes": [
+    {
+      "description": "Additional fiber conduit installed",
+      "severity": "minor",
+      "type": "unknown"
+    }
+  ],
+  "recommendations": [
+    "Review for code compliance violations",
+    "Check against applicable building codes and standards",
+    "Verify NEC compliance for electrical installations",
+    "Check conduit sizing and grounding"
+  ],
+  "highlighting_legend": {
+    "conduit": "Red - Electrical conduit and piping",
+    "fiber": "Blue - Fiber optic and communication",
+    "junction_box": "Green - Junction boxes and electrical equipment",
+    "signal": "Yellow - Traffic signals and control devices",
+    "violation": "Magenta - Code violations and compliance issues",
+    "change": "Orange - As-built changes and modifications",
+    "critical": "Purple - Critical issues requiring attention"
+  }
+}

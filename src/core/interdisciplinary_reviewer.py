@@ -476,6 +476,277 @@ class BusinessReviewer:
             'risk_factors': [f['category'] for f in findings if f['severity'] in ['high', 'critical']]
         }
 
+class PerformanceReviewer:
+    """Performance-focused code analysis for detecting complexity issues."""
+    
+    def __init__(self):
+        self.complexity_patterns = {
+            'nested_loops': [
+                r'for\s+.*:\s*\n.*for\s+.*:',
+                r'while\s+.*:\s*\n.*while\s+.*:',
+                r'for\s+.*:\s*\n.*while\s+.*:',
+                r'while\s+.*:\s*\n.*for\s+.*:'
+            ],
+            'quadratic_operations': [
+                r'\.append\s*\(\s*\[\s*\]\s*\)',  # List of lists
+                r'\.extend\s*\(\s*\[\s*\]\s*\)',  # Extending with empty list
+                r'list\s*\(\s*range\s*\(\s*\w+\s*,\s*\w+\s*\)\s*\)',  # Range to list
+                r'\[\s*\[\s*\]\s*for\s+.*\s+in\s+.*\s*\]',  # List comprehension with nested lists
+            ],
+            'inefficient_operations': [
+                r'\.insert\s*\(\s*0\s*,',  # Insert at beginning
+                r'\.pop\s*\(\s*0\s*\)',  # Pop from beginning
+                r'\.remove\s*\(',  # Remove by value
+                r'\.index\s*\(',  # Find index
+                r'in\s+list\s*\(',  # Membership in list
+                r'\.sort\s*\(\s*\)',  # In-place sort
+                r'sorted\s*\(\s*\)',  # Sort function
+            ],
+            'memory_intensive': [
+                r'deepcopy\s*\(',
+                r'copy\.deepcopy\s*\(',
+                r'pickle\.dumps\s*\(',
+                r'json\.dumps\s*\(',
+                r'xml\.etree\.ElementTree\.tostring\s*\('
+            ]
+        }
+        
+        self.optimization_patterns = {
+            'efficient_alternatives': {
+                'list_operations': {
+                    'inefficient': r'\.insert\s*\(\s*0\s*,',
+                    'efficient': 'collections.deque for O(1) operations',
+                    'description': 'Use deque for frequent insertions/deletions at ends'
+                },
+                'search_operations': {
+                    'inefficient': r'in\s+list\s*\(',
+                    'efficient': 'set or dict for O(1) lookups',
+                    'description': 'Use set/dict for membership testing'
+                },
+                'sorting': {
+                    'inefficient': r'\.sort\s*\(\s*\)',
+                    'efficient': 'heapq for partial sorting',
+                    'description': 'Use heapq for top-k operations'
+                }
+            }
+        }
+    
+    def review_code(self, code: str, language: str = 'python') -> ReviewPerspective:
+        """Perform performance review."""
+        findings = []
+        
+        # Analyze code structure for complexity
+        complexity_findings = self._analyze_complexity(code)
+        findings.extend(complexity_findings)
+        
+        # Check for inefficient operations
+        inefficiency_findings = self._check_inefficient_operations(code)
+        findings.extend(inefficiency_findings)
+        
+        # Analyze time complexity
+        time_complexity_findings = self._analyze_time_complexity(code)
+        findings.extend(time_complexity_findings)
+        
+        # Check for memory issues
+        memory_findings = self._check_memory_usage(code)
+        findings.extend(memory_findings)
+        
+        # Generate optimization recommendations
+        optimization_findings = self._generate_optimization_recommendations(findings)
+        findings.extend(optimization_findings)
+        
+        # Determine risk level based on findings
+        risk_level = self._determine_risk_level(findings)
+        
+        return ReviewPerspective(
+            name="Performance Review",
+            description="Analysis of algorithmic complexity, performance bottlenecks, and optimization opportunities",
+            criteria=[
+                "Time complexity analysis",
+                "Space complexity analysis", 
+                "Inefficient operation detection",
+                "Memory usage optimization",
+                "Algorithm optimization recommendations"
+            ],
+            findings=findings,
+            risk_level=risk_level,
+            confidence=0.85
+        )
+    
+    def _analyze_complexity(self, code: str) -> List[Dict[str, Any]]:
+        """Analyze code for complexity issues."""
+        findings = []
+        
+        # Check for nested loops
+        for pattern in self.complexity_patterns['nested_loops']:
+            matches = re.finditer(pattern, code, re.MULTILINE | re.DOTALL)
+            for match in matches:
+                findings.append({
+                    'type': 'complexity_issue',
+                    'category': 'nested_loops',
+                    'severity': 'high',
+                    'line': code[:match.start()].count('\n') + 1,
+                    'code': match.group()[:100] + '...' if len(match.group()) > 100 else match.group(),
+                    'description': 'Nested loop detected - potential O(n^2) or worse complexity',
+                    'recommendation': 'Consider using more efficient algorithms or data structures',
+                    'complexity': 'O(n^2) or worse'
+                })
+        
+        # Check for quadratic operations
+        for pattern in self.complexity_patterns['quadratic_operations']:
+            matches = re.finditer(pattern, code, re.IGNORECASE)
+            for match in matches:
+                findings.append({
+                    'type': 'complexity_issue',
+                    'category': 'quadratic_operation',
+                    'severity': 'medium',
+                    'line': code[:match.start()].count('\n') + 1,
+                    'code': match.group(),
+                    'description': 'Potentially quadratic operation detected',
+                    'recommendation': 'Consider vectorized operations or more efficient data structures',
+                    'complexity': 'O(n^2)'
+                })
+        
+        return findings
+    
+    def _check_inefficient_operations(self, code: str) -> List[Dict[str, Any]]:
+        """Check for inefficient operations."""
+        findings = []
+        
+        for pattern in self.complexity_patterns['inefficient_operations']:
+            matches = re.finditer(pattern, code, re.IGNORECASE)
+            for match in matches:
+                operation = match.group()
+                severity = 'high' if 'insert(0' in operation or 'pop(0' in operation else 'medium'
+                
+                findings.append({
+                    'type': 'inefficient_operation',
+                    'category': 'list_operation',
+                    'severity': severity,
+                    'line': code[:match.start()].count('\n') + 1,
+                    'code': operation,
+                    'description': f'Inefficient operation detected: {operation}',
+                    'recommendation': self._get_optimization_recommendation(operation),
+                    'complexity': 'O(n) for list operations'
+                })
+        
+        return findings
+    
+    def _analyze_time_complexity(self, code: str) -> List[Dict[str, Any]]:
+        """Analyze time complexity of code patterns."""
+        findings = []
+        
+        # Count nested structures
+        lines = code.split('\n')
+        for i, line in enumerate(lines):
+            indent_level = len(line) - len(line.lstrip())
+            
+            # Check for deeply nested structures
+            if indent_level > 8:  # More than 4 levels of nesting
+                findings.append({
+                    'type': 'complexity_issue',
+                    'category': 'deep_nesting',
+                    'severity': 'medium',
+                    'line': i + 1,
+                    'code': line.strip(),
+                    'description': f'Deep nesting detected ({indent_level//2} levels)',
+                    'recommendation': 'Consider extracting functions or using early returns to reduce nesting',
+                    'complexity': 'O(n^k) where k is nesting depth'
+                })
+        
+        # Check for recursive patterns without memoization
+        if re.search(r'def\s+\w+\s*\(.*\):\s*\n.*\w+\s*\(.*\)', code, re.MULTILINE):
+            findings.append({
+                'type': 'complexity_issue',
+                'category': 'recursion',
+                'severity': 'medium',
+                'description': 'Recursive function detected without apparent memoization',
+                'recommendation': 'Consider adding memoization or converting to iterative approach',
+                'complexity': 'O(2^n) without memoization'
+            })
+        
+        return findings
+    
+    def _check_memory_usage(self, code: str) -> List[Dict[str, Any]]:
+        """Check for memory-intensive operations."""
+        findings = []
+        
+        for pattern in self.complexity_patterns['memory_intensive']:
+            matches = re.finditer(pattern, code, re.IGNORECASE)
+            for match in matches:
+                findings.append({
+                    'type': 'memory_issue',
+                    'category': 'memory_intensive',
+                    'severity': 'medium',
+                    'line': code[:match.start()].count('\n') + 1,
+                    'code': match.group(),
+                    'description': 'Memory-intensive operation detected',
+                    'recommendation': 'Consider streaming or chunked processing for large data',
+                    'complexity': 'High memory usage'
+                })
+        
+        return findings
+    
+    def _generate_optimization_recommendations(self, findings: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Generate specific optimization recommendations."""
+        recommendations = []
+        
+        # Count findings by category
+        category_counts = {}
+        for finding in findings:
+            category = finding.get('category', 'unknown')
+            category_counts[category] = category_counts.get(category, 0) + 1
+        
+        # Generate recommendations based on findings
+        if category_counts.get('nested_loops', 0) > 0:
+            recommendations.append({
+                'type': 'optimization_recommendation',
+                'category': 'algorithm_optimization',
+                'severity': 'high',
+                'description': f"Found {category_counts['nested_loops']} nested loop(s)",
+                'recommendation': 'Consider using vectorized operations, hash maps, or divide-and-conquer algorithms',
+                'impact': 'Can reduce complexity from O(n^2) to O(n log n) or O(n)'
+            })
+        
+        if category_counts.get('list_operation', 0) > 0:
+            recommendations.append({
+                'type': 'optimization_recommendation',
+                'category': 'data_structure_optimization',
+                'severity': 'medium',
+                'description': f"Found {category_counts['list_operation']} inefficient list operation(s)",
+                'recommendation': 'Use collections.deque for frequent insertions/deletions, sets for membership testing',
+                'impact': 'Can reduce complexity from O(n) to O(1) for many operations'
+            })
+        
+        return recommendations
+    
+    def _get_optimization_recommendation(self, operation: str) -> str:
+        """Get specific optimization recommendation for an operation."""
+        if 'insert(0' in operation:
+            return 'Use collections.deque for O(1) insertions at beginning'
+        elif 'pop(0' in operation:
+            return 'Use collections.deque for O(1) removals from beginning'
+        elif 'remove(' in operation:
+            return 'Use set or dict for O(1) removals by value'
+        elif 'index(' in operation:
+            return 'Use dict for O(1) lookups by key'
+        elif 'in list(' in operation:
+            return 'Use set for O(1) membership testing'
+        else:
+            return 'Consider more efficient data structure or algorithm'
+    
+    def _determine_risk_level(self, findings: List[Dict[str, Any]]) -> str:
+        """Determine overall risk level based on findings."""
+        if any(f['severity'] == 'critical' for f in findings):
+            return 'critical'
+        elif any(f['severity'] == 'high' for f in findings):
+            return 'high'
+        elif any(f['severity'] == 'medium' for f in findings):
+            return 'medium'
+        else:
+            return 'low'
+
+
 class TechnicalReviewer:
     """Technical architecture and best practices review."""
     
@@ -630,6 +901,7 @@ class InterdisciplinaryReviewer:
         self.compliance_reviewer = ComplianceReviewer()
         self.business_reviewer = BusinessReviewer()
         self.technical_reviewer = TechnicalReviewer()
+        self.performance_reviewer = PerformanceReviewer()
     
     def perform_review(self, file_path: str, frameworks: List[str] = None, domain: str = 'general') -> InterdisciplinaryReview:
         """Perform comprehensive interdisciplinary review."""
@@ -657,6 +929,10 @@ class InterdisciplinaryReviewer:
         technical_perspective = self.technical_reviewer.review_code(code)
         perspectives['technical'] = technical_perspective
         
+        # Performance review
+        performance_perspective = self.performance_reviewer.review_code(code)
+        perspectives['performance'] = performance_perspective
+        
         # Calculate overall risk score
         overall_risk_score = self._calculate_overall_risk(perspectives)
         
@@ -668,7 +944,8 @@ class InterdisciplinaryReviewer:
             'security': security_perspective.risk_level in ['low', 'medium'],
             'compliance': compliance_perspective.risk_level in ['low', 'medium'],
             'business': business_perspective.risk_level in ['low', 'medium'],
-            'technical': technical_perspective.risk_level in ['low', 'medium']
+            'technical': technical_perspective.risk_level in ['low', 'medium'],
+            'performance': performance_perspective.risk_level in ['low', 'medium']
         }
         
         # Calculate business impact

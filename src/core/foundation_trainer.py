@@ -24,8 +24,16 @@ try:
     from sklearn.preprocessing import StandardScaler, LabelEncoder
     from sklearn.cluster import KMeans
     import joblib
+    # Add XGBoost import
+    try:
+        import xgboost as xgb
+        XGBOOST_AVAILABLE = True
+    except ImportError:
+        print("Warning: XGBoost not installed. Install with: pip install xgboost")
+        XGBOOST_AVAILABLE = False
 except ImportError:
     print("Warning: ML dependencies not installed. Install with: pip install scikit-learn joblib")
+    XGBOOST_AVAILABLE = False
 
 @dataclass
 class AsBuiltData:
@@ -163,6 +171,17 @@ class FoundationTrainer:
             'foundation_gradient_boosting': GradientBoostingClassifier(n_estimators=200, random_state=42)
         }
         
+        # Add XGBoost if available
+        if XGBOOST_AVAILABLE:
+            model_types['foundation_xgboost'] = xgb.XGBClassifier(
+                n_estimators=200,
+                learning_rate=0.1,
+                max_depth=6,
+                random_state=42,
+                eval_metric='logloss',
+                use_label_encoder=False
+            )
+        
         for model_name, model in model_types.items():
             print(f"Training {model_name}...")
             
@@ -176,9 +195,19 @@ class FoundationTrainer:
             # Cross-validation
             cv_scores = cross_val_score(model, X_train_scaled, y_train, cv=5)
             
+            # Log detailed cross-validation metrics
+            cv_mean = cv_scores.mean()
+            cv_std = cv_scores.std()
+            
             print(f"  Train accuracy: {train_score:.3f}")
             print(f"  Test accuracy: {test_score:.3f}")
-            print(f"  CV accuracy: {cv_scores.mean():.3f} (+/- {cv_scores.std() * 2:.3f})")
+            print(f"  CV accuracy: {cv_mean:.3f} (+/- {cv_std * 2:.3f})")
+            print(f"  CV scores: {cv_scores.tolist()}")
+            
+            # Log additional metrics for XGBoost
+            if model_name == 'foundation_xgboost' and hasattr(model, 'feature_importances_'):
+                top_features = np.argsort(model.feature_importances_)[-5:]  # Top 5 features
+                print(f"  Top 5 feature importances: {model.feature_importances_[top_features]}")
             
             # Save model
             self.foundation_models[model_name] = model
@@ -190,7 +219,14 @@ class FoundationTrainer:
         # Save training statistics
         self._save_training_statistics(X_train, X_test, y_train, y_test)
         
-        print("✅ Foundation models trained and saved")
+        # Log model availability summary
+        available_models = list(self.foundation_models.keys())
+        print(f"✅ Foundation models trained and saved: {available_models}")
+        
+        if XGBOOST_AVAILABLE and 'foundation_xgboost' in available_models:
+            print("✅ XGBoost model successfully trained and integrated")
+        elif not XGBOOST_AVAILABLE:
+            print("⚠️  XGBoost not available - only RandomForest and GradientBoosting models trained")
     
     def predict_with_foundation_models(self, plan_image: np.ndarray, 
                                      detected_elements: List[Any]) -> Dict[str, Any]:
@@ -535,6 +571,22 @@ class FoundationTrainer:
         scaler_path = self.model_dir / f"{model_name}_scaler.joblib"
         
         try:
+            # Handle XGBoost models specially if needed
+            if model_name == 'foundation_xgboost' and XGBOOST_AVAILABLE:
+                # XGBoost models can be saved with joblib, but we can add special handling here
+                # For example, save additional metadata
+                model_metadata = {
+                    'model_type': 'xgboost',
+                    'n_estimators': model.n_estimators,
+                    'learning_rate': model.learning_rate,
+                    'max_depth': model.max_depth,
+                    'feature_importances': model.feature_importances_.tolist() if hasattr(model, 'feature_importances_') else None
+                }
+                metadata_path = self.model_dir / f"{model_name}_metadata.json"
+                with open(metadata_path, 'w') as f:
+                    json.dump(model_metadata, f, indent=2)
+                print(f"  Saved {model_name} metadata")
+            
             joblib.dump(model, model_path)
             joblib.dump(scaler, scaler_path)
             print(f"  Saved {model_name}")
@@ -604,6 +656,45 @@ class FoundationTrainer:
                 print(f"Error loading milestone data {data_file}: {e}")
         
         print(f"✅ Loaded {len(self.as_built_data)} as-built records and {len(self.review_milestones)} milestone records")
+        
+        # Load existing foundation models
+        self._load_foundation_models()
+    
+    def _load_foundation_models(self):
+        """Load existing foundation models from disk."""
+        model_files = list(self.model_dir.glob("foundation_*.joblib"))
+        
+        for model_file in model_files:
+            model_name = model_file.stem
+            scaler_file = self.model_dir / f"{model_name}_scaler.joblib"
+            
+            if scaler_file.exists():
+                try:
+                    model = joblib.load(model_file)
+                    scaler = joblib.load(scaler_file)
+                    
+                    self.foundation_models[model_name] = model
+                    self.scalers[model_name] = scaler
+                    
+                    print(f"✅ Loaded {model_name}")
+                    
+                    # Load XGBoost metadata if available
+                    if model_name == 'foundation_xgboost':
+                        metadata_file = self.model_dir / f"{model_name}_metadata.json"
+                        if metadata_file.exists():
+                            with open(metadata_file, 'r') as f:
+                                metadata = json.load(f)
+                            print(f"  XGBoost metadata: {metadata.get('n_estimators')} estimators, "
+                                  f"learning_rate={metadata.get('learning_rate')}, "
+                                  f"max_depth={metadata.get('max_depth')}")
+                    
+                except Exception as e:
+                    print(f"❌ Error loading {model_name}: {e}")
+        
+        if self.foundation_models:
+            print(f"✅ Loaded {len(self.foundation_models)} foundation models")
+        else:
+            print("ℹ️  No existing foundation models found")
 
 def main():
     """Example usage of the foundation trainer."""

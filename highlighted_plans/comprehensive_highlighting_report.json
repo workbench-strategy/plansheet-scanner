@@ -1,0 +1,13 @@
+{
+  "total_plans": 2,
+  "highlighted_plans": [],
+  "summary": {
+    "total_elements": 6,
+    "total_violations": 6,
+    "total_changes": 2,
+    "disciplines_found": [
+      "structural",
+      "electrical"
+    ]
+  }
+}

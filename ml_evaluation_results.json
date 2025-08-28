@@ -1,13 +1,13 @@
 {
   "system_overview": {
-    "available_as_builts": 23,
+    "available_as_builts": 58,
     "existing_models": 5
   },
   "component_analysis": {
     "Improved AI Trainer": {
       "status": "available",
-      "file_size": 37498,
-      "file_size_mb": 0.03576087951660156
+      "file_size": 36651,
+      "file_size_mb": 0.03495311737060547
     },
     "Foundation Trainer": {
       "status": "available",
@@ -31,16 +31,22 @@
     }
   },
   "performance_metrics": {
-    "training_time": 0.316103458404541,
-    "prediction_time": 0.0,
-    "error": "float division by zero"
+    "training_time": 0.7121639251708984,
+    "prediction_time": 0.01908278465270996,
+    "prediction_speed": 5240.325341396069
   },
   "data_quality": {
-    "available_sample_directories": 4,
-    "sample_coverage": 100.0,
-    "training_data_files": 502
+    "available_sample_directories": 0,
+    "sample_coverage": 0.0,
+    "training_data_files": 673
   },
   "recommendations": [
+    {
+      "category": "Data",
+      "priority": "High",
+      "recommendation": "Increase as-built data coverage by processing more sample directories",
+      "action": "Process additional as-built directories to improve training data diversity"
+    },
     {
       "category": "Integration",
       "priority": "Medium",
