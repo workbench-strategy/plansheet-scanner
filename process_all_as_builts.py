@@ -1,267 +1,312 @@
 #!/usr/bin/env python3
 """
-Process All As-Built PDFs
-Improved script to process all available PDF files efficiently.
+Process All As-Built Files for Enhanced ML Training
+Comprehensive script to process all 50+ as-built PDF files and enhance ML capabilities.
 """
 
 import os
 import sys
-from pathlib import Path
 import json
-from datetime import datetime
-import time
+import cv2
+import numpy as np
 import fitz  # PyMuPDF
+from pathlib import Path
+from datetime import datetime
+from typing import List, Dict, Any, Optional
+import logging
 import re
-from improved_ai_trainer import ImprovedAIEngineerTrainer
+from collections import defaultdict
 
-def extract_text_from_pdf_improved(pdf_path):
-    """Improved text extraction with better error handling."""
-    try:
-        doc = fitz.open(pdf_path)
-        text = ""
-        
-        # Try to extract text from first 3 pages only (faster)
-        for page_num in range(min(3, len(doc))):
-            try:
-                page = doc.load_page(page_num)
-                page_text = page.get_text()
-                if page_text.strip():
-                    text += page_text + "\n"
-            except Exception as e:
-                continue  # Skip problematic pages
-        
-        doc.close()
-        
-        # If still no text, try alternative method
-        if not text.strip():
-            try:
-                doc = fitz.open(pdf_path)
-                text = doc.get_text()
-                doc.close()
-            except Exception as e:
-                pass
-        
-        return text
-    except Exception as e:
-        return ""
+# Add src to path for imports
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
-def analyze_pdf_content_improved(pdf_path, text_content):
-    """Improved content analysis with better discipline detection."""
-    filename = Path(pdf_path).stem.lower()
-    text_lower = text_content.lower()
-    
-    # Enhanced discipline detection
-    discipline = "unknown"
-    
-    # Traffic keywords
-    traffic_keywords = ["traffic", "signal", "signing", "control", "its", "intelligent transportation"]
-    if any(keyword in filename or keyword in text_lower for keyword in traffic_keywords):
-        discipline = "traffic"
-    # Electrical keywords  
-    elif any(keyword in filename or keyword in text_lower for keyword in ["electrical", "power", "illumination", "lighting", "conduit", "panel"]):
-        discipline = "electrical"
-    # Structural keywords
-    elif any(keyword in filename or keyword in text_lower for keyword in ["structural", "bridge", "foundation", "beam", "column", "concrete"]):
-        discipline = "structural"
-    # Drainage keywords
-    elif any(keyword in filename or keyword in text_lower for keyword in ["drainage", "storm", "culvert", "pipe", "catch", "inlet"]):
-        discipline = "drainage"
-    
-    # Extract project information
-    project_info = {
-        "filename": Path(pdf_path).name,
-        "file_size_mb": Path(pdf_path).stat().st_size / (1024 * 1024),
-        "discipline": discipline,
-        "text_length": len(text_content),
-        "word_count": len(text_content.split()),
-        "extraction_date": datetime.now().isoformat()
-    }
-    
-    # Enhanced pattern matching
-    patterns = {
-        "project_number": r"(\d{5,6})",  # 5-6 digit project numbers
-        "highway_reference": r"(SR\s*\d+|I-\d+)",  # SR 99, I-5, etc.
-        "mile_post": r"MP\s*(\d+\.?\d*)",  # Mile post references
-        "sheet_number": r"([A-Z]-\d+)",  # Sheet numbers like T-01, E-02
-        "contract_number": r"(\d{4,5}[A-Z]?)",  # Contract numbers
-    }
-    
-    for pattern_name, pattern in patterns.items():
-        matches = re.findall(pattern, text_content, re.IGNORECASE)
-        if matches:
-            project_info[pattern_name] = matches[:3]  # Keep first 3 matches
-    
-    return project_info
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('all_as_builts_processing.log', encoding='utf-8'),
+        logging.StreamHandler()
+    ]
+)
 
-def create_as_built_drawing_data_improved(pdf_path, project_info):
-    """Create improved as-built drawing data structure."""
-    
-    filename = Path(pdf_path).name
-    sheet_title = filename.replace(".pdf", "").replace("_", " ").title()
-    
-    # Enhanced drawing data
-    drawing_data = {
-        "drawing_id": f"real_{Path(pdf_path).stem}",
-        "project_name": project_info.get("project_number", ["Unknown"])[0] if project_info.get("project_number") else "Unknown Project",
-        "sheet_number": project_info.get("sheet_number", ["Unknown"])[0] if project_info.get("sheet_number") else "Unknown",
-        "sheet_title": sheet_title,
-        "discipline": project_info["discipline"],
-        "original_design": {
-            "elements": max(1, project_info["word_count"] // 1000),
-            "complexity": "high" if project_info["file_size_mb"] > 50 else "medium"
-        },
-        "as_built_changes": [],
-        "code_references": [],
-        "review_notes": [],
-        "approval_status": "approved",
-        "reviewer_feedback": {"quality": "good"},
-        "construction_notes": f"Real as-built drawing: {filename}",
-        "file_path": str(pdf_path)
-    }
-    
-    # Enhanced code references based on discipline
-    if project_info["discipline"] == "traffic":
-        drawing_data["code_references"] = ["MUTCD", "WSDOT_Traffic_Standards", "ITE_Standards"]
-        drawing_data["review_notes"] = ["Traffic control devices reviewed", "Signal timing verified", "ITS systems checked"]
-    elif project_info["discipline"] == "electrical":
-        drawing_data["code_references"] = ["NEC", "WSDOT_Electrical_Standards", "IEEE_Standards"]
-        drawing_data["review_notes"] = ["Electrical systems reviewed", "Power distribution verified", "Illumination systems checked"]
-    elif project_info["discipline"] == "structural":
-        drawing_data["code_references"] = ["AASHTO", "WSDOT_Structural_Standards", "ACI_Standards"]
-        drawing_data["review_notes"] = ["Structural elements reviewed", "Load ratings verified", "Foundation systems checked"]
-    elif project_info["discipline"] == "drainage":
-        drawing_data["code_references"] = ["WSDOT_Drainage_Standards", "HEC_Standards"]
-        drawing_data["review_notes"] = ["Drainage systems reviewed", "Capacity calculations verified", "Storm water management checked"]
-    else:
-        drawing_data["code_references"] = ["WSDOT_General_Standards"]
-        drawing_data["review_notes"] = ["General engineering review completed"]
-    
-    # Add realistic violations based on file characteristics
-    if project_info["file_size_mb"] > 100:
-        drawing_data["as_built_changes"].append({
-            "description": "Complex drawing - field modifications may be required",
-            "code_violation": False,
-            "severity": "minor"
-        })
-    
-    if project_info["text_length"] < 100:  # Very little text might indicate issues
-        drawing_data["as_built_changes"].append({
-            "description": "Limited text content - may need manual review",
-            "code_violation": False,
-            "severity": "minor"
-        })
-    
-    return drawing_data
+logger = logging.getLogger(__name__)
 
-def process_all_pdfs():
-    """Process all available PDF files efficiently."""
-    print("🔄 PROCESSING ALL AS-BUILT PDFS")
-    print("=" * 60)
+class AsBuiltProcessor:
+    """Process all as-built PDF files for enhanced ML training."""
     
-    as_built_dir = Path("as_built_drawings")
-    pdf_files = list(as_built_dir.rglob("*.pdf"))
-    
-    print(f"📄 Found {len(pdf_files)} PDF files to process")
-    print()
-    
-    # Initialize AI trainer
-    trainer = ImprovedAIEngineerTrainer()
-    
-    processed_count = 0
-    failed_count = 0
-    start_time = time.time()
-    
-    for i, pdf_path in enumerate(pdf_files, 1):
-        print(f"🔄 Processing {i}/{len(pdf_files)}: {pdf_path.name}")
+    def __init__(self):
+        self.as_built_dir = Path("as_built_drawings")
+        self.output_dir = Path("enhanced_training_data")
+        self.output_dir.mkdir(exist_ok=True)
         
+        # Create subdirectories
+        for subdir in ["images", "metadata", "extracted_text", "features"]:
+            (self.output_dir / subdir).mkdir(exist_ok=True)
+        
+        # Project type mapping
+        self.project_types = {
+            'traffic_signal': ['signal', 'traffic', 'intersection'],
+            'its': ['its', 'fiber', 'communication', 'atms', 'camera'],
+            'electrical': ['electrical', 'lighting', 'power', 'conduit'],
+            'structural': ['structural', 'bridge', 'ramp', 'interchange'],
+            'congestion': ['congestion', 'management', 'traffic_flow'],
+            'special': ['special', 'provisions', 'standards']
+        }
+    
+    def analyze_as_built_collection(self):
+        """Analyze the entire as-built collection."""
+        logger.info("Analyzing as-built collection...")
+        
+        pdf_files = list(self.as_built_dir.glob("*.pdf"))
+        logger.info(f"Found {len(pdf_files)} PDF files")
+        
+        collection_stats = {
+            'total_files': len(pdf_files),
+            'total_size_mb': sum(f.stat().st_size / (1024*1024) for f in pdf_files),
+            'file_types': defaultdict(int),
+            'project_categories': defaultdict(int),
+            'date_range': {'earliest': None, 'latest': None}
+        }
+        
+        for pdf_file in pdf_files:
+            # Analyze file name for project type
+            filename = pdf_file.name.lower()
+            
+            # Determine project category
+            category = self.categorize_project(filename)
+            collection_stats['project_categories'][category] += 1
+            
+            # Extract date if present
+            date_match = re.search(r'(\d{4})', filename)
+            if date_match:
+                year = int(date_match.group(1))
+                if collection_stats['date_range']['earliest'] is None or year < collection_stats['date_range']['earliest']:
+                    collection_stats['date_range']['earliest'] = year
+                if collection_stats['date_range']['latest'] is None or year > collection_stats['date_range']['latest']:
+                    collection_stats['date_range']['latest'] = year
+        
+        logger.info(f"Collection Statistics:")
+        logger.info(f"  Total Files: {collection_stats['total_files']}")
+        logger.info(f"  Total Size: {collection_stats['total_size_mb']:.1f} MB")
+        logger.info(f"  Date Range: {collection_stats['date_range']['earliest']} - {collection_stats['date_range']['latest']}")
+        logger.info(f"  Project Categories:")
+        for category, count in collection_stats['project_categories'].items():
+            logger.info(f"    {category}: {count} files")
+        
+        return collection_stats
+    
+    def categorize_project(self, filename: str) -> str:
+        """Categorize project based on filename."""
+        filename_lower = filename.lower()
+        
+        for category, keywords in self.project_types.items():
+            if any(keyword in filename_lower for keyword in keywords):
+                return category
+        
+        return 'unknown'
+    
+    def extract_pdf_metadata(self, pdf_path: Path) -> Dict[str, Any]:
+        """Extract metadata from PDF file."""
         try:
-            # Extract text from PDF
-            text_content = extract_text_from_pdf_improved(pdf_path)
+            doc = fitz.open(pdf_path)
             
-            if not text_content.strip():
-                print(f"   ⚠️  No text content extracted from {pdf_path.name}")
-                failed_count += 1
-                continue
+            metadata = {
+                'filename': pdf_path.name,
+                'file_size_mb': pdf_path.stat().st_size / (1024*1024),
+                'page_count': len(doc),
+                'project_category': self.categorize_project(pdf_path.name),
+                'extraction_date': datetime.now().isoformat()
+            }
             
-            # Analyze PDF content
-            project_info = analyze_pdf_content_improved(pdf_path, text_content)
+            # Extract text from first few pages
+            text_content = []
+            for page_num in range(min(3, len(doc))):
+                page = doc[page_num]
+                text_content.append(page.get_text())
             
-            # Create as-built drawing data
-            drawing_data = create_as_built_drawing_data_improved(pdf_path, project_info)
+            metadata['text_sample'] = '\n'.join(text_content)[:2000]  # First 2000 chars
             
-            # Add to trainer
-            from improved_ai_trainer import AsBuiltDrawing
-            drawing = AsBuiltDrawing(**drawing_data)
-            trainer.add_as_built_drawing(drawing)
-            
-            print(f"   ✅ Processed: {drawing_data['discipline']} - {drawing_data['sheet_title']}")
-            print(f"      📊 Text length: {project_info['text_length']} chars")
-            print(f"      📄 File size: {project_info['file_size_mb']:.1f} MB")
-            
-            processed_count += 1
+            doc.close()
+            return metadata
             
         except Exception as e:
-            print(f"   ❌ Failed to process {pdf_path.name}: {e}")
-            failed_count += 1
+            logger.error(f"Error extracting metadata from {pdf_path}: {e}")
+            return {'filename': pdf_path.name, 'error': str(e)}
     
-    total_time = time.time() - start_time
+    def convert_pdf_to_images(self, pdf_path: Path, output_dir: Path) -> List[Path]:
+        """Convert PDF pages to images."""
+        try:
+            doc = fitz.open(pdf_path)
+            image_paths = []
+            
+            for page_num in range(len(doc)):
+                page = doc[page_num]
+                
+                # Convert page to image
+                mat = fitz.Matrix(2.0, 2.0)  # 2x zoom for better quality
+                pix = page.get_pixmap(matrix=mat)
+                
+                # Save image
+                image_filename = f"{pdf_path.stem}_page_{page_num:03d}.png"
+                image_path = output_dir / image_filename
+                pix.save(str(image_path))
+                
+                image_paths.append(image_path)
+            
+            doc.close()
+            logger.info(f"Converted {pdf_path.name} to {len(image_paths)} images")
+            return image_paths
+            
+        except Exception as e:
+            logger.error(f"Error converting {pdf_path} to images: {e}")
+            return []
     
-    print(f"\n📊 Processing Summary:")
-    print(f"   ✅ Successfully processed: {processed_count}")
-    print(f"   ❌ Failed: {failed_count}")
-    print(f"   📄 Total PDFs found: {len(pdf_files)}")
-    print(f"   ⏱️  Total processing time: {total_time:.1f} seconds")
-    print(f"   ⏱️  Average time per file: {total_time/len(pdf_files):.3f} seconds")
+    def extract_engineering_features(self, image_path: Path) -> Dict[str, Any]:
+        """Extract engineering-specific features from image."""
+        try:
+            image = cv2.imread(str(image_path))
+            if image is None:
+                return {}
+            
+            features = {}
+            
+            # Basic image features
+            features['image_size'] = image.shape[:2]
+            features['aspect_ratio'] = image.shape[1] / image.shape[0]
+            features['color_channels'] = image.shape[2]
+            
+            # Color analysis
+            features['mean_color'] = np.mean(image, axis=(0, 1)).tolist()
+            features['std_color'] = np.std(image, axis=(0, 1)).tolist()
+            
+            # Edge detection for engineering elements
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            edges = cv2.Canny(gray, 50, 150)
+            features['edge_density'] = np.sum(edges > 0) / (edges.shape[0] * edges.shape[1])
+            
+            # Line detection for engineering drawings
+            lines = cv2.HoughLinesP(edges, 1, np.pi/180, threshold=50, minLineLength=50, maxLineGap=10)
+            features['line_count'] = len(lines) if lines is not None else 0
+            
+            # Contour analysis for symbols
+            contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            features['contour_count'] = len(contours)
+            
+            # Text region detection (simplified)
+            # This would be enhanced with OCR in production
+            features['text_regions'] = self.detect_text_regions(gray)
+            
+            return features
+            
+        except Exception as e:
+            logger.error(f"Error extracting features from {image_path}: {e}")
+            return {}
     
-    return trainer
-
-def train_on_all_data(trainer):
-    """Train ML models on all available data."""
-    print(f"\n🤖 TRAINING ML MODELS ON ALL DATA")
-    print("=" * 60)
+    def detect_text_regions(self, gray_image: np.ndarray) -> int:
+        """Detect potential text regions in image."""
+        # Simple text region detection using morphological operations
+        kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+        morph = cv2.morphologyEx(gray_image, cv2.MORPH_CLOSE, kernel)
+        
+        # Find connected components
+        num_labels, labels = cv2.connectedComponents(morph)
+        return num_labels - 1  # Subtract background
     
-    if len(trainer.as_built_drawings) == 0:
-        print("❌ No as-built drawings to train on!")
-        return
+    def process_all_as_builts(self):
+        """Process all as-built files for enhanced ML training."""
+        logger.info("Starting comprehensive as-built processing...")
+        
+        # Analyze collection
+        stats = self.analyze_as_built_collection()
+        
+        # Process each PDF file
+        pdf_files = list(self.as_built_dir.glob("*.pdf"))
+        processed_files = 0
+        
+        for pdf_file in pdf_files:
+            try:
+                logger.info(f"Processing {pdf_file.name}...")
+                
+                # Extract metadata
+                metadata = self.extract_pdf_metadata(pdf_file)
+                metadata_path = self.output_dir / "metadata" / f"{pdf_file.stem}_metadata.json"
+                with open(metadata_path, 'w') as f:
+                    json.dump(metadata, f, indent=2)
+                
+                # Convert to images
+                images_dir = self.output_dir / "images" / pdf_file.stem
+                images_dir.mkdir(exist_ok=True)
+                image_paths = self.convert_pdf_to_images(pdf_file, images_dir)
+                
+                # Extract features from each image
+                features_data = []
+                for image_path in image_paths:
+                    features = self.extract_engineering_features(image_path)
+                    features['image_path'] = str(image_path)
+                    features['source_pdf'] = pdf_file.name
+                    features_data.append(features)
+                
+                # Save features
+                features_path = self.output_dir / "features" / f"{pdf_file.stem}_features.json"
+                with open(features_path, 'w') as f:
+                    json.dump(features_data, f, indent=2)
+                
+                processed_files += 1
+                logger.info(f"[OK] Completed {pdf_file.name} ({len(image_paths)} pages)")
+                
+            except Exception as e:
+                logger.error(f"[ERROR] Error processing {pdf_file.name}: {e}")
+        
+        # Generate summary report
+        self.generate_processing_report(stats, processed_files)
+        
+        logger.info(f"Processing complete! {processed_files}/{len(pdf_files)} files processed")
     
-    print(f"📊 Training on {len(trainer.as_built_drawings)} as-built drawings")
-    
-    # Train models
-    trainer.train_models(min_examples=10)  # Higher threshold for more data
-    trainer.save_models()
-    
-    # Get statistics
-    stats = trainer.get_training_statistics()
-    print(f"\n📈 Training Statistics:")
-    print(f"   📄 Total drawings: {stats['total_drawings']}")
-    print(f"   🎯 Models trained: {stats['models_trained']}")
-    print(f"   📊 Review patterns: {stats['review_patterns']}")
-    
-    if stats['discipline_distribution']:
-        print(f"   🏗️  Discipline distribution:")
-        for discipline, count in stats['discipline_distribution'].items():
-            print(f"      {discipline}: {count}")
+    def generate_processing_report(self, stats: Dict, processed_files: int):
+        """Generate comprehensive processing report."""
+        report = {
+            'processing_date': datetime.now().isoformat(),
+            'collection_stats': stats,
+            'processing_results': {
+                'total_files': stats['total_files'],
+                'processed_files': processed_files,
+                'success_rate': processed_files / stats['total_files'] * 100
+            },
+            'output_structure': {
+                'images_dir': str(self.output_dir / "images"),
+                'metadata_dir': str(self.output_dir / "metadata"),
+                'features_dir': str(self.output_dir / "features"),
+                'extracted_text_dir': str(self.output_dir / "extracted_text")
+            },
+            'ml_training_ready': {
+                'total_images': len(list((self.output_dir / "images").rglob("*.png"))),
+                'total_features': len(list((self.output_dir / "features").glob("*.json"))),
+                'total_metadata': len(list((self.output_dir / "metadata").glob("*.json")))
+            }
+        }
+        
+        report_path = self.output_dir / "processing_report.json"
+        with open(report_path, 'w') as f:
+            json.dump(report, f, indent=2)
+        
+        logger.info("Processing Report Generated:")
+        logger.info(f"  Success Rate: {report['processing_results']['success_rate']:.1f}%")
+        logger.info(f"  Total Images: {report['ml_training_ready']['total_images']}")
+        logger.info(f"  Total Features: {report['ml_training_ready']['total_features']}")
+        logger.info(f"  Report saved to: {report_path}")
 
 def main():
-    """Main function to process all as-built PDFs."""
-    print("🏗️ COMPREHENSIVE AS-BUILT PDF PROCESSING")
-    print("=" * 80)
-    print(f"Processing Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    """Main function to process all as-built files."""
+    print("Processing All As-Built Files for Enhanced ML Training")
+    print("=" * 70)
     
-    # Process all PDFs
-    trainer = process_all_pdfs()
+    processor = AsBuiltProcessor()
+    processor.process_all_as_builts()
     
-    if len(trainer.as_built_drawings) > 0:
-        # Train on all data
-        train_on_all_data(trainer)
-        
-        print(f"\n✅ Comprehensive processing complete!")
-        print(f"   📄 Processed {len(trainer.as_built_drawings)} drawings")
-        print(f"   🤖 Models trained on comprehensive data")
-        print(f"   🎯 Ready for production use!")
-    else:
-        print(f"\n❌ No drawings processed successfully")
-        print(f"   Check the PDF files and try again")
+    print("\nProcessing Complete!")
+    print("Check enhanced_training_data/ directory for results")
+    print("Review all_as_builts_processing.log for detailed information")
 
 if __name__ == "__main__":
     main()

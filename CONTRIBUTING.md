@@ -1,180 +1,369 @@
-# Contributing to PlanSheet Scanner
+# Contributing to Plansheet Scanner
 
-Thank you for your interest in contributing to the PlanSheet Scanner project! This document provides guidelines and information for contributors.
+Thank you for your interest in contributing to Plansheet Scanner! This document provides guidelines and standards for contributing to the project.
+
+## Table of Contents
+
+- [Code of Conduct](#code-of-conduct)
+- [Getting Started](#getting-started)
+- [Development Setup](#development-setup)
+- [Code Standards](#code-standards)
+- [Testing Guidelines](#testing-guidelines)
+- [Pull Request Process](#pull-request-process)
+- [Release Process](#release-process)
+- [Documentation](#documentation)
+- [Support](#support)
+
+## Code of Conduct
+
+This project adheres to the Contributor Covenant Code of Conduct. By participating, you are expected to uphold this code.
 
 ## Getting Started
-
-1. **Fork the repository** on GitHub
-2. **Clone your fork** locally
-3. **Create a feature branch** for your changes
-4. **Make your changes** following the guidelines below
-5. **Test your changes** thoroughly
-6. **Submit a pull request**
-
-## Development Setup
 
 ### Prerequisites
 
 - Python 3.8 or higher
 - Git
-- pip or conda for package management
+- Basic knowledge of machine learning and computer vision concepts
 
-### Installation
+### Fork and Clone
+
+1. Fork the repository on GitHub
+2. Clone your fork locally:
+   ```bash
+   git clone https://github.com/your-username/plansheet-scanner-new.git
+   cd plansheet-scanner-new
+   ```
+3. Add the upstream remote:
+   ```bash
+   git remote add upstream https://github.com/original-username/plansheet-scanner-new.git
+   ```
+
+## Development Setup
+
+### Automated Setup
+
+Run the development environment setup script:
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/plansheet-scanner-new.git
-cd plansheet-scanner-new
-
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+python scripts/setup_dev_environment.py
 ```
 
-## Code Style Guidelines
+### Manual Setup
 
-### Python Code
+1. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-- Follow [PEP 8](https://www.python.org/dev/peps/pep-0008/) style guidelines
-- Use meaningful variable and function names
-- Add docstrings to all public functions and classes
-- Keep functions focused and under 50 lines when possible
-- Use type hints where appropriate
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   pip install -r requirements-dev.txt
+   ```
 
-### Commit Messages
+3. Install pre-commit hooks:
+   ```bash
+   pre-commit install
+   ```
 
-Use conventional commit format:
+4. Verify installation:
+   ```bash
+   python -m pytest tests/ -v
+   ```
 
+## Code Standards
+
+### Python Style Guide
+
+We follow PEP 8 with some modifications:
+
+- **Line length**: 88 characters (Black default)
+- **Import sorting**: Use isort with Black profile
+- **Type hints**: Required for all function parameters and return values
+- **Docstrings**: Google-style docstrings for all public functions and classes
+
+### Code Formatting
+
+All code is automatically formatted using:
+
+- **Black**: Code formatting
+- **isort**: Import sorting
+- **flake8**: Linting
+- **mypy**: Type checking
+
+Run formatting before committing:
+```bash
+black src/ tests/
+isort src/ tests/
 ```
-type(scope): description
 
-[optional body]
+### Import Organization
 
-[optional footer]
+Follow this import order:
+1. Standard library imports
+2. Third-party imports
+3. Local application imports
+
+Example:
+```python
+import os
+import sys
+from pathlib import Path
+from typing import List, Optional
+
+import numpy as np
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+
+from plansheet_scanner.core.models import BaseModel
+from plansheet_scanner.utils.helpers import load_data
 ```
 
-Types:
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code style changes (formatting, etc.)
-- `refactor`: Code refactoring
-- `test`: Adding or updating tests
-- `chore`: Maintenance tasks
+### Type Hints
 
-Examples:
-```
-feat(core): add new cable matching algorithm
-fix(extractor): resolve PDF parsing edge case
-docs(readme): update installation instructions
+Use type hints for all functions:
+
+```python
+def process_image(
+    image_path: Path,
+    model_config: ModelConfig,
+    output_dir: Optional[Path] = None
+) -> ProcessingResult:
+    """
+    Process an image using the specified model configuration.
+    
+    Args:
+        image_path: Path to the input image
+        model_config: Configuration for the ML model
+        output_dir: Optional output directory for results
+        
+    Returns:
+        ProcessingResult containing the analysis results
+        
+    Raises:
+        FileNotFoundError: If image_path doesn't exist
+        ValueError: If model_config is invalid
+    """
+    # Implementation here
 ```
 
-## Testing
+### Error Handling
+
+- Use specific exception types
+- Provide meaningful error messages
+- Log errors with appropriate levels
+- Handle edge cases gracefully
+
+```python
+try:
+    result = model.predict(data)
+except ModelNotTrainedError:
+    logger.error("Model must be trained before prediction")
+    raise
+except ValueError as e:
+    logger.error(f"Invalid input data: {e}")
+    raise
+```
+
+## Testing Guidelines
+
+### Test Structure
+
+- Place tests in the `tests/` directory
+- Mirror the source code structure
+- Use descriptive test names
+- Group related tests in classes
+
+### Test Naming Convention
+
+```python
+def test_function_name_expected_behavior():
+    """Test description."""
+    # Test implementation
+
+def test_function_name_error_condition():
+    """Test error handling."""
+    # Test implementation
+```
+
+### Test Categories
+
+Use pytest markers to categorize tests:
+
+```python
+import pytest
+
+@pytest.mark.slow
+def test_expensive_operation():
+    """Test that takes a long time."""
+    pass
+
+@pytest.mark.integration
+def test_database_integration():
+    """Test database operations."""
+    pass
+
+@pytest.mark.unit
+def test_unit_function():
+    """Test individual function."""
+    pass
+```
 
 ### Running Tests
 
 ```bash
 # Run all tests
-python -m pytest tests/
+pytest
+
+# Run with coverage
+pytest --cov=src --cov-report=html
+
+# Run specific test categories
+pytest -m "not slow"
+pytest -m integration
+pytest -m unit
+
+# Run tests in parallel
+pytest -n auto
 
 # Run tests with verbose output
-python -m pytest tests/ -v
-
-# Run specific test file
-python -m pytest tests/test_cable_matcher.py
+pytest -v
 ```
 
-### Writing Tests
+### Test Coverage
 
-- Place test files in the `tests/` directory
-- Use descriptive test names
+- Maintain at least 80% test coverage
+- Focus on critical business logic
+- Mock external dependencies
 - Test both success and failure cases
-- Mock external dependencies when appropriate
-- Include integration tests for complex workflows
 
 ## Pull Request Process
 
-1. **Update documentation** if your changes affect user-facing functionality
-2. **Add tests** for new features or bug fixes
-3. **Ensure all tests pass** before submitting
-4. **Update the CHANGELOG.md** with a brief description of your changes
-5. **Request review** from maintainers
+### Before Submitting
+
+1. Ensure all tests pass
+2. Run code quality checks:
+   ```bash
+   pre-commit run --all-files
+   ```
+3. Update documentation if needed
+4. Add tests for new functionality
 
 ### Pull Request Template
 
+Use this template for pull requests:
+
 ```markdown
 ## Description
-Brief description of the changes made.
+Brief description of changes
 
 ## Type of Change
 - [ ] Bug fix
 - [ ] New feature
+- [ ] Breaking change
 - [ ] Documentation update
-- [ ] Code refactoring
-- [ ] Other (please describe)
 
 ## Testing
-- [ ] Unit tests pass
-- [ ] Integration tests pass
+- [ ] Tests added/updated
+- [ ] All tests pass
 - [ ] Manual testing completed
 
 ## Checklist
 - [ ] Code follows style guidelines
 - [ ] Self-review completed
 - [ ] Documentation updated
-- [ ] Tests added/updated
+- [ ] No breaking changes
 ```
 
-## Project Structure
+### Review Process
 
+1. **Automated Checks**: CI/CD pipeline runs tests and quality checks
+2. **Code Review**: At least one maintainer must approve
+3. **Testing**: Ensure all tests pass on multiple Python versions
+4. **Documentation**: Update relevant documentation
+5. **Merge**: Squash and merge when approved
+
+## Release Process
+
+### Versioning
+
+We use semantic versioning (MAJOR.MINOR.PATCH):
+
+- **MAJOR**: Breaking changes
+- **MINOR**: New features, backward compatible
+- **PATCH**: Bug fixes, backward compatible
+
+### Release Checklist
+
+- [ ] Update version in `pyproject.toml`
+- [ ] Update `CHANGELOG.md`
+- [ ] Run full test suite
+- [ ] Update documentation
+- [ ] Create release tag
+- [ ] Deploy to PyPI
+
+### Creating a Release
+
+```bash
+# Update version
+bump2version patch  # or minor/major
+
+# Create and push tag
+git push --tags
+
+# Build and upload to PyPI
+python -m build
+twine upload dist/*
 ```
-plansheet-scanner-new/
-├── src/                    # Core source code
-│   ├── core/              # Core functionality
-│   └── cli/               # Command-line interfaces
-├── tests/                 # Test files
-├── docs/                  # Documentation
-├── templates/             # Template files
-├── scripts/               # Utility scripts
-└── requirements.txt       # Python dependencies
-```
 
-## Areas for Contribution
+## Documentation
 
-### High Priority
-- Bug fixes and performance improvements
-- Enhanced error handling and logging
-- Additional unit and integration tests
-- Documentation improvements
+### Code Documentation
 
-### Medium Priority
-- New feature development
-- UI/UX improvements
-- Additional file format support
-- Performance optimizations
+- Use Google-style docstrings
+- Include examples in docstrings
+- Document all public APIs
+- Keep docstrings up to date
 
-### Low Priority
-- Code refactoring
-- Style improvements
-- Additional examples and tutorials
+### Project Documentation
 
-## Getting Help
+- Update README.md for new features
+- Maintain API documentation
+- Include setup and usage examples
+- Document configuration options
+
+### Documentation Standards
+
+- Use clear, concise language
+- Include code examples
+- Provide troubleshooting guides
+- Keep documentation current
+
+## Support
+
+### Getting Help
 
 - **Issues**: Use GitHub Issues for bug reports and feature requests
-- **Discussions**: Use GitHub Discussions for questions and general discussion
-- **Documentation**: Check the `docs/` directory for detailed documentation
+- **Discussions**: Use GitHub Discussions for questions and ideas
+- **Documentation**: Check the docs directory and README files
 
-## Code of Conduct
+### Communication
 
-This project is committed to providing a welcoming and inclusive environment for all contributors. Please be respectful and constructive in all interactions.
+- Be respectful and professional
+- Provide context for issues
+- Use clear, descriptive language
+- Follow the project's communication guidelines
 
-## License
+## Additional Resources
 
-By contributing to this project, you agree that your contributions will be licensed under the same license as the project.
+- [Python Style Guide (PEP 8)](https://www.python.org/dev/peps/pep-0008/)
+- [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+- [pytest Documentation](https://docs.pytest.org/)
+- [Black Code Formatter](https://black.readthedocs.io/)
+- [mypy Type Checker](https://mypy.readthedocs.io/)
 
 ---
 
-Thank you for contributing to PlanSheet Scanner!
+Thank you for contributing to Plansheet Scanner! Your contributions help make this project better for everyone.

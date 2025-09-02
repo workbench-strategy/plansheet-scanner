@@ -1,9 +1,9 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
-labels: 'enhancement'
-assignees: ''
+title: '[FEATURE] '
+labels: ['enhancement', 'needs-triage']
+assignees: ['your-github-username']
 
 ---
 
@@ -20,10 +20,22 @@ A clear and concise description of any alternative solutions or features you've 
 Add any other context or screenshots about the feature request here.
 
 **Use case**
-Describe a specific use case where this feature would be valuable.
+Describe a specific use case where this feature would be valuable:
 
-**Impact**
-How would this feature benefit users of the project?
+**Priority**
+- [ ] Low - Nice to have
+- [ ] Medium - Important for workflow
+- [ ] High - Critical for core functionality
+- [ ] Urgent - Blocking current work
 
-**Implementation ideas**
-If you have any ideas about how this could be implemented, please share them.
+**Implementation complexity**
+- [ ] Simple - Minor changes
+- [ ] Medium - Moderate effort
+- [ ] Complex - Significant development time
+- [ ] Very Complex - Major architectural changes
+
+**Checklist**
+- [ ] I have searched existing issues to avoid duplicates
+- [ ] I have provided a clear use case
+- [ ] I have considered alternatives
+- [ ] This feature aligns with project goals
