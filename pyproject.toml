@@ -1,0 +1,253 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "plansheet-scanner"
+version = "1.0.0"
+description = "ML-powered plansheet scanner for engineering drawings and traffic plans"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "HNTB DIS SEA_DTS Python Working Group"}
+]
+keywords = ["machine-learning", "computer-vision", "engineering", "plansheets", "traffic-plans"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    # Core image processing
+    "opencv-python>=4.8.0,<5.0.0",
+    "Pillow>=10.0.0,<11.0.0",
+    "numpy>=1.24.0,<2.0.0",
+    "pandas>=2.0.0,<3.0.0",
+    
+    # Machine Learning
+    "scikit-learn>=1.3.0,<2.0.0",
+    "torch>=2.0.0,<3.0.0",
+    "transformers>=4.30.0,<5.0.0",
+    "sentence-transformers>=2.2.0,<3.0.0",
+    "xgboost>=1.5.0,<2.0.0",
+    
+    # AI/ML utilities
+    "openai>=0.27.0,<1.0.0",
+    "pytesseract>=0.3.10,<1.0.0",
+    
+    # Geospatial and mapping
+    "simplekml>=1.3.0,<2.0.0",
+    
+    # Web interface
+    "streamlit>=1.10.0,<2.0.0",
+    "streamlit-drawable-canvas>=0.9.0,<1.0.0",
+    
+    # Utilities
+    "tqdm>=4.65.0,<5.0.0",
+    "colorama>=0.4.6,<1.0.0",
+    "python-dateutil>=2.8.0,<3.0.0",
+    "PyYAML>=6.0,<7.0.0",
+    "psutil>=5.9.0,<6.0.0",
+    
+    # Code analysis
+    "astroid>=2.14.0,<3.0.0",
+    "jedi>=0.18.0,<1.0.0",
+    
+    # Web framework
+    "fastapi>=0.100.0,<1.0.0",
+    "uvicorn>=0.20.0,<1.0.0",
+    "websockets>=11.0.0,<12.0.0",
+    "sqlalchemy>=2.0.0,<3.0.0",
+    "psycopg2-binary>=2.9.0,<3.0.0",
+    "pydantic>=2.0.0,<3.0.0",
+    
+    # Advanced analytics
+    "plotly>=5.15.0,<6.0.0",
+    "optuna>=3.2.0,<4.0.0",
+    "joblib>=1.3.0,<2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0,<8.0.0",
+    "pytest-cov>=4.1.0,<5.0.0",
+    "pytest-benchmark>=4.0.0,<5.0.0",
+    "black>=23.7.0,<24.0.0",
+    "isort>=5.12.0,<6.0.0",
+    "flake8>=6.0.0,<7.0.0",
+    "mypy>=1.5.0,<2.0.0",
+    "pre-commit>=3.3.0,<4.0.0",
+    "bandit>=1.7.0,<2.0.0",
+    "safety>=2.3.0,<3.0.0",
+    "memory-profiler>=0.61.0,<1.0.0",
+    "py-spy>=0.3.0,<1.0.0",
+]
+test = [
+    "pytest>=7.4.0,<8.0.0",
+    "pytest-cov>=4.1.0,<5.0.0",
+    "pytest-benchmark>=4.0.0,<5.0.0",
+    "pytest-asyncio>=0.21.0,<1.0.0",
+]
+docs = [
+    "mkdocs>=1.5.0,<2.0.0",
+    "mkdocs-material>=9.2.0,<10.0.0",
+    "mkdocstrings>=0.22.0,<1.0.0",
+    "mkdocstrings-python>=1.3.0,<2.0.0",
+]
+performance = [
+    "memory-profiler>=0.61.0,<1.0.0",
+    "py-spy>=0.3.0,<1.0.0",
+    "line-profiler>=4.0.0,<5.0.0",
+    "numba>=0.57.0,<1.0.0",
+    "cython>=3.0.0,<4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/plansheet-scanner-new"
+Documentation = "https://plansheet-scanner.readthedocs.io"
+Repository = "https://github.com/your-username/plansheet-scanner-new"
+Issues = "https://github.com/your-username/plansheet-scanner-new/issues"
+
+[project.scripts]
+plansheet-scanner = "src.cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/plansheet_scanner"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["plansheet_scanner"]
+known_third_party = ["opencv", "torch", "sklearn", "pandas", "numpy"]
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+show_error_codes = true
+
+[[tool.mypy.overrides]]
+module = [
+    "opencv.*",
+    "cv2.*",
+    "PIL.*",
+    "sklearn.*",
+    "torch.*",
+    "transformers.*",
+    "streamlit.*",
+    "fastapi.*",
+    "uvicorn.*",
+    "sqlalchemy.*",
+    "psycopg2.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--cov=src",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+    "--cov-report=xml",
+    "--cov-fail-under=20",
+    "--strict-markers",
+    "--strict-config",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+    "performance: marks tests as performance tests",
+    "asyncio: marks tests as async tests",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/.venv/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", ".venv"]
+skips = ["B101", "B601"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "*.egg-info",
+    "venv",
+    ".venv",
+    ".pytest_cache",
+    ".mypy_cache",
+]
+
+[tool.safety]
+output = "json"
+full-report = true
